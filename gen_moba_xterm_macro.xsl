@@ -65,6 +65,12 @@
                 <xsl:value-of select="$v_macro_document"/>
             </li>
         </ul>
+        <xsl:for-each select="//macro">
+            <li>
+                <xsl:text>git add </xsl:text>
+                <xsl:value-of select="@xml:base"/>
+            </li>
+        </xsl:for-each>
 
         <xsl:result-document method="xhtml" href="{$v_macro_document}">
             <html>

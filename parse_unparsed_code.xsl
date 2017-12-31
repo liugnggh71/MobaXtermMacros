@@ -13,6 +13,24 @@
                 <xsl:variable name="file_name" select="substring-before(., '.')"/>
                 <xsl:variable name="suffix" select="substring-after(., '.')"/>
                 <xsl:variable name="out_file_name" select="concat($file_name, '.xml')"/>
+                <li>
+                    <xsl:text>git add </xsl:text>
+                    <xsl:value-of select="$out_file_name"/>
+                </li>
+                <li>
+                    <xsl:text>git add </xsl:text>
+                    <xsl:value-of select="$v_file_name"/>
+                </li>
+            </xsl:for-each>
+        </ul>
+        <ul>
+            <xsl:for-each select="//file">
+                <xsl:variable name="v_file_name" select="."/>
+                <xsl:variable name="full_file"
+                    select="replace(unparsed-text(concat($sub_dir, '/', .)), '\r', '')"/>
+                <xsl:variable name="file_name" select="substring-before(., '.')"/>
+                <xsl:variable name="suffix" select="substring-after(., '.')"/>
+                <xsl:variable name="out_file_name" select="concat($file_name, '.xml')"/>
                 <xsl:variable name="action" select="@action"/>
                 <li>
                     <xsl:text>&lt;xi:include href=&quot;</xsl:text>
@@ -23,6 +41,12 @@
                     <xsl:text>&quot;/&gt;</xsl:text>
                 </li>
 
+                <li>
+                    <xsl:text>git add </xsl:text>
+                    <xsl:value-of select="$out_file_name"/>
+                </li>
+                
+                
                 <xsl:result-document method="xml" href="{$out_file_name}" indent="yes">
                     <macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
                         <name>
