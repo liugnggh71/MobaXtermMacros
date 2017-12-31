@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>0 git config</name>
+   <desc>Full code file: git_config.ksh</desc>
+   <environment>KornShell</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">git config --global user.name 'Gang Liu'</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">git config --global user.email 'liugng71@gmail.com'</line>
+   <line type="KeyPress">RETURN</line>
+</macro>
