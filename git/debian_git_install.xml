@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>debian_git_install</name>
+   <desc>Full code file: debian_git_install.ksh</desc>
+   <environment>KornShell</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">sudo apt-get install git</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

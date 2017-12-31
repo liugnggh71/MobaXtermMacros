@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+    <name>cmd</name>
+    <desc>Get into Windows cmd environment</desc>
+    <environment>MobaXterm</environment>
+    <hotkey>0</hotkey>
+    <line type="Text">cmd</line>
+    <line type="KeyPress">RETURN</line>
+</macro>

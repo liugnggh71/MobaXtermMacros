@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+    <name>____Macro_DIR</name>
+    <desc>Change to Macro location</desc>
+    <environment>cmd</environment>
+    <hotkey>0</hotkey>
+    <line type="Text">explorer C:\Users\gangl\Documents\MobaXterm\home\MobaXtermMacros</line>
+    <line type="KeyPress">RETURN</line>
+    <line type="Text">cd</line>
+    <line type="KeyPress">RETURN</line>
+</macro>

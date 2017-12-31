@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>README</name>
+   <desc>Full code file: README.md</desc>
+   <environment>Vi</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">vi README.md</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">i</line>
+   <line type="Text">My App</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">This is my app</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="KeyPress">ESCAPE</line>
+   <line type="KeyPress">COLON</line>
+   <line type="Text">x</line>
+   <line type="KeyPress">RETURN</line>
+</macro>
