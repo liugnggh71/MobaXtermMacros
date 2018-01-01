@@ -5,7 +5,7 @@
     <xsl:output method="html" indent="yes"/>
     <xsl:template match="/">
         <xsl:variable name="sub_dir" select="/codes/directory"/>
-        <ul>
+        <table>
             <xsl:for-each select="//file">
                 <xsl:variable name="v_file_name" select="."/>
                 <xsl:variable name="full_file"
@@ -13,17 +13,20 @@
                 <xsl:variable name="file_name" select="substring-before(., '.')"/>
                 <xsl:variable name="suffix" select="substring-after(., '.')"/>
                 <xsl:variable name="out_file_name" select="concat($file_name, '.xml')"/>
-                <li>
-                    <xsl:text>git add </xsl:text>
-                    <xsl:value-of select="$out_file_name"/>
-                </li>
-                <li>
-                    <xsl:text>git add </xsl:text>
-                    <xsl:value-of select="$v_file_name"/>
-                </li>
+                <tr>
+                    <td>
+                        <xsl:text>git add </xsl:text>
+                        <xsl:value-of select="$out_file_name"/>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <xsl:text>git add </xsl:text>
+                        <xsl:value-of select="$v_file_name"/>
+                    </td>
+                </tr>
             </xsl:for-each>
-        </ul>
-        <ul>
             <xsl:for-each select="//file">
                 <xsl:variable name="v_file_name" select="."/>
                 <xsl:variable name="full_file"
@@ -32,23 +35,19 @@
                 <xsl:variable name="suffix" select="substring-after(., '.')"/>
                 <xsl:variable name="out_file_name" select="concat($file_name, '.xml')"/>
                 <xsl:variable name="action" select="@action"/>
-                <li>
-                    <xsl:text>&lt;xi:include href=&quot;</xsl:text>
-                    <xsl:text>../</xsl:text>
-                    <xsl:value-of select="$sub_dir"/>
-                    <xsl:text>/</xsl:text>
-                    <xsl:value-of select="$out_file_name"/>
-                    <xsl:text>&quot;/&gt;</xsl:text>
-                </li>
-
-                <li>
-                    <xsl:text>git add </xsl:text>
-                    <xsl:value-of select="$out_file_name"/>
-                </li>
-                
-                
+                <tr>
+                    <td>
+                        <xsl:text>&lt;xi:include href=&quot;</xsl:text>
+                        <xsl:text>../</xsl:text>
+                        <xsl:value-of select="$sub_dir"/>
+                        <xsl:text>/</xsl:text>
+                        <xsl:value-of select="$out_file_name"/>
+                        <xsl:text>&quot;/&gt;</xsl:text>
+                    </td>
+                </tr>
                 <xsl:result-document method="xml" href="{$out_file_name}" indent="yes">
-                    <macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+                    <macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                        xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
                         <name>
                             <xsl:value-of select="$file_name"/>
                         </name>
@@ -126,7 +125,7 @@
                     </macro>
                 </xsl:result-document>
             </xsl:for-each>
-        </ul>
+        </table>
     </xsl:template>
 
 </xsl:stylesheet>
