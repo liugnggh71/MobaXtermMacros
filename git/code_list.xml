@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../parse_unparsed_code.xsl"?>
+
+<codes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../code_list.xsd">
+    <directory>git</directory>
+    <file>debian_git_install.ksh</file>
+    <file>fedora_git_install.ksh</file>
+    <file action="vi">README.md</file>
+    <file action="WebBrowser">git_crash_course.txt</file>
+    <file action="WebBrowser">introduction_to_git.txt</file>
+    
+    <!--     
+    <file action="WebBrowser">Daily_bck_issue.txt</file>
+    <file action="vi">multi_day_db_bck_apxdev.ksh</file>
+    <file action="Help">SPACE_ticket_help.txt</file>
+ -->
+</codes>

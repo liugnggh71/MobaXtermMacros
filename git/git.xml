@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../gen_moba_xterm_macro.xsl"?>
+<xmoba_macros xmlns:xi="http://www.w3.org/2001/XInclude">
+    <file>git</file>
+    <xi:include href="../common/____Macro_DIR.xml">af</xi:include>
+    <xi:include href="../common/cmd.xml"/>
+
+    <xi:include href="../git/.gitignore.xml"/>
+    <xi:include href="../git/README.xml"/>
+
+    <xi:include href="../git/git_init.xml"/>
+    <xi:include href="../git/git_config.xml"/>
+
+    <xi:include href="../git/debian_git_install.xml"/>
+    <xi:include href="../git/fedora_git_install.xml"/>
+
+    <xi:include href="../git/git_add.xml"/>
+    <xi:include href="../git/git_branch.xml"/>
+    <xi:include href="../git/git_branch_create.xml"/>
+    <xi:include href="../git/git_branch_delete.xml"/>
+    <xi:include href="../git/git_checkout.xml"/>
+    <xi:include href="../git/git_checkout_master.xml"/>
+    <xi:include href="../git/git_clone.xml"/>
+    <xi:include href="../git/git_commit.xml"/>
+    <xi:include href="../git/git_diff.xml"/>
+    <xi:include href="../git/git_log.xml"/>
+    <xi:include href="../git/git_merge.xml"/>
+    <xi:include href="../git/git_pull.xml"/>
+    <xi:include href="../git/git_push.xml"/>
+    <xi:include href="../git/git_push_u_origin_master.xml"/>
+    <xi:include href="../git/git_remote.xml"/>
+    <xi:include href="../git/git_remote_add_origin.xml"/>
+    <xi:include href="../git/git_reset_hard.xml"/>
+    <xi:include href="../git/git_reset_hard_origin_master.xml"/>
+    <xi:include href="../git/git_rm.xml"/>
+    <xi:include href="../git/git_status.xml"/>
+    <xi:include href="../git/introduction_to_git.xml"/>
+    <xi:include href="../git/git_crash_course.xml"/>
+
+    <transfer_map>
+        <transfer>
+            <source_xml>../unparsed_code/code_list.xml</source_xml>
+            <transfer_xsl>../parse_unparsed_code.xsl</transfer_xsl>
+            <master_output>../unparsed_code/code_list.txt</master_output>
+        </transfer>
+        <transfer>
+            <source_xml>code_list.xml</source_xml>
+            <transfer_xsl>../parse_unparsed_code.xsl</transfer_xsl>
+            <master_output>code_list.txt</master_output>
+        </transfer>
+        <transfer>
+            <source_xml>NEW_TOPIC_TEMPLATE.xml</source_xml>
+            <transfer_xsl>../gen_moba_xterm_macro.xsl</transfer_xsl>
+            <master_output>NEW_TOPIC_TEMPLATE.txt</master_output>
+        </transfer>
+    </transfer_map>
+    <!-- java -jar $jar_file -o:$out_file $xml_file $xsl_file -->
+</xmoba_macros>
