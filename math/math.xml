@@ -13,6 +13,7 @@
     <xi:include href="../math/cd_apple_latex.xml"/>
     <xi:include href="../math/copy_solution.xml"/>
     <xi:include href="../math/cp_problem.xml"/>
+    <xi:include href="../common/cd_MobaXtermMacros.xml"/>
 
     <transfer_map>
         <transfer>

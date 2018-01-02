@@ -4,6 +4,7 @@
     <file>git</file>
     <xi:include href="../common/____Macro_DIR.xml">af</xi:include>
     <xi:include href="../common/cmd.xml"/>
+    <xi:include href="../common/cd_MobaXtermMacros.xml"/>
 
     <xi:include href="../git/.gitignore.xml"/>
     <xi:include href="../git/README.xml"/>
