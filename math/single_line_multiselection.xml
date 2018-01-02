@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>single_line_multiselection</name>
+   <desc>Full code file: single_line_multiselection.tex</desc>
+   <environment>Vi</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">vi single_line_multiselection.tex</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">i</line>
+   <line type="Text">In July 1861, $ 366$ inches of rain fell in Cherrapunji, India. What was the average rainfall in inches per hour during that month?</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">\[ \textbf{(A)}\ \frac{366}{31 \times 24} \qquad</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">\textbf{(B)}\ \frac{366 \times 31}{24} \qquad</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">\textbf{(C)}\ \frac{366 \times 24}{31} \qquad</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">\textbf{(D)}\ \frac{31 \times 24}{366} \qquad</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">\textbf{(E)}\ 366 \times 31 \times 24</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">\]</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="KeyPress">ESCAPE</line>
+   <line type="KeyPress">COLON</line>
+   <line type="Text">x</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>multi_line_multiselection</name>
+   <desc>Full code file: multi_line_multiselection.tex</desc>
+   <environment>Vi</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">vi multi_line_multiselection.tex</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">i</line>
+   <line type="Text">Which of the following sets of whole numbers has the largest average?</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">\\</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">\textbf{(A)}\ \text{multiples of 2 between 1 and 101} \\</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">\textbf{(B)}\ \text{multiples of 3 between 1 and 101} \\</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">\textbf{(C)}\ \text{multiples of 4 between 1 and 101} \\</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">\textbf{(D)}\ \text{multiples of 5 between 1 and 101} \\</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">\textbf{(E)}\ \text{multiples of 6 between 1 and 101}</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="KeyPress">ESCAPE</line>
+   <line type="KeyPress">COLON</line>
+   <line type="Text">x</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

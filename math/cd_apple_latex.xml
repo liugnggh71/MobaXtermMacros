@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>cd_apple_latex</name>
+   <desc>Full code file: cd_apple_latex.ksh</desc>
+   <environment>MobaXterm</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">cd /drives/c/Users/gangl/MathLatex/apple_latex</line>
+   <line type="KeyPress">RETURN</line>
+    <line type="Text">pwd</line>
+    <line type="KeyPress">RETURN</line>
+</macro>

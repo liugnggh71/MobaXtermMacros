@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+    <name>copy_solution</name>
+    <desc>Copy solution in current directory</desc>
+    <environment>MobaXterm</environment>
+    <hotkey>0</hotkey>
+    <line type="Text">./cp_problem.ksh 2005_amc8</line>
+</macro>

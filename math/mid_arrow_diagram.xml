@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>mid_arrow_diagram</name>
+   <desc>Full code file: mid_arrow_diagram.tex</desc>
+   <environment>Vi</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">vi mid_arrow_diagram.tex</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">i</line>
+   <line type="Text">Using only the paths and the directions shown, how many different routes are there from $ M$ to $ N$?</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">\begin{figure}[H]</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">\centering</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">\begin{asy}</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">size(100);</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">draw((0,0)--(5,0),MidArrow);</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">draw((5,0)--(10,0),MidArrow);</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">draw((5,5sqrt(3))--(2.5,2.5sqrt(3)),MidArrow);</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">draw((2.5,2.5sqrt(3))--(0,0),MidArrow);</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">draw((5,5sqrt(3))--(7.5,2.5sqrt(3)),MidArrow);</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">draw((7.5,2.5sqrt(3))--(10,0),MidArrow);</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">draw((7.5,2.5sqrt(3))--(2.5,2.5sqrt(3)),MidArrow);</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">draw((7.5,2.5sqrt(3))--(5,0),MidArrow);</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">draw((2.5,2.5sqrt(3))--(5,0),MidArrow);</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">label("D",(0,0),SW);</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">label("C",(5,0),S);</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">label("N",(10,0),SE);</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">label("A",(2.5,2.5sqrt(3)),W);</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">label("B",(7.5,2.5sqrt(3)),E);</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">label("M",(5,5sqrt(3)),N);</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">\end{asy}</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">\end{figure}</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">\[ \textbf{(A)}\ 2 \qquad</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">\textbf{(B)}\ 3 \qquad</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">\textbf{(C)}\ 4 \qquad</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">\textbf{(D)}\ 5 \qquad</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">\textbf{(E)}\ 6</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">\]</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="KeyPress">ESCAPE</line>
+   <line type="KeyPress">COLON</line>
+   <line type="Text">x</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

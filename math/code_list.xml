@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <?xml-stylesheet type="text/xsl" href="../parse_unparsed_code.xsl"?>
+
+<codes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../code_list.xsd">
+    <directory>math</directory>
+    <file action="WebBrowser">david_math.txt</file>
+    <file action="WebBrowser">andrew_math.txt</file>
+    <file action="vi">1986_amc8.tex</file>
+    <file action="vi">single_line_multiselection.tex</file>
+    <file action="vi">multi_line_multiselection.tex</file>
+    <file action="vi">mid_arrow_diagram.tex</file>
+    <file action="vi">asymptote.tex</file>
+    <!--     
+    <file action="WebBrowser">Daily_bck_issue.txt</file>
+    <file action="vi">multi_day_db_bck_apxdev.ksh</file>
+    <file action="Help">SPACE_ticket_help.txt</file>
+find . -type f -name \*.xml | xargs grep /environment |
+grep -v SQLPlus| grep -v Help | grep -v Vi| grep -v KornShell | grep -v WebBrowser | grep -v RMAN |grep -v MobaXterm| grep -v cmd
+
+./copy_solution.ksh
+
+ -->
+</codes>

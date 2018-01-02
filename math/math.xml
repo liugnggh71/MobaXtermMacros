@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../gen_moba_xterm_macro.xsl"?>
+<xmoba_macros xmlns:xi="http://www.w3.org/2001/XInclude">
+    <file>math</file>
+    <xi:include href="../math/david_math.xml"/>
+    <xi:include href="../math/andrew_math.xml"/>
+    <xi:include href="../math/____Math_DIR.xml"/>
+    <xi:include href="../math/____MathLatex_DIR.xml"/>
+    <xi:include href="../math/1986_amc8.xml"/>
+    <xi:include href="../math/single_line_multiselection.xml"/>
+    <xi:include href="../math/multi_line_multiselection.xml"/>
+    <xi:include href="../math/mid_arrow_diagram.xml"/>
+    <xi:include href="../math/cd_apple_latex.xml"/>
+    <xi:include href="../math/copy_solution.xml"/>
+    <xi:include href="../math/cp_problem.xml"/>
+
+    <transfer_map>
+        <transfer>
+            <source_xml>../unparsed_code/code_list.xml</source_xml>
+            <transfer_xsl>../parse_unparsed_code.xsl</transfer_xsl>
+            <master_output>../unparsed_code/code_list.txt</master_output>
+        </transfer>
+        <transfer>
+            <source_xml>code_list.xml</source_xml>
+            <transfer_xsl>../parse_unparsed_code.xsl</transfer_xsl>
+            <master_output>code_list.txt</master_output>
+        </transfer>
+        <transfer>
+            <source_xml>NEW_TOPIC_TEMPLATE.xml</source_xml>
+            <transfer_xsl>../gen_moba_xterm_macro.xsl</transfer_xsl>
+            <master_output>NEW_TOPIC_TEMPLATE.txt</master_output>
+        </transfer>
+    </transfer_map>
+    <!-- java -jar $jar_file -o:$out_file $xml_file $xsl_file-->
+</xmoba_macros>

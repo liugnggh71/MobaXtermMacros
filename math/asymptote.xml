@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>asymptote</name>
+   <desc>Full code file: asymptote.tex</desc>
+   <environment>Vi</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">vi asymptote.tex</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">i</line>
+   <line type="Text">\usepackage{asymptote}</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">\begin{figure}[H]</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">\centering</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">\begin{asy}</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">import "./olympiad.asy" as olympiad;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">size(0,120);</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">\end{asy}</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">\end{figure}</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">\\</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">Solution:</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="KeyPress">ESCAPE</line>
+   <line type="KeyPress">COLON</line>
+   <line type="Text">x</line>
+   <line type="KeyPress">RETURN</line>
+</macro>
