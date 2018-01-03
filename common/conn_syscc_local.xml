@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>conn_syscc_fix_local---</name>
+   <desc>Full code file: conn_syscc.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">connect sys_cc/M2ryhadal2mb** as sysdba</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">set sqlprompt "_user '@' _connect_identifier > "</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

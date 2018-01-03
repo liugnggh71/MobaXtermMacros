@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>accept_tablespace_name</name>
+   <desc>Full code file: accept_tablespace_name.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">SELECT tablespace_name FROM dba_tablespaces order by tablespace_name;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">accept TABLESPACE_NAME char prompt 'Enter Tablespace Name: '</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

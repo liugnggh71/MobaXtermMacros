@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>set_tmp_diag</name>
+   <desc>Full code file: set_tmp_diag.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">host mkdir /u01/app/oracle/tmp_diag </line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">alter system set diagnostic_dest='/u01/app/oracle/tmp_diag' scope=both;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select value from v$parameter where name='diagnostic_dest';</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

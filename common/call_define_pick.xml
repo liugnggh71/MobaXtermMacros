@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>CALL_define_pick------------</name>
+   <desc>Full code file: call_define_pick.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">set sqlprompt "_user '@' _connect_identifier > "</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">@define_connect_db_pick.sql</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

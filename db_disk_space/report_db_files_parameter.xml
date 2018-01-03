@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>report_db_files_parameter</name>
+   <desc>Full code file: report_db_files_parameter.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">show parameter db_files</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">prompt alter sysetm set db_files=4800 scope=spfile;;</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

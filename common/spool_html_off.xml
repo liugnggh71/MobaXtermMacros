@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>spool_html_off</name>
+   <desc>Full code file: spool_html_off.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">prompt ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">prompt Spool off </line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">prompt ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">spool off</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">set markup HTML OFF</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">set termout on</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">set pagesize 100</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

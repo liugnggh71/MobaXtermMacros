@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>mkdir_general_scripts</name>
+   <desc>Full code file: mkdir_general_scripts.ksh</desc>
+   <environment>KornShell</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">mkdir -p /u01/app/oracle/admin/general/scripts</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

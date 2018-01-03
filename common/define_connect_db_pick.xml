@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>define_connect_db_pick</name>
+   <desc>Full code file: define_connect_db_pick.sql</desc>
+   <environment>Vi</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">vi define_connect_db_pick.sql</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">i</line>
+   <line type="Text">conn dbinv/Ora_cle1@cmparch:1521/dbadmin</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">UNDEFINE instance_list_filter</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">UNDEFINE picked_instance</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">accept instance_list_filter CHAR prompt 'Enter Instanct list filter: '</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">column host_instance format A50</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">set pagesize 50 linesize 100</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT h.ORA_INSTANCE_ID || '----' || h.host_instance_name host_instance</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  FROM ora_host_instance h</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"> WHERE UPPER (host_instance_name) LIKE UPPER ('%&amp;instance_list_filter%');</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">accept picked_instance CHAR prompt 'Enter instance id: '</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">@@define_connections.sql</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="KeyPress">ESCAPE</line>
+   <line type="KeyPress">COLON</line>
+   <line type="Text">x</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

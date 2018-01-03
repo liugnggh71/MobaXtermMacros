@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>delete_audit_files</name>
+   <desc>Full code file: delete_audit_files.ksh</desc>
+   <environment>KornShell</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">cd /u01/app/oracle/admin</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">find . -type f -name \*.aud -mtime +3 | xargs rm</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

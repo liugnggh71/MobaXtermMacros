@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>tbs_create_new_tbs</name>
+   <desc>Full code file: tbs_create_new_tbs.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">column tablespace_name new_value tablespace_name</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select 'USERS' tablespace_name from dual;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">COLUMN  file_suffix NEW_VALUE file_suffix</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT SUBSTR (name, NULLIF (INSTR (name, '.', -1) + 1, 1)) file_suffix</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  FROM v$datafile</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"> WHERE file# = 1;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">PROMPT CREATE TABLESPACE &amp;&amp;tablespace_name DATAFILE '&amp;NEW_FILE_DIR.&amp;&amp;tablespace_name._001.&amp;file_suffix' SIZE 100M AUTOEXTEND ON NEXT 10M MAXSIZE UNLIMITED EXTENT MANAGEMENT LOCAL AUTOALLOCATE SEGMENT SPACE MANAGEMENT AUTO;;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">PROMPT create tablespace &amp;&amp;tablespace_name;;</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

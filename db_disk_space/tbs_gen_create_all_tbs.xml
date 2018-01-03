@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>tbs_gen_create_all_tbs</name>
+   <desc>Full code file: tbs_gen_create_all_tbs.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">set linesize 200</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">set pagesize 1000</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT    'CREATE TABLESPACE '</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       || tablespace_name</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       || ' DATAFILE '''</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       || '&amp;NEW_FILE_DIR'</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       || tablespace_name</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       || '_001.dbf'' SIZE 100M AUTOEXTEND ON NEXT 10M MAXSIZE UNLIMITED EXTENT MANAGEMENT LOCAL AUTOALLOCATE SEGMENT SPACE MANAGEMENT AUTO;'</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  FROM dba_tablespaces;  </line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">set linesize 100</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">set pagesize 1000</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT    'CREATE TABLESPACE '</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       || tablespace_name</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       || ';'</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  FROM dba_tablespaces;</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

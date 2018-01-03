@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>define_current_connection</name>
+   <desc>Full code file: define_current_connection.sql</desc>
+   <environment>Vi</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">vi define_current_connection.sql</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">i</line>
+   <line type="Text">column host_name new_value host_name</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">column instance_name new_value instance_name</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select host_name, instance_name from v$instance;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">conn dbinv/Ora_cle1@cmparch:1521/dbadmin</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">define host_name</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">define instance_name</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">column ora_instance_id new_value picked_instance</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select ora_instance_id from ora_host_instance where upper(dns_host_name)=upper('&amp;host_name') and upper(instance_name)=upper('&amp;instance_name');</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">define picked_instance</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">define ora_instance_id</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">@@define_connections.sql</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="KeyPress">ESCAPE</line>
+   <line type="KeyPress">COLON</line>
+   <line type="Text">x</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

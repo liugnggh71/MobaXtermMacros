@@ -1,0 +1,2 @@
+rman
+connect target

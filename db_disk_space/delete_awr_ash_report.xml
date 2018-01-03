@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>delete_awr_ash_report</name>
+   <desc>Full code file: delete_awr_ash_report.ksh</desc>
+   <environment>KornShell</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">cd /u01/app/oracle/admin</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">find . -type f -name \*.html -mtime +30 | xargs ls</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

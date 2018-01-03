@@ -16,13 +16,18 @@
                 <tr>
                     <td>
                         <xsl:text>git add </xsl:text>
+                        <xsl:text>../</xsl:text>
+                        <xsl:value-of select="$sub_dir"/>
+                        <xsl:text>/</xsl:text>
                         <xsl:value-of select="$out_file_name"/>
-
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <xsl:text>git add </xsl:text>
+                        <xsl:text>../</xsl:text>
+                        <xsl:value-of select="$sub_dir"/>
+                        <xsl:text>/</xsl:text>
                         <xsl:value-of select="$v_file_name"/>
                     </td>
                 </tr>

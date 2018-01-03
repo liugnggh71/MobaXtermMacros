@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>list_all_tbs</name>
+   <desc>Full code file: list_all_tbs.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">clear screen</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SET LINESIZE 132</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">COMPUTE SUM LABEL 'TOTAL' OF free_mb ON REPORT</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">COMPUTE SUM LABEL 'TOTAL' OF file_mb ON REPORT</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">COMPUTE SUM LABEL 'TOTAL' OF used_mb ON REPORT</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">BREAK ON REPORT</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">COLUMN free_mb FORMAT 999,999,999,999.99</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">COLUMN file_mb FORMAT 999,999,999,999.99</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">COLUMN used_mb FORMAT 999,999,999,999.99</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT tablespace_name,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       NVL (free_mb, 0)                            free_mb,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       file_mb,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       NVL (used_mb, file_mb)                      used_mb,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       ROUND (NVL (free_mb, 0) / file_mb * 100, 2) free_pct</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  FROM (SELECT b.tablespace_name,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">               ROUND (free_mb)           free_mb,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">               ROUND (file_mb)           file_mb,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">               ROUND (file_mb - free_mb) used_mb</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">          FROM (  SELECT tablespace_name, SUM (bytes) / 1024 / 1024 free_mb</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">                    FROM dba_free_space</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">                GROUP BY tablespace_name) a,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">               (  SELECT tablespace_name, SUM (bytes) / 1024 / 1024 file_mb</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">                    FROM dba_data_files</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">                GROUP BY tablespace_name) b</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">         WHERE a.tablespace_name(+) = b.tablespace_name);</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

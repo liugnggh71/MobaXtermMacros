@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+    <name>sqlplus /nolog</name>
+    <desc>Get into SQLPlus environment</desc>
+    <environment>MobaXterm</environment>
+    <hotkey>0</hotkey>
+    <line type="Text">sqlplus /nolog</line>
+    <line type="KeyPress">RETURN</line>
+    <line type="Text">set sqlprompt "_user '@' _connect_identifier > "</line>
+    <line type="KeyPress">RETURN</line>
+</macro>
