@@ -5,10 +5,6 @@
    <desc>Full code file: tbs_create_new_tbs.sql</desc>
    <environment>SQLPlus</environment>
    <hotkey>0</hotkey>
-   <line type="Text">column tablespace_name new_value tablespace_name</line>
-   <line type="KeyPress">RETURN</line>
-   <line type="Text">select 'USERS' tablespace_name from dual;</line>
-   <line type="KeyPress">RETURN</line>
    <line type="Text">COLUMN  file_suffix NEW_VALUE file_suffix</line>
    <line type="KeyPress">RETURN</line>
    <line type="Text">SELECT SUBSTR (name, NULLIF (INSTR (name, '.', -1) + 1, 1)) file_suffix</line>

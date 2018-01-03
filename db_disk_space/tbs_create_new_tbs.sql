@@ -1,7 +1,3 @@
-column tablespace_name new_value tablespace_name
-
-select 'USERS' tablespace_name from dual;
-
 COLUMN  file_suffix NEW_VALUE file_suffix
 
 SELECT SUBSTR (name, NULLIF (INSTR (name, '.', -1) + 1, 1)) file_suffix

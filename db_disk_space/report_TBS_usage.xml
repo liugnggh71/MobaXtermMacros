@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
-   <name>TBS_usage</name>
-   <desc>Full code file: TBS_usage.sql</desc>
+   <name>report_TBS_usage</name>
+   <desc>Full code file: report_TBS_usage.sql</desc>
    <environment>SQLPlus</environment>
    <hotkey>0</hotkey>
    <line type="Text">COLUMN value NEW_VALUE dbblocksz NOPRINT</line>
