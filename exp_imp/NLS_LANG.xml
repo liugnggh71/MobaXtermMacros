@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>NLS_LANG</name>
+   <desc>Full code file: NLS_LANG.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">clear screen</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">column NLS_LANG_DEFINE new_value NLS_LANG_DEFINE</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT    'NLS_LANG='</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       || A.NLS_LANGUAGE</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       || '_'</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       || B.NLS_TERRITORY</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       || '.'</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       || C.NLS_CHARACTERSET</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">           NLS_LANG_DEFINE</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  FROM (SELECT VALUE NLS_LANGUAGE</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">          FROM V$NLS_PARAMETERS</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">         WHERE parameter = 'NLS_LANGUAGE') a,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       (SELECT VALUE NLS_TERRITORY</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">          FROM V$NLS_PARAMETERS</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">         WHERE parameter = 'NLS_TERRITORY') b,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       (SELECT VALUE NLS_CHARACTERSET</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">          FROM V$NLS_PARAMETERS</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">         WHERE parameter = 'NLS_CHARACTERSET') c;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">prompt export &amp;NLS_LANG_DEFINE</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">prompt set &amp;NLS_LANG_DEFINE</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

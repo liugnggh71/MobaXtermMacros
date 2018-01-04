@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>accept_MY_DATA_PUMP_DIR</name>
+   <desc>Full code file: accept_MY_DATA_PUMP_DIR.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">column db_name new_value db_name</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select value  db_name from v$parameter where name='db_name';</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">set verify on</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">accept MY_DATA_PUMP_DIR char default '/archivelog/dpdump/&amp;&amp;db_name/' prompt 'Enter New dump dir: '</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

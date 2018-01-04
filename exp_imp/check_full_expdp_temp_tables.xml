@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>check_full_expdp_temp_tables</name>
+   <desc>Full code file: check_full_expdp_temp_tables.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">clear screen</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">desc sys.compressed_expdp_full</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">desc sys.expdp_full</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">prompt drop table sys.compressed_expdp_full;;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">prompt drop table sys.expdp_full;;</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

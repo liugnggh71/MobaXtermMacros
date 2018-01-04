@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>report_owner_tbs_exp_imp_tables</name>
+   <desc>Full code file: report_owner_tbs_exp_imp_tables.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">prompt reporting new exp imp tables ==========================</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">clear screen</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">prompt missing tables:</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT owner missing_owner, table_name missing_table_name</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  FROM dbsnmp.exp_imp_tables</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">MINUS</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT owner, table_name FROM dba_tables;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">COMPUTE SUM LABEL 'TOTAL' OF table_count on report</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">BREAK ON REPORT</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT t.owner, COUNT (1) table_count</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">    FROM DBSNMP.EXP_IMP_TABLES e, dba_tables t</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">   WHERE e.owner = t.OWNER AND e.TABLE_NAME = t.TABLE_NAME</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  GROUP BY t.owner</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"> ORDER BY t.owner;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">COMPUTE SUM LABEL 'TOTAL' OF index_count on report</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">BREAK ON REPORT</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT tablespace_name, COUNT (1) index_count</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">    FROM dba_indexes</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">   WHERE (table_owner, table_name) IN (SELECT *</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">                                         FROM DBSNMP.EXP_IMP_TABLES)</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  GROUP BY tablespace_name</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  ORDER BY tablespace_name;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">COMPUTE SUM LABEL 'TOTAL' OF mb on report</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">BREAK ON REPORT</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">WITH s</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">     AS (SELECT *</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">           FROM dba_segments</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">          WHERE (owner, segment_name) IN (SELECT *</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">                                            FROM DBSNMP.EXP_IMP_TABLES))</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  SELECT tablespace_name, ROUND (SUM (bytes) / 1024 / 1024) mb</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">    FROM s</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">GROUP BY tablespace_name</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">ORDER BY tablespace_name;</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

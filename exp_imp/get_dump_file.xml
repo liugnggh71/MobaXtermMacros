@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>get_dump_file</name>
+   <desc>Full code file: get_dump_file.pl</desc>
+   <environment>Vi</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">vi get_dump_file.pl</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">i</line>
+   <line type="Text">use Net::FTP;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">use Cwd qw(cwd);</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">my $dir = cwd;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">my $glob         = '*.DMP';</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">my @remote_files;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">my $file_count;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">my $loop_count = 1;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">print "$dir\n";</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">$ftp = Net::FTP-&gt;new("irvrad.bhcs.pvt", Debug =&gt; 0)</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">or die "Cannot connect to apxqa.bhcs.pvt: $@";</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">$ftp-&gt;login("GANGL_P",'GANGL100')</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">or die "Cannot login ", $ftp-&gt;message;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">$ftp-&gt;binary();</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">$ftp-&gt;cwd("ORA1:[BCK]")</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">or die "Cannot change working directory ", $ftp-&gt;message;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">while (1) {</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">    </line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  @remote_files = $ftp-&gt;ls($glob);</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  $file_count = @remote_files;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  if ($file_count&gt;1) {</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">     foreach my $file (@remote_files) {</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">        $ftp-&gt;get($file);</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">        print "Get and delete: $file\n";</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">        $ftp-&gt;delete($file);</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">        last;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">    }</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  }</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  </line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  $loop_count = $loop_count +1;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  print "Loop count: $loop_count\n";</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  sleep 5;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">}</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">1;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="KeyPress">ESCAPE</line>
+   <line type="KeyPress">COLON</line>
+   <line type="Text">x</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>CREATE_MY_DATA_PUMP_DIR</name>
+   <desc>Full code file: CREATE_MY_DATA_PUMP_DIR.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">clear screen</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">COLUMN db_name NEW_VALUE db_name</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT LOWER (VALUE) db_name</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  FROM v$parameter</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"> WHERE name = 'db_name';</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">CREATE OR REPLACE DIRECTORY MY_DATA_PUMP_DIR</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">    AS '&amp;MY_DATA_PUMP_DIR';</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select * from dba_directories where directory_name='MY_DATA_PUMP_DIR';</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

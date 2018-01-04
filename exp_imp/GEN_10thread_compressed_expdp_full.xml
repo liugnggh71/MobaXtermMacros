@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>GEN_10thread_compressed_expdp_full</name>
+   <desc>Full code file: GEN_10thread_compressed_expdp_full.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">clear screen</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">set long 4000</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">var exp_sysdba_var clob;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">var exp_sys_cc_var clob;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">DECLARE</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">    v_exp   VARCHAR2 (4000)</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">                := q'#compressed_expdp_full.par</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">USERID='SYSdbaUSRpwd as sysdba'</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">DUMPFILE="compressed_full_db_%U.dmp"</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">LOGFILE="compressed_expdp_full.log"</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">DIRECTORY=MY_DATA_PUMP_DIR</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">JOB_NAME='compressed_expdp_full'</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">COMPRESSION=ALL</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">PARALLEL=10</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">CONTENT=ALL</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">FULL=Y#';</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">BEGIN</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">    :exp_sysdba_var :=  replace(v_exp, 'SYSdbaUSRpwd', '&amp;SYSDBA');</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">    :exp_sys_cc_var :=  replace(v_exp, 'SYSdbaUSRpwd', '&amp;SYSCC');</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">END;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">/</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">print exp_sysdba_var</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">print exp_sys_cc_var</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

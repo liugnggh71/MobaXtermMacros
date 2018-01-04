@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>list_datapump_jobs</name>
+   <desc>Full code file: list_datapump_jobs.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">clear screen</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">set linesize 200</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">column OWNER_NAME format A15</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">column job_name format A25</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">column OPERATION FORMAT A20</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">column JOB_MODE FORMAT A15</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT * FROM dba_datapump_jobs;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">set linesize 200</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">column OWNER_NAME format A15</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">column job_name format A25</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">column OPERATION FORMAT A20</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">column JOB_MODE FORMAT A15</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">column STATE FORMAT A15</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT * FROM v$datapump_job;</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

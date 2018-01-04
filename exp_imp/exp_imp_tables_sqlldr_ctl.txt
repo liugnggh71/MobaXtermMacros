@@ -1,0 +1,23 @@
+-- SQL Loader Control and Data File created by TOAD
+-- Variable length, terminated enclosed data formatting
+-- 
+-- The format for executing this file with SQL Loader is:
+-- SQLLDR control=<filename> Be sure to substitute your
+-- version of SQL LOADER and the filename for this file.
+--
+-- Note: Nested table datatypes are not supported here and
+--       will be exported as nulls.
+-- sqlldr dbsnmp/uC52tdnsSFG6H! control=exp_imp_tables_sqlldr_ctl.txt
+OPTIONS (DIRECT=FALSE, PARALLEL=FALSE)
+LOAD DATA
+INFILE *
+BADFILE './EXP_IMP_TABLES.BAD'
+DISCARDFILE './EXP_IMP_TABLES.DSC'
+TRUNCATE INTO TABLE DBSNMP.EXP_IMP_TABLES
+Fields terminated by ";" Optionally enclosed by '"'
+(
+  OWNER,
+  TABLE_NAME
+)
+BEGINDATA
+"EDW";"ABC"

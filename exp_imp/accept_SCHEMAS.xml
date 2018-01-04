@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>accept_SCHEMAS</name>
+   <desc>Full code file: accept_SCHEMAS.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">DEFINE SCHEMAS new_value SCHEMAS</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">accept SCHEMAS char default 'ABC,EFG' prompt 'Enter List of schemas(ABC,EFG): '</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

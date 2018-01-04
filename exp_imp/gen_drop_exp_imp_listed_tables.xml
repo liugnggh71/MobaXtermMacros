@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>gen_drop_exp_imp_listed_tables</name>
+   <desc>Full code file: gen_drop_exp_imp_listed_tables.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">SET PAGESIZE 1000</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT 'drop table ' || owner || '.' || table_name || ';' exp_imp_table</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">    FROM DBSNMP.EXP_IMP_TABLES</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">ORDER BY exp_imp_table;</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

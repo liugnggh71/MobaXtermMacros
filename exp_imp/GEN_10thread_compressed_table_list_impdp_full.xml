@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>GEN_10thread_compressed_table_list_impdp_full</name>
+   <desc>Full code file: GEN_10thread_compressed_table_list_impdp_full.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">clear screen</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">set long 4000</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">var imp_tbl_full_sysdba_var clob;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">var imp_tbl_full_sys_cc_var clob;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">DECLARE</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">    v_imp   VARCHAR2 (4000)</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">                := q'#table_list_compressed_impdp_full.par</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">USERID='SYSdbaUSRpwd as sysdba'</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">DUMPFILE="compressed_table_list_%U.dmp"</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">LOGFILE="import_full_compressed_table_list.log"</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">DIRECTORY=MY_DATA_PUMP_DIR</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">JOB_NAME='full_imp_table_list'</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">TABLE_EXISTS_ACTION=SKIP</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SKIP_UNUSABLE_INDEXES=Y</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">PARALLEL=10</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">CONTENT=ALL</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">PARTITION_OPTIONS=NONE</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">FULL=Y#';</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">BEGIN</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">    :imp_tbl_full_sysdba_var :=  replace(v_imp, 'SYSdbaUSRpwd', '&amp;SYSDBA');</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">    :imp_tbl_full_sys_cc_var :=  replace(v_imp, 'SYSdbaUSRpwd', '&amp;SYSCC');</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">END;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">/</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">print imp_tbl_full_sysdba_var</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">print imp_tbl_full_sys_cc_var</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

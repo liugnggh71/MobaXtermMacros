@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>Exp_imp_help</name>
+   <desc>Full code file: Exp_imp_help.txt</desc>
+   <environment>Help</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">cat &lt;&lt; EOH</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">Steps to generate export import parameter file</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">K_cd_general_scripts (if on local host ignore go to the $HOME by running cd)</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">M_sqlplus /nolog</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">S_call_define_pick</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">S_conn sysdba</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">S_fancy_prompt</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">S_gen_std_expdp_full</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">EOH</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

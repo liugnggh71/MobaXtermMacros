@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>Job_kill_stop_resume</name>
+   <desc>Full code file: Job_kill_stop_resume.txt</desc>
+   <environment>Help</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">cat &lt;&lt; EOH</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">kill_job</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">stop_job=immediate</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select owner, job_name, operation, status from dba_datapump_jobs;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SYSTEM, EXP_FULL, EXPORT, NOT RUNNING</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">expdp system attach=exp_full</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">START_JOB</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">CONTINUE_CLIENT</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">http://blog.oracle48.nl/wordpress/killing-and-resuming-datapump-expdp-and-impdp-jobs/</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">EOH</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

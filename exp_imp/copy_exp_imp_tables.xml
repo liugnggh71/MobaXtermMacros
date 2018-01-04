@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>copy_exp_imp_tables</name>
+   <desc>Full code file: copy_exp_imp_tables.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">prompt DROP TABLE EXP_IMP_TABLES;;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">prompt COPY FROM dbsnmp/uC52tdnsSFG6H!@edwprd:1521/bdwprod TO dbsnmp/uC52tdnsSFG6H!@localhost:1521/cogtest CREATE EXP_IMP_TABLES(OWNER,TABLE_NAME) USING SELECT OWNER,TABLE_NAME FROM EXP_IMP_TABLES;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">COPY FROM &amp;DBSNMP CREATE EXP_IMP_TABLES(OWNER,TABLE_NAME) USING SELECT OWNER,TABLE_NAME FROM EXP_IMP_TABLES;</line>
+   <line type="KeyPress">RETURN</line>
+</macro>
