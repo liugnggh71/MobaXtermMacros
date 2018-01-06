@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../parse_unparsed_code.xsl"?>
+
+<codes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../code_list.xsd">
+    <directory>downtime_prepare</directory>
+    <file action="vi">sample_oracle_startup_shutdown.ksh</file>
+    <file>START_ALL_DB_LOOP.ksh</file>
+    <file>SHUT_ALL_DB_LOOP.ksh</file>
+    <file>log_switch_and_backup.rman</file>
+    <file>call_create_restore_point.sql</file>
+    <file action="vi">create_restore_point_before_down_time.sql</file>
+    <file action="vi">startup_all_db_loop.ksh</file>
+    <file action="vi">shutdown_all_db_loop.ksh</file>
+    <file>CHECK_user_session_count.sql</file>
+    <!--     
+    <file action="WebBrowser">Daily_bck_issue.txt</file>
+    <file action="vi">multi_day_db_bck_apxdev.ksh</file>
+    <file action="Help">SPACE_ticket_help.txt</file>
+-->
+</codes>

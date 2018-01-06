@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../gen_moba_xterm_macro.xsl"?>
+<xmoba_macros xmlns:xi="http://www.w3.org/2001/XInclude">
+    <file>user_audit</file>
+    <xi:include href="../common/______BCK_all_macro.xml"/>
+    <xi:include href="../common/____Macro_DIR.xml"/>
+    <xi:include href="../common/cmd.xml"/>
+    <xi:include href="../common/sqlplus_nolog.xml"/>
+    <xi:include href="../common/conn_syscc.xml"/>
+    <xi:include href="../common/conn_sysdba.xml"/>
+    <xi:include href="../common/conn_rocc.xml"/>
+    <xi:include href="../common/spool_html.xml"/>
+    <xi:include href="../common/spool_html_off.xml"/>
+    <xi:include href="../common/call_define_pick.xml"/>
+    <xi:include href="../common/fancy_prompt.xml"/>
+    <xi:include href="../common/conn_dbinv.xml"/>
+    <xi:include href="../common/conn_dbsnmp_local.xml"/>
+    <xi:include href="../common/conn_rocc_local.xml"/>
+    <xi:include href="../common/conn_syscc_local.xml"/>
+    <xi:include href="../common/call_define_current_connection.xml"/>
+    <xi:include href="../common/TNS_entry_stanza_list.xml"/>
+    <xi:include href="../common/TNS_CURRENT_stanza.xml"/>
+
+    <xi:include href="../user_audit/cc_dbsnmp_fixed_password.xml"/>
+    <xi:include href="../user_audit/cc_create_sys_cc_user.xml"/>
+    <xi:include href="../user_audit/cc_create_ro_cc_user.xml"/>
+    <!-- 
+    <xi:include href="../common/define_connect_db_pick.xml"/>
+ -->
+    <xi:include href="../common/define_oracle_home.xml"/>
+    <xi:include href="../common/cd_general_scripts.xml"/>
+    <xi:include href="../common/rman_connect_target.xml"/>
+    <xi:include href="../common/define_connect_db_pick.xml"/>
+
+    <xi:include href="../user_audit/tbs_database_property.xml"/>
+    <xi:include href="../user_audit/tbs_get_default_tablespace.xml"/>
+    <xi:include href="../user_audit/tbs_get_temporary_tablespace.xml"/>
+    <xi:include href="../user_audit/tbs_change_default_tablespace.xml"/>
+    <xi:include href="../user_audit/tbs_change_temporary_tablespace.xml"/>
+    <xi:include href="../user_audit/tbs_default_tablespace_100mb.xml"/>
+
+    <xi:include href="../user_audit/PWD_change_user_password.xml"/>
+    <xi:include href="../user_audit/PWD_CreateGenPassword.xml"/>
+    <xi:include href="../user_audit/PWD_get_random_password.xml"/>
+    <xi:include href="../user_audit/PWD_expire_username.xml"/>
+    <xi:include href="../user_audit/PWD_unlock_username.xml"/>
+    <xi:include href="../user_audit/PWD_lock_username.xml"/>
+    <xi:include href="../user_audit/PWD_call_gen_user_ddl.xml"/>
+
+    <xi:include href="../user_audit/gen_user_ddl.xml"/>
+
+    <xi:include href="../user_audit/accept_user_name.xml"/>
+    <xi:include href="../user_audit/accept_password.xml"/>
+    <xi:include href="../user_audit/accept_profile.xml"/>
+    <xi:include href="../user_audit/accept_role.xml"/>
+    <xi:include href="../user_audit/accept_default_tablespace.xml"/>
+    <xi:include href="../user_audit/accept_temporary_tablespace.xml"/>
+
+    <xi:include href="../user_audit/create_new_user.xml"/>
+
+    <xi:include href="../user_audit/grant_role.xml"/>
+
+    <xi:include href="../user_audit/proxy_empi_grant.xml"/>
+    <xi:include href="../user_audit/proxy_user_report.xml"/>
+
+    <xi:include href="../user_audit/audit_report.xml"/>
+
+    <xi:include href="../user_audit/p_create_verify_password.xml"/>
+    <xi:include href="../user_audit/p_create_appuser_profile.xml"/>
+    <xi:include href="../user_audit/p_create_safe_user_profile.xml"/>
+    <xi:include href="../user_audit/p_create_tmp_unlimit_profile.xml"/>
+    <xi:include href="../user_audit/p_get_profile.xml"/>
+    <xi:include href="../user_audit/p_change_user_profile.xml"/>
+    <xi:include href="../user_audit/p_profile_unlimited_life_time.xml"/>
+    <xi:include href="../user_audit/p_profile_180d_life_time.xml"/>
+    <xi:include href="../user_audit/p_change_profile_verify_password.xml"/>
+    <xi:include href="../user_audit/p_change_profile_verify_null.xml"/>
+
+    <xi:include href="../user_audit/report_profile.xml"/>
+    <xi:include href="../user_audit/report_single_user.xml"/>
+
+    <xi:include href="../user_audit/grant_select_any_to_user.xml"/>
+
+    <xi:include href="../user_audit/Set_environment_help.xml"/>
+    <xi:include href="../user_audit/User_management_help.xml"/>
+    <transfer_map>
+        <transfer>
+            <source_xml>../unparsed_code/code_list.xml</source_xml>
+            <transfer_xsl>../parse_unparsed_code.xsl</transfer_xsl>
+            <master_output>../unparsed_code/code_list.txt</master_output>
+        </transfer>
+        <transfer>
+            <source_xml>code_list.xml</source_xml>
+            <transfer_xsl>../parse_unparsed_code.xsl</transfer_xsl>
+            <master_output>code_list.txt</master_output>
+        </transfer>
+        <transfer>
+            <source_xml>NEW_TOPIC_TEMPLATE.xml</source_xml>
+            <transfer_xsl>../gen_moba_xterm_macro.xsl</transfer_xsl>
+            <master_output>NEW_TOPIC_TEMPLATE.txt</master_output>
+        </transfer>
+    </transfer_map>
+    <!-- java -jar $jar_file -o:$out_file $xml_file $xsl_file -->
+</xmoba_macros>

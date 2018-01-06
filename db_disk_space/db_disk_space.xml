@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../gen_moba_xterm_macro.xsl"?>
+<xmoba_macros xmlns:xi="http://www.w3.org/2001/XInclude">
+    <file>db_disk_space</file>
+    <xi:include href="../common/______BCK_all_macro.xml"/>
+    <xi:include href="../common/____Macro_DIR.xml"/>
+    <xi:include href="../common/cmd.xml"/>
+    <xi:include href="../common/sqlplus_nolog.xml"/>
+    <xi:include href="../common/sqlplus_as_sysdba.xml"/>
+
+    <xi:include href="../common/conn_syscc.xml"/>
+    <xi:include href="../common/conn_sysdba.xml"/>
+    <xi:include href="../common/html_spool_on.xml"/>
+    <xi:include href="../common/html_spool_off.xml"/>
+    <xi:include href="../common/conn_dbinv.xml"/>
+    <xi:include href="../common/fancy_prompt.xml"/>
+    <xi:include href="../common/conn_dbsnmp_local.xml"/>
+    <xi:include href="../common/conn_rocc_local.xml"/>
+    <xi:include href="../common/conn_syscc_local.xml"/>
+    <xi:include href="../common/call_define_pick.xml"/>
+
+    <xi:include href="../common/define_oracle_home.xml"/>
+    <xi:include href="../common/cd_general_scripts.xml"/>
+    <xi:include href="../common/rman_connect_target.xml"/>
+    <xi:include href="../common/define_connect_db_pick.xml"/>
+    <xi:include href="../db_disk_space/delete_audit_files.xml"/>
+    <xi:include href="../db_disk_space/delete_awr_ash_report.xml"/>
+    <xi:include href="../db_disk_space/set_diag.xml"/>
+    <xi:include href="../db_disk_space/set_tmp_diag.xml"/>
+    <xi:include href="../db_disk_space/report_TBS_usage.xml"/>
+    <xi:include href="../db_disk_space/list_all_db_files.xml"/>
+    <xi:include href="../db_disk_space/list_all_tbs.xml"/>
+    <xi:include href="../db_disk_space/service_now_main.xml"/>
+    <xi:include href="../db_disk_space/SPACE_ticket_help.xml"/>
+    <xi:include href="../db_disk_space/accept_tablespace_name.xml"/>
+    <xi:include href="../db_disk_space/report_single_tbs.xml"/>
+    <xi:include href="../db_disk_space/accept_new_file_dir.xml"/>
+    <xi:include href="../db_disk_space/tbs_add_new_file.xml"/>
+    <xi:include href="../db_disk_space/tbs_gen_add_files_all_tbs.xml"/>
+    <xi:include href="../db_disk_space/tbs_gen_create_all_tbs.xml"/>
+    <xi:include href="../db_disk_space/tbs_create_new_tbs.xml"/>
+    <xi:include href="../db_disk_space/report_db_files_parameter.xml"/>
+    <xi:include href="../db_disk_space/db_disk_space_blogger.xml"/>
+    <xi:include href="../db_disk_space/report_diag_parameter.xml"/>
+    <xi:include href="../db_disk_space/report_DB_USED_MB.xml"/>
+    <transfer_map>
+        <transfer>
+            <source_xml>../unparsed_code/code_list.xml</source_xml>
+            <transfer_xsl>../parse_unparsed_code.xsl</transfer_xsl>
+            <master_output>../unparsed_code/code_list.txt</master_output>
+        </transfer>
+        <transfer>
+            <source_xml>code_list.xml</source_xml>
+            <transfer_xsl>../parse_unparsed_code.xsl</transfer_xsl>
+            <master_output>code_list.txt</master_output>
+        </transfer>
+        <transfer>
+            <source_xml>daily_backup.xml</source_xml>
+            <transfer_xsl>../gen_moba_xterm_macro.xsl</transfer_xsl>
+            <master_output>daily_backup.txt</master_output>
+        </transfer>
+    </transfer_map>
+    <!-- java -jar $jar_file -o:$out_file $xml_file $xsl_file -->
+</xmoba_macros>

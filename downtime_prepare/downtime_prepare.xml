@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../gen_moba_xterm_macro.xsl"?>
+<xmoba_macros xmlns:xi="http://www.w3.org/2001/XInclude">
+    <file>downtime_prepare</file>
+    <xi:include href="../common/______BCK_all_macro.xml"/>
+    <xi:include href="../common/____Macro_DIR.xml"/>
+    <xi:include href="../common/cmd.xml"/>
+    <xi:include href="../common/sqlplus_nolog.xml"/>
+    <xi:include href="../common//sqlplus_as_sysdba.xml"/>
+    <xi:include href="../common/conn_rocc.xml"/>
+    <xi:include href="../common/conn_syscc.xml"/>
+    <xi:include href="../common/conn_sysdba.xml"/>
+    <xi:include href="../common/conn_system.xml"/>
+    <xi:include href="../common/conn_dbsnmp_local.xml"/>
+    <xi:include href="../common/conn_rocc_local.xml"/>
+    <xi:include href="../common/conn_syscc_local.xml"/>
+    <xi:include href="../common/call_define_pick.xml"/>
+    <xi:include href="../common/html_spool_on.xml"/>
+    <xi:include href="../common/html_spool_off.xml"/>
+    <xi:include href="../common/fancy_prompt.xml"/>
+    <xi:include href="../common/conn_dbinv.xml"/>
+    <xi:include href="../common/call_define_current_connection.xml"/>
+    <xi:include href="../common//call_define_R_connection.xml"/>
+    <xi:include href="../common/dbinv_db_link_create.xml"/>
+
+    <xi:include href="../common/define_R_connections.xml"/>
+
+    <xi:include href="../common/create_r_system_db_link.xml"/>
+
+    <xi:include href="../common/ls_PMON_SID_sort.xml"/>
+
+    <xi:include href="../common/scp_create_restore_point_before_down_time.xml"/>
+    <xi:include href="../downtime_prepare/create_restore_point_before_down_time.xml"/>
+    <xi:include href="../downtime_prepare/sample_oracle_startup_shutdown.xml"/>
+    <xi:include href="../common/define_oracle_home.xml"/>
+    <xi:include href="../downtime_prepare/START_ALL_DB_LOOP.xml"/>
+    <xi:include href="../downtime_prepare/SHUT_ALL_DB_LOOP.xml"/>
+    <xi:include href="../common/mkdir_general_scripts.xml"/>
+    <xi:include href="../common/cd_general_scripts.xml"/>
+    <xi:include href="../common/rman_connect_target.xml"/>
+    <xi:include href="../downtime_prepare/log_switch_and_backup.xml"/>
+
+    <xi:include href="../common/define_connect_db_pick.xml"/>
+    <xi:include href="../common/define_connections.xml"/>
+    <xi:include href="../common/define_current_connection.xml"/>
+    <!-- 
+    <xi:include href="../downtime_prepare/call_define_pick.xml"/> -->
+    <xi:include href="../downtime_prepare/call_create_restore_point.xml"/>
+    <xi:include href="../downtime_prepare/startup_all_db_loop.xml"/>
+    <xi:include href="../downtime_prepare/shutdown_all_db_loop.xml"/>
+    <xi:include href="../downtime_prepare/CHECK_user_session_count.xml"/>
+    <transfer_map>
+        <transfer>
+            <source_xml>unparsed_code/code_list.xml</source_xml>
+            <transfer_xsl>parse_unparsed_code.xsl</transfer_xsl>
+            <master_output>unparsed_code/code_list.txt</master_output>
+        </transfer>
+        <transfer>
+            <source_xml>downtime_prepare/code_list.xml</source_xml>
+            <transfer_xsl>parse_unparsed_code.xsl</transfer_xsl>
+            <master_output>downtime_prepare/code_list.txt</master_output>
+        </transfer>
+        <transfer>
+            <source_xml>downtime_prepare.xml</source_xml>
+            <transfer_xsl>gen_moba_xterm_macro.xsl</transfer_xsl>
+            <master_output>downtime_prepare.txt</master_output>
+        </transfer>
+    </transfer_map>
+    <!-- java -jar $jar_file -o:$out_file $xml_file $xsl_file -->
+</xmoba_macros>

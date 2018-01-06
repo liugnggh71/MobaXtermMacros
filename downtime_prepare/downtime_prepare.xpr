@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="19.1">
+    <meta>
+        <filters directoryPatterns="" filePatterns="downtime_prepare.xpr" positiveFilePatterns="" showHiddenFiles="false"/>
+        <options/>
+    </meta>
+    <projectTree name="downtime_prepare.xpr">
+        <folder path="."/>
+        <file name="code_list.xml"/>
+        <file name="downtime_prepare.xml"/>
+    </projectTree>
+</project>

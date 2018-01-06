@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../parse_unparsed_code.xsl"?>
+
+<codes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../code_list.xsd">
+    <directory>db_disk_space</directory>
+    <file action="WebBrowser">db_disk_space_blogger.txt</file>
+    <file>delete_audit_files.ksh</file>
+    <file>delete_awr_ash_report.ksh</file>
+    <file>set_tmp_diag.sql</file>
+    <file>set_diag.sql</file>
+    <file>report_TBS_usage.sql</file>
+    <file>list_all_db_files.sql</file>
+    <file>list_all_tbs.sql</file>
+    <file action="WebBrowser">service_now_main.txt</file>
+    <file action="Help">SPACE_ticket_help.txt</file>
+    <file>accept_tablespace_name.sql</file>
+    <file>report_single_tbs.sql</file>
+    <file>accept_new_file_dir.sql</file>
+    <file>tbs_add_new_file.sql</file>
+    <file>tbs_gen_add_files_all_tbs.sql</file>
+    <file>tbs_gen_create_all_tbs.sql</file>
+    <file>tbs_create_new_tbs.sql</file>
+    <file>report_db_files_parameter.sql</file>
+    <file>report_diag_parameter.sql</file>
+    <file>report_DB_USED_MB.sql</file>
+    <!--     
+    <file action="WebBrowser">Daily_bck_issue.txt</file>
+    <file action="vi">multi_day_db_bck_apxdev.ksh</file>
+    <file action="Help">SPACE_ticket_help.txt</file>
+-->
+</codes>

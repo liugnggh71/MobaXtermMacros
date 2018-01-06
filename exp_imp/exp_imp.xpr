@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="19.1">
+    <meta>
+        <filters directoryPatterns="" filePatterns="db_disk_space.xpr" positiveFilePatterns="" showHiddenFiles="false"/>
+        <options/>
+    </meta>
+    <projectTree name="exp_imp.xpr">
+        <folder path="."/>
+        <file name="code_list.xml"/>
+        <file name="exp_imp.xml"/>
+        <file name="GEN_10thread_compressed_expdp_full.sql"/>
+        <file name="GEN_10thread_compressed_expdp_tables.sql"/>
+        <file name="../gen_moba_xterm_macro.xsl"/>
+        <file name="get_dump_file.pl"/>
+        <file name="../parse_unparsed_code.xsl"/>
+        <file name="sample_exp_table.txt"/>
+    </projectTree>
+</project>
