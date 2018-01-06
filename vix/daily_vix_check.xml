@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>daily_vix_check</name>
+   <desc>Full code file: daily_vix_check.txt</desc>
+   <environment>WebBrowser</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" </line>
+   <line type="Text">https://gliuoracle.blogspot.com/2017/08/template-for-daily-market-analyze-on.html</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

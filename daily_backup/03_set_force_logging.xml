@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>03_set_force_logging</name>
+   <desc>Full code file: 03_set_force_logging.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">clear screen</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT force_logging FROM v$database;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"> </line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">prompt alter database force logging</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

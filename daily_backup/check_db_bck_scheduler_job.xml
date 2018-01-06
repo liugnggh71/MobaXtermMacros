@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>check_db_bck_scheduler_job</name>
+   <desc>Full code file: check_db_bck_scheduler_job.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">SET LINESIZE 1000</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">COLUMN SCHEDULE_NAME FORMAT A30</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">COLUMN PROGRAM_NAME FORMAT A30</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">COLUMN SCHEDULE_OWNER FORMAT A30</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">COLUMN PROGRAM_OWNER FORMAT A30</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">COLUMN COMMENTS FORMAT A50</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT J.OWNER,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       J.JOB_NAME,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       J.ENABLED,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       J.STATE,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       J.PROGRAM_OWNER,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       J.PROGRAM_NAME,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       J.SCHEDULE_OWNER,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       J.SCHEDULE_NAME,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       J.RUN_COUNT,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       J.LAST_START_DATE,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       J.LAST_RUN_DURATION,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       J.NEXT_RUN_DATE,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       J.COMMENTS</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  FROM sys.DBA_SCHEDULER_JOBS J</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"> WHERE OWNER = 'SYSTEM' AND JOB_NAME = 'DB_BCK';</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">prompt exec SYS.DBMS_SCHEDULER.ENABLE (name  =&gt; 'SYSTEM.DB_BCK');;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">prompt exec SYS.DBMS_SCHEDULER.DISABLE(name  =&gt; 'SYSTEM.DB_BCK' ,force =&gt; TRUE);;</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

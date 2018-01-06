@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>define_oracle_home</name>
+   <desc>Full code file: define_oracle_home.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">var oracle_home varchar2(4000);</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">exec SYS.dbms_system.get_env('ORACLE_HOME', :oracle_home);</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">print oracle_home</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">column oracle_home new_value oracle_home</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select :oracle_home oracle_home from dual;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">define oracle_home</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

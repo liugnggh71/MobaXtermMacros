@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>sample_oracle_startup_shutdown</name>
+   <desc>Full code file: sample_oracle_startup_shutdown.ksh</desc>
+   <environment>Vi</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">vi sample_oracle_startup_shutdown.ksh</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">i</line>
+   <line type="Text">#!/bin/sh</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"># /u01/app/oracle/admin/general/scripts/shut_all_db_loop.sh</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"># Sample code variable escaped by back slash in code</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">#export PATH=/usr/local/bin:$PATH</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">#set -A InstanceArray cpo cpoemr CSCPSFT dbadmin dwparch hpdev IARC IPRO pharmarc</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">#</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">#for i in "${InstanceArray[@]}"</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">#do</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">#</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">#export ORACLE_SID=$i</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">#export ORAENV_ASK=NO</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">#. oraenv</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">#sqlplus / as sysdba &lt;&lt; EOF</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">#set echo on</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">#ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD HH24:MI:SS';</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">#set sqlprompt "_date _user '@' _connect_identifier &gt; "</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">#shutdown immediate;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">#exit</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">#EOF</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">#</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">#done</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">#</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">#lsnrctl stop</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">#!/bin/sh</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"># /u01/app/oracle/admin/general/scripts/start_all_db_loop.sh</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">#</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">#export PATH=/usr/local/bin:$PATH</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">#</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">#set -A InstanceArray cpo cpoemr CSCPSFT dbadmin dwparch hpdev IARC IPRO pharmarc</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">#</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">#for i in "${InstanceArray[@]}"</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">#do</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">#</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">#export ORACLE_SID=$i</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">#export ORAENV_ASK=NO</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">#. oraenv</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">#sqlplus / as sysdba &lt;&lt; EOF</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">#set echo on</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">#set sqlprompt "_date _user '@' _connect_identifier &gt; "</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">#startup</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">#ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD HH24:MI:SS';</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">#exit</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">#EOF</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">#</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">#done</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">#</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">#lsnrctl start</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="KeyPress">ESCAPE</line>
+   <line type="KeyPress">COLON</line>
+   <line type="Text">x</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

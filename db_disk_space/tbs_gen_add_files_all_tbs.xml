@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>tbs_gen_add_files_all_tbs</name>
+   <desc>Full code file: tbs_gen_add_files_all_tbs.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">SET LINESIZE 300</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT    'alter tablespace '</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       || t.tablespace_name</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       || ' add datafile '''</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       || '&amp;NEW_FILE_DIR'</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       || t.tablespace_name</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       || '_'</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       || TRIM (TO_CHAR (d.l, '009'))</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       || '.dbf'' SIZE 100M AUTOEXTEND ON NEXT 1M MAXSIZE UNLIMITED;'</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">           statement</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  FROM (    SELECT LEVEL - 1 l</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">              FROM DUAL</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">        CONNECT BY LEVEL &lt;= 1000) d,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       (  SELECT tablespace_name,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">                 CEIL (SUM (bytes) / 1024 / 1024 / 1024 / 30) FILES</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">            FROM dba_data_files</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">        GROUP BY tablespace_name</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">          HAVING CEIL (SUM (bytes) / 1024 / 1024 / 1024 / 30) &gt; 1) t</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"> WHERE d.l BETWEEN 2 AND t.FILES</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT 'alter tablespace ' || t.tablespace_name || ' add datafile;' statement</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  FROM (    SELECT LEVEL - 1 l</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">              FROM DUAL</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">        CONNECT BY LEVEL &lt;= 1000) d,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       (  SELECT tablespace_name,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">                 CEIL (SUM (bytes) / 1024 / 1024 / 1024 / 30) FILES</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">            FROM dba_data_files@irvrad_prddb1_v500</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">        GROUP BY tablespace_name</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">          HAVING CEIL (SUM (bytes) / 1024 / 1024 / 1024 / 30) &gt; 1) t</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"> WHERE d.l BETWEEN 2 AND t.FILES;</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

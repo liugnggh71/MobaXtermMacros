@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>gen_legacy_imp_schema</name>
+   <desc>Full code file: gen_legacy_imp_schema.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">clear screen</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">set long 32767</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">COLUMN db_name NEW_VALUE db_name</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT LOWER (VALUE) db_name</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  FROM v$parameter</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"> WHERE name = 'db_name';</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SET SQLBLANKLINES ON</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">var imp_schema_legacy_sysdba_var varchar2(4000);</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">DECLARE</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">    v_files   VARCHAR2 (4000) :='000.DMP;1';</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">    v_exp   VARCHAR2 (4000)</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">                := 'set NLS_LANG, find big dir</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">nohup imp parfile=import_legacy_full.par &gt; exp_&amp;db_name.log 2&gt;~1 ~                </line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">import_legacy_full.par</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">USERID="SYSdbaUSRpwd as sysdba"</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">FILE=f01.dmp</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">LOG=imp_full.log</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">commit=y</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">COMPILE=Y</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">CONSTRAINTS=Y</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">feedback=1000000</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">ignore=y</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">FULL=Y</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">GRANTS=Y</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">INDEXES=Y</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">RESUMABLE=y</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">RESUMABLE_NAME=schema_imp</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">RESUMABLE_TIMEOUT=1000000</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">STATISTICS=ALWAYS</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">fromuser=FIN</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">touser=FINCONV</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">';</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">BEGIN</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">    FOR Lcntr IN 1..100</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">    LOOP</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">      v_files := v_files || ',' ||TRIM(TO_CHAR(Lcntr,'009'))|| '.DMP;1';</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">    END LOOP;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">    v_exp :=  replace(v_exp, 'f01.dmp', v_files);</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">    :imp_schema_legacy_sysdba_var :=  replace(replace(v_exp, 'SYSdbaUSRpwd', '&amp;SYSDBA'), '~', chr(38));</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">END;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">/</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">print imp_schema_legacy_sysdba_var </line>
+   <line type="KeyPress">RETURN</line>
+</macro>

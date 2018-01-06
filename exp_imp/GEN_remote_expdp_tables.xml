@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>GEN_remote_expdp_tables</name>
+   <desc>Full code file: GEN_remote_expdp_tables.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">clear screen</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">set long 4000</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">var exp_system_var clob;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">DECLARE</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">    v_tab_list   VARCHAR2 (4000);</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">    v_loop_count NUMBER := 1;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">    v_exp   VARCHAR2 (4000)</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">                := q'#remote_table_list.par</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">USERID='SYStemUSRpwd'</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">DUMPFILE="remote_table_list_%U.dmp"</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">LOGFILE="remote_table_list.log"</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">DIRECTORY=MY_DATA_PUMP_DIR</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">JOB_NAME='remote_table_list'</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">network_link=R_SYSTEM</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">CONTENT=ALL</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">TABLES=(TaBlE_LiSt)</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">REUSE_DUMPFILES=N#';</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">BEGIN</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">    FOR rec_exp_imp_table in (select * from DBSNMP.EXP_IMP_TABLES)</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">    LOOP</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       IF v_loop_count &gt; 1 THEN</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">          v_tab_list := v_tab_list || ',' || chr(10);</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       END IF;    </line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       v_tab_list := v_tab_list || rec_exp_imp_table.OWNER || '.' ||  rec_exp_imp_table.TABLE_NAME; </line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       v_loop_count := v_loop_count + 1;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">    END LOOP;    </line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">    :exp_system_var :=  replace(replace(v_exp, 'SYStemUSRpwd', '&amp;SYSTEM'), 'TaBlE_LiSt', v_tab_list);</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">END;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">/</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">print exp_system_var</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select * from dba_directories where directory_name='MY_DATA_PUMP_DIR';</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

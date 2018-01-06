@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>spool_html</name>
+   <desc>Full code file: spool_html.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">prompt @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">prompt Spool to HTML</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">prompt @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">column spool_html_file new_value spool_html_file noprint</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT    SUBSTR (host_name,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">                  1,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">                  INSTR (host_name || '.',</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">                         '.',</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">                         1,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">                         1))</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       || '_'</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       || instance_name</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       || '_'</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       || '&amp;_user'</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       || '_'</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       || TO_CHAR (SYSDATE, 'yyyymmddhh24miss')</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       || '.html'</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">           spool_html_file</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  FROM v$instance;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">define spool_html_file</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">set markup HTML ON</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">set termout off</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">set echo on</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">host mkdir html</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">spool html/&amp;spool_html_file</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

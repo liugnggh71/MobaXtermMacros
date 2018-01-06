@@ -1,0 +1,5 @@
+On database server run 3 scripts to create 3 codes 
+
+V_define_connect_db_pick
+V_define_username
+V_gen_user_ddl

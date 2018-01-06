@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>multi_day_db_bck_apxdev</name>
+   <desc>Full code file: multi_day_db_bck_apxdev.ksh</desc>
+   <environment>Vi</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">vi multi_day_db_bck_apxdev.ksh</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">i</line>
+   <line type="Text">#!/bin/sh</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"># multi_day_db_bck.ksh</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"># 2 vairables to modify: PART_COUNT, and ORACLE_SID</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">export PART_COUNT=3</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">export ORACLE_SID=apxdev</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">MY_PATH="`dirname \"$0\"`"</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">echo "$MY_PATH"</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">cd $MY_PATH</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">DATE=`date '+%Y_%m_%d_%H_%M_%S'`</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">me=`basename $0 .ksh`</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">log=${me}.${DATE}.logs</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">export PATH=/usr/local/bin:$PATH</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">export ORAENV_ASK=NO</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">. oraenv</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">sqlplus /nolog @gen_multi_day_db_bck.sql $PART_COUNT</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">rman &lt;&lt; EOF &gt; log/$log 2&gt;&amp;1</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">connect target</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">@multi_day_db_bck.rman</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">EOF</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">find log -type f -mtime +100 -name $me\*.logs | xargs rm</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="KeyPress">ESCAPE</line>
+   <line type="KeyPress">COLON</line>
+   <line type="Text">x</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

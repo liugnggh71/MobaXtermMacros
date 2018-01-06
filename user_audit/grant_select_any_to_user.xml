@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>grant_select_any_to_user</name>
+   <desc>Full code file: grant_select_any_to_user.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">GRANT SELECT ANY DICTIONARY TO &amp;username;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">GRANT SELECT ANY TABLE TO &amp;username;</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

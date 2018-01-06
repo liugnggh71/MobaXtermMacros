@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>restart_oracle_agent</name>
+   <desc>Full code file: restart_oracle_agent.ksh</desc>
+   <environment>Vi</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">vi restart_oracle_agent.ksh</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">i</line>
+   <line type="Text">#!/bin/sh </line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"># 00,15,30,45 * * * * /u01/app/oracle/admin/general/scripts/restart_oracle_agent.ksh &gt; /u01/app/oracle/admin/general/scripts/restart_oracle_agent.log 2&gt;&amp;1</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">agent_process_count="$(ps -ef | grep 12.1.0.5.0 | grep java | wc -l)"</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"> </line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">if [ $agent_process_count -lt 1 ]</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">then</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">export ORACLE_HOME=/u01/app/oracle/agent/core/12.1.0.5.0</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">export ORACLE_BASE=/u01/app/oracle</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">export PATH=$ORACLE_HOME/bin:$PATH</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">emctl start agent</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">emctl status agent</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">fi</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="KeyPress">ESCAPE</line>
+   <line type="KeyPress">COLON</line>
+   <line type="Text">x</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

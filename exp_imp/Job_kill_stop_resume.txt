@@ -1,0 +1,13 @@
+kill_job
+stop_job=immediate
+
+select owner, job_name, operation, status from dba_datapump_jobs;
+
+SYSTEM, EXP_FULL, EXPORT, NOT RUNNING
+
+expdp system attach=exp_full
+
+START_JOB
+CONTINUE_CLIENT
+
+http://blog.oracle48.nl/wordpress/killing-and-resuming-datapump-expdp-and-impdp-jobs/

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>DBINV DBLINK create ###</name>
+   <desc>Create database link to DBINV user on DBA repository</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">CREATE DATABASE LINK dbinv CONNECT TO dbinv IDENTIFIED BY Ora_cle1 USING 'cmparch:1521/dbadmin';</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

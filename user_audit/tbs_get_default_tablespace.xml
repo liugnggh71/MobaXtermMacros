@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>tbs_get_default_tablespace</name>
+   <desc>Full code file: tbs_get_default_tablespace.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">COLUMN DEFAULT_PERMANENT_TABLESPACE NEW_VALUE DEFAULT_PERMANENT_TABLESPACE</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT PROPERTY_VALUE DEFAULT_PERMANENT_TABLESPACE</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  FROM database_properties</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"> WHERE property_name = 'DEFAULT_PERMANENT_TABLESPACE';</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">COLUMN mostused_default_tablespace NEW_VALUE mostused_default_tablespace</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT default_tablespace mostused_default_tablespace</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  FROM (  SELECT default_tablespace, COUNT (1) user_count</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">            FROM dba_users</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">        GROUP BY default_tablespace</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">        ORDER BY user_count DESC)</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"> WHERE ROWNUM &lt; 2;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">undefine default_tablespace</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">COLUMN default_tablespace NEW_VALUE default_tablespace</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT DEFAULT_PERMANENT_TABLESPACE default_tablespace</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  FROM (SELECT PROPERTY_VALUE DEFAULT_PERMANENT_TABLESPACE</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">          FROM database_properties</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">         WHERE property_name = 'DEFAULT_PERMANENT_TABLESPACE') a,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       (SELECT default_tablespace mostused_default_tablespace</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">          FROM (  SELECT default_tablespace, COUNT (1) user_count</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">                    FROM dba_users</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">                GROUP BY default_tablespace</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">                ORDER BY user_count DESC)</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">         WHERE ROWNUM &lt; 2) b</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"> WHERE DEFAULT_PERMANENT_TABLESPACE = mostused_default_tablespace;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"> </line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">define default_tablespace</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">define mostused_default_tablespace</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">define DEFAULT_PERMANENT_TABLESPACE</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

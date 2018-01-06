@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>accept_temporary_tablespace</name>
+   <desc>Full code file: accept_temporary_tablespace.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">set pagesize 100</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT TABLESPACE_NAME TEMPORARY_TABLESPACE</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  FROM dba_tablespaces</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"> WHERE contents = 'TEMPORARY' ORDER BY 1;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">UNDEFINE temporary_tablespace</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">accept temporary_tablespace char prompt 'Enter Temporary Tablespace: '</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

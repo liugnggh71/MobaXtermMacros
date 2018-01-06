@@ -1,0 +1,1 @@
+sql 'begin DBMS_BACKUP_RESTORE.resetconfig; end;';

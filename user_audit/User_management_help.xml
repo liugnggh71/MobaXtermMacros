@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>User_management_help</name>
+   <desc>Full code file: User_management_help.txt</desc>
+   <environment>Help</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">cat &lt;&lt; EOH</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">== Prepare ==</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">* Run default tablespace report, check database level tablespace setting</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">== Create user ==</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">* Accept username</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">* Get random password</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">* Create user</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">* Accept role</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">* Grant role</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">* Get tbs default tablespace or tbs_database property</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">* tbs_default_tablespace_100mb</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">* proxy_empi_grant</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">* proxy_user_report</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">== Connect to database ==</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">S_call_define_pick</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">Then pick Oracle SID</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">Click S_conn sysdba</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">And then click S_fancy_prompt</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">== Pick existing user or accept new user ==</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">* Accept new user: S_accept_user_name</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">* Pick existing user: S_call_define_username</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">== Save definition of original user ==</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">* S_call_gen_user_ddl</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">== Create new user or reset password ==</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">* Call S_get_random_passwd to pick a random password</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">* If function is not defined run S_CreateGenPassword to create random password function</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">EOH</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

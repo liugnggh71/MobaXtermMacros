@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>tbs_add_new_file</name>
+   <desc>Full code file: tbs_add_new_file.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">COLUMN  next_file_sequence NEW_VALUE next_file_sequence</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT TRIM (TO_CHAR (COUNT (1) + 1, '009')) next_file_sequence</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  FROM DBA_DATA_FILES</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"> WHERE TABLESPACE_NAME = 'USERS';</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">COLUMN  file_suffix NEW_VALUE file_suffix</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT SUBSTR (name, NULLIF (INSTR (name, '.', -1) + 1, 1)) file_suffix</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  FROM v$datafile</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"> WHERE file# = 1;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">PROMPT alter tablespace &amp;&amp;tablespace_name add datafile '&amp;NEW_FILE_DIR.&amp;&amp;tablespace_name._&amp;next_file_sequence..&amp;file_suffix' SIZE 100M AUTOEXTEND ON NEXT 1M MAXSIZE UNLIMITED;;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">PROMPT alter tablespace &amp;&amp;tablespace_name add datafile;;</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

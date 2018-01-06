@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>break_on_2_column_sample</name>
+   <desc>Full code file: break_on_2_column_sample.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">BREAK ON DEPARTMENT_ID ON JOB_ID DUPLICATES</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">COMPUTE SUM OF SALARY ON DEPARTMENT_ID</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">COMPUTE AVG OF SALARY ON JOB_ID</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT DEPARTMENT_ID,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">         JOB_ID,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">         LAST_NAME,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">         SALARY</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">    FROM hr.EMP_DETAILS_VIEW</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">   WHERE JOB_ID IN ('SH_CLERK', 'SA_MAN') AND DEPARTMENT_ID IN (50, 80)</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  ORDER BY DEPARTMENT_ID, JOB_ID;</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

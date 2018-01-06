@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>accept_profile</name>
+   <desc>Full code file: accept_profile.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">SELECT b.profile, a.USER_COUNT</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">    FROM (  SELECT profile, COUNT (1) user_count</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">              FROM dba_users</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">          GROUP BY profile) a,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">         (  SELECT DISTINCT profile</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">              FROM dba_profiles</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">          ORDER BY profile) b</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">   WHERE a.profile(+) = b.PROFILE</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  ORDER BY a.USER_COUNT desc, profile;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">UNDEFINE profile</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">accept profile char prompt 'Enter PROFILE: '</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>check_db_bck_run_status</name>
+   <desc>Full code file: check_db_bck_run_status.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">SET LINESIZE 400</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">COLUMN ADDITIONAL_INFO FORMAT A70</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT l.log_id,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">         l.log_date,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">         L.operation,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">         L.STATUS,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">         R.REQ_START_DATE "Required_Start_Date",</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">         R.ACTUAL_START_DATE,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">         R.RUN_DURATION,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">         TO_CHAR (R.CPU_USED),</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">         R.ADDITIONAL_INFO</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">    FROM DBA_SCHEDULER_JOB_LOG L, DBA_SCHEDULER_JOB_RUN_DETAILS R</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">   WHERE     l.Owner = 'SYSTEM'</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">         AND l.job_name = 'DB_BCK'</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">         AND l.log_id = r.log_id(+)</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">         AND SYSDATE &lt; L.log_date + 10</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">ORDER BY 1 DESC;</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

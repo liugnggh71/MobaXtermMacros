@@ -1,0 +1,1 @@
+BACKUP filesperset 1 archivelog all delete input;

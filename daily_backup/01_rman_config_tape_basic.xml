@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>01_rman_config_tape_basic</name>
+   <desc>Full code file: 01_rman_config_tape_basic.rman</desc>
+   <environment>RMAN</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">CONFIGURE RETENTION POLICY TO RECOVERY WINDOW OF 35 DAYS;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">CONFIGURE DEFAULT DEVICE TYPE TO 'SBT_TAPE';</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">CONFIGURE CONTROLFILE AUTOBACKUP ON;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">CONFIGURE ARCHIVELOG DELETION POLICY TO BACKED UP 2 TIMES TO 'SBT_TAPE';</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">CONFIGURE DEVICE TYPE 'SBT_TAPE' PARALLELISM 1 BACKUP TYPE TO BACKUPSET;</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

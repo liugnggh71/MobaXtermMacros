@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+    <name>fancy_prompt</name>
+    <desc>Use fancy SQLPlus prompt</desc>
+    <environment>SqlPlus</environment>
+    <hotkey>0</hotkey>
+    <line type="Text">ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD HH24:MI:SS';</line>
+    <line type="KeyPress">RETURN</line>
+    <line type="Text">column host_instance_name new_value _host_instance_name noprint</line>
+    <line type="KeyPress">RETURN</line>
+    <line type="Text">select HOST_NAME || '-' || INSTANCE_NAME  || ' >' || chr(10) host_instance_name from v$instance;</line>
+    <line type="KeyPress">RETURN</line>
+    <line type="Text">define _host_instance_name</line>
+    <line type="KeyPress">RETURN</line>
+    <line type="Text">set sqlprompt "_date _user '@'_host_instance_name' '"</line>
+    <line type="KeyPress">RETURN</line>
+    <line type="Text">set numwidth 18</line>
+    <line type="KeyPress">RETURN</line>
+</macro>

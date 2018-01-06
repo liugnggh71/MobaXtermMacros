@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>rman_connect_target</name>
+   <desc>Full code file: rman_connect_target.ksh</desc>
+   <environment>KornShell</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">rman</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">connect target</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

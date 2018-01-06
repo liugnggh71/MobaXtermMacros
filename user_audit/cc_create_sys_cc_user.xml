@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>cc_create_sys_cc_user</name>
+   <desc>Full code file: cc_create_sys_cc_user.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">create user sys_cc identified by "M2ryhadal2mb**";</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">grant sysdba to sys_cc;</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>accept_default_tablespace</name>
+   <desc>Full code file: accept_default_tablespace.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">set pagesize 100</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT a.TABLESPACE_NAME, b.user_count</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">    FROM (  SELECT tablespace_name</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">              FROM dba_tablespaces</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">          ORDER BY tablespace_name) a,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">         (  SELECT default_tablespace, COUNT (1) user_count</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">              FROM dba_users</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">          GROUP BY default_tablespace) b</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">   WHERE a.tablespace_name = b.default_tablespace(+)</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  ORDER BY user_count DESC, tablespace_name;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">UNDEFINE default_tablespace</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">accept default_tablespace char prompt 'Enter Default Tablespace: '</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

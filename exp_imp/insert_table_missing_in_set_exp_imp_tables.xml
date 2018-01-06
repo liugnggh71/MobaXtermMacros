@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>insert_table_missing_in_set_exp_imp_tables</name>
+   <desc>Full code file: insert_table_missing_in_set_exp_imp_tables.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">insert into dbsnmp.exp_imp_tables </line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select owner, table_name from </line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">(</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select owner, table_name from dbsnmp.refering_tables_to_the_set</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">minus</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select owner, table_name from dbsnmp.exp_imp_tables</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">);</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">commit;</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

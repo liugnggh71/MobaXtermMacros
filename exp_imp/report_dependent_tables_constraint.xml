@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>report_dependent_tables_constraint</name>
+   <desc>Full code file: report_dependent_tables_constraint.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">SELECT DISTINCT owner,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">                  table_name,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">                  CONSTRAINT_NAME,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">                  STATUS</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">    FROM dba_constraints</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  WHERE (r_owner, r_constraint_name) IN</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">             (SELECT owner, constraint_name</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">                FROM dba_constraints</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">               WHERE (owner, table_name) IN (SELECT owner, table_name</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">                                               FROM DBSNMP.EXP_IMP_TABLES))</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"> ORDER BY 1, 2;</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>accept_new_file_dir</name>
+   <desc>Full code file: accept_new_file_dir.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">COMPUTE SUM LABEL 'TOTAL' OF mb on report</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">BREAK ON REPORT</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT FILE_NAME, BYTES / 1024 / 1024 MB</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  FROM DBA_DATA_FILES</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"> WHERE TABLESPACE_NAME = upper('&amp;tablespace_name');</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">column next_file_sequence new_value next_file_sequence</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT COUNT (1) + 1 next_file_sequence</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  FROM DBA_DATA_FILES</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"> WHERE TABLESPACE_NAME = '&amp;tablespace_name';</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"> </line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">show parameter db_create_file_dest</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">accept NEW_FILE_DIR char prompt 'Enter new file dir(/u01/oradata/prod/, D:\oradata\prod\): '</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

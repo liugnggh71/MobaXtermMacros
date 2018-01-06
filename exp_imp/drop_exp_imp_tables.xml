@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>drop_exp_imp_tables</name>
+   <desc>Full code file: drop_exp_imp_tables.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">DROP TABLE DBSNMP.REFERING_TABLES_TO_THE_SET CASCADE CONSTRAINTS;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">DROP TABLE DBSNMP.EXP_IMP_TABLES CASCADE CONSTRAINTS;</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>02_set_db_recovery_file_dest</name>
+   <desc>Full code file: 02_set_db_recovery_file_dest.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">clear screen</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">set linesize 252</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">column name format a30</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">column value format a40</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">column display_value format a40</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">column description format a50</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT name,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       VALUE,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       display_value,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       description</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  FROM v$parameter</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"> WHERE name IN ('db_recovery_file_dest', 'db_recovery_file_dest_size');</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"> </line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">prompt alter system set db_recovery_file_dest='/archivelog/oradata/fast_recovery_area/' scope=both;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">prompt alter system set db_recovery_file_dest_size=500G scope=both;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select flashback_on from v$database;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">prompt alter database flashback on;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT * FROM GV$FLASHBACK_DATABASE_LOG;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT *</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  FROM (  SELECT *</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">            FROM GV$FLASHBACK_DATABASE_LOGFILE</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">        ORDER BY first_time DESC)</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"> WHERE ROWNUM &lt; 2;</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

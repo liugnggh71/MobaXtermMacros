@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>CC_daily</name>
+   <desc>Full code file: CC_daily.rman</desc>
+   <environment>RMAN</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">SET ECHO ON</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">backup filesperset 1 database;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">backup filesperset 1 archivelog all not backed up;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">backup filesperset 1 archivelog all delete all input;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">backup spfile;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">CONFIGURE CONTROLFILE AUTOBACKUP ON;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">backup current controlfile;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">CONFIGURE CONTROLFILE AUTOBACKUP OFF;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">crosscheck archivelog all;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">delete force noprompt expired archivelog all; </line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">delete noprompt obsolete;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">delete force noprompt backup completed before "sysdate-45";</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

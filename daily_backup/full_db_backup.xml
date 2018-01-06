@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>full_db_backup</name>
+   <desc>Full code file: full_db_backup.rman</desc>
+   <environment>RMAN</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">set echo on</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">CONFIGURE CONTROLFILE AUTOBACKUP ON;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">BACKUP INCREMENTAL LEVEL 0 FILESPERSET 1 DATABASE plus archivelog NOT BACKED UP;</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

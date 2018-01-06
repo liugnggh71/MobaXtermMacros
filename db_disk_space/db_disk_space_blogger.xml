@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>db_disk_space_blogger</name>
+   <desc>Full code file: db_disk_space_blogger.txt</desc>
+   <environment>WebBrowser</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" </line>
+   <line type="Text">https://gliuoracle.blogspot.com/2017/12/db-disk-space-blogger.html</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>define_R_connections</name>
+   <desc>Full code file: define_R_connections.sql</desc>
+   <environment>Vi</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">vi define_R_connections.sql</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">i</line>
+   <line type="Text">column R_HOSTNAME NEW_VALUE R_HOSTNAME</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">column R_SERVICE_NAME NEW_VALUE R_SERVICE_NAME</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">column R_DBSNMP NEW_VALUE R_DBSNMP</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">column R_SYSCC NEW_VALUE R_SYSCC</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">column R_ROCC NEW_VALUE R_ROCC</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">column R_SYSDBA NEW_VALUE R_SYSDBA</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">column R_SYSTEM NEW_VALUE R_SYSTEM</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">column R_SYSTEM_USERNAME NEW_VALUE R_SYSTEM_USERNAME</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">column R_SYSTEM_PASSWORD NEW_VALUE R_SYSTEM_PASSWORD</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">column R_CONNECT_STRING NEW_VALUE R_CONNECT_STRING</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT '&amp;SYSTEM' R_SYSTEM FROM DUAL;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT '&amp;SYSDBA' R_SYSDBA FROM DUAL;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT '&amp;ROCC' R_ROCC FROM DUAL;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT '&amp;SYSCC' R_SYSCC FROM DUAL;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT '&amp;DBSNMP' R_DBSNMP FROM DUAL;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT '&amp;SERVICE_NAME' R_SERVICE_NAME FROM DUAL;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT '&amp;HOSTNAME' R_HOSTNAME FROM DUAL;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT '&amp;SYSTEM_USERNAME' R_SYSTEM_USERNAME FROM DUAL;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT '&amp;SYSTEM_PASSWORD' R_SYSTEM_PASSWORD FROM DUAL;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT '&amp;CONNECT_STRING' R_CONNECT_STRING FROM DUAL;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">define R_HOSTNAME</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">define R_SERVICE_NAME</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">define R_DBSNMP</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">define R_SYSCC</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">define R_ROCC</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">define R_SYSDBA</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">define R_SYSTEM</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">define R_SYSTEM_USERNAME</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">define R_SYSTEM_PASSWORD</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">define R_CONNECT_STRING</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="KeyPress">ESCAPE</line>
+   <line type="KeyPress">COLON</line>
+   <line type="Text">x</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

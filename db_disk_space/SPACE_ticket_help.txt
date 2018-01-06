@@ -1,0 +1,12 @@
+=========================
+For mount point incident: Requester put username and phone number 
+
+Gang Liu, 214-820-1010
+
+Mount point /opt on host edwdev is 100% used, please pad more space
+
+=========================
+For storage request: 
+
+Please add 1Tb space to host empidbp and Lun size 200Gb
+

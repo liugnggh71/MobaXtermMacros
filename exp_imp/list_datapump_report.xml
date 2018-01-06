@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>list_datapump_report</name>
+   <desc>Full code file: list_datapump_report.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">clear screen</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">set linesize 2000 </line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">column OWNER_NAME format A15</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">column job_name format A25</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">column OPERATION FORMAT A20</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">column JOB_MODE FORMAT A15</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT * FROM dba_datapump_jobs;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT * FROM v$datapump_job;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT b.username,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">         a.sid,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">         b.opname,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">         b.target,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">         ROUND (b.SOFAR * 100 / b.TOTALWORK, 0) || '%' AS "%DONE",</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">         TO_CHAR (b.start_time, 'YYYY/MM/DD HH24:MI:SS') start_time,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">         b.TIME_REMAINING</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">    FROM v$session_longops b, v$session a</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">   WHERE a.sid = b.sid and TIME_REMAINING&gt;0</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  ORDER BY 6;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT sl.sid,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       sl.serial#,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       sl.sofar,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       sl.totalwork,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       dp.owner_name,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       dp.state,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       dp.job_mode</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  FROM v$session_longops sl, v$datapump_job dp</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"> WHERE sl.opname = dp.job_name AND sl.sofar != sl.totalwork;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"> </line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">COLUMN SQL_TEXT FORMAT A150</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"> </line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT x.job_name,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       b.state,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       b.job_mode,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       b.degree,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       x.owner_name,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       z.sql_text,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       p.MESSAGE,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       p.totalwork,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       p.sofar,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       ROUND ( (p.sofar / p.totalwork) * 100, 2) done,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       p.time_remaining,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">	   y.sid,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">	   y.serial#</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  FROM dba_datapump_jobs  b</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       LEFT JOIN dba_datapump_sessions x ON (x.job_name = b.job_name)</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       LEFT JOIN v$session y ON (y.saddr = x.saddr)</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       LEFT JOIN v$sql z ON (y.sql_id = z.sql_id)</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       LEFT JOIN v$session_longops p ON (p.sql_id = y.sql_id)</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"> WHERE y.module = 'Data Pump Worker' AND p.time_remaining &gt; 0;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"> </line>
+   <line type="KeyPress">RETURN</line>
+</macro>

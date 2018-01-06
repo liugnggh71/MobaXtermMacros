@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>p_create_safe_user_profile</name>
+   <desc>Full code file: p_create_safe_user_profile.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">CREATE PROFILE SAFE_USER LIMIT</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  SESSIONS_PER_USER UNLIMITED</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  CPU_PER_SESSION UNLIMITED</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  CPU_PER_CALL 3000</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  CONNECT_TIME 45</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  IDLE_TIME DEFAULT</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  LOGICAL_READS_PER_SESSION DEFAULT</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  LOGICAL_READS_PER_CALL 1000</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  COMPOSITE_LIMIT 5000000</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  PRIVATE_SGA 15360</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  FAILED_LOGIN_ATTEMPTS DEFAULT</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  PASSWORD_LIFE_TIME UNLIMITED</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  PASSWORD_REUSE_TIME DEFAULT</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  PASSWORD_REUSE_MAX DEFAULT</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  PASSWORD_LOCK_TIME DEFAULT</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  PASSWORD_GRACE_TIME DEFAULT</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  PASSWORD_VERIFY_FUNCTION DEFAULT;  </line>
+   <line type="KeyPress">RETURN</line>
+</macro>

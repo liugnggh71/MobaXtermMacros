@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>edw_36_table_export</name>
+   <desc>Full code file: edw_36_table_export.txt</desc>
+   <environment>WebBrowser</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" </line>
+   <line type="Text">https://gliuoracle.blogspot.com/2017/12/edwprd-to-edwtst-36-tables-exp-imp.html</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

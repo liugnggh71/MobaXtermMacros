@@ -1,0 +1,9 @@
+Steps to generate export import parameter file
+
+K_cd_general_scripts (if on local host ignore go to the $HOME by running cd)
+M_sqlplus /nolog
+S_call_define_pick
+S_conn sysdba
+S_fancy_prompt
+S_gen_std_expdp_full
+

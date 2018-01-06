@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>GEN_makeup_bck_code</name>
+   <desc>Full code file: GEN_makeup_bck_code.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">SET LINESIZE 2000</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">WITH missing_file_list</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">     AS (SELECT file# FROM v$datafile</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">         MINUS</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">         SELECT DISTINCT file#</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">           FROM v$backup_datafile</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">          WHERE     (incremental_level = 0 OR incremental_level IS NULL)</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">                AND SYSDATE - completion_time &lt; 7</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">         ORDER BY file#)</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT    'CONFIGURE CONTROLFILE AUTOBACKUP ON;'</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       || CHR (10)</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       || 'backup incremental level 0 filesperset 1 datafile '</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       || LISTAGG (file#, ',') WITHIN GROUP (ORDER BY file#)</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       || ' plus archivelog NOT BACKED UP;'</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">           backup_cmd</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  FROM missing_file_list;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SET LINESIZE 132</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

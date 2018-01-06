@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>00_reset_rman_config</name>
+   <desc>Full code file: 00_reset_rman_config.rman</desc>
+   <environment>RMAN</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">sql 'begin DBMS_BACKUP_RESTORE.resetconfig; end;';</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

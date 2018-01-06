@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+    <name>scp create_restore_point_before_down_time</name>
+    <desc>Copy create restore point before down time to host</desc>
+    <environment>SqlPlus</environment>
+    <hotkey>0</hotkey>
+    <line type="Text">host scp sqlplus/create_restore_point_before_down_time.sql oracle@&amp;HOSTNAME:/u01/app/oracle/admin/general/scripts</line>
+    <line type="KeyPress">RETURN</line>
+</macro>

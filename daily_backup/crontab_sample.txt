@@ -1,0 +1,23 @@
+# ================================================================================================== #
+# crontab file for the oracle account on the ??????????? server.
+# The numbered parameters are as follows:
+# First number       - minute of the hour to run.
+# Second number      - hour of the day to run.
+# Third number       - day of the month to run.
+# Fourth number      - month of the year.
+# Fifth number       - day of the week to run (0 (Sun) thru 6 (Sat)).
+# Asterisk (*)       - wildcard parameter.
+# Example:
+#    10 4 * * 5      - Will run at 4:10 AM every Friday.
+# To submit this file to cron:
+#    cd
+#    crontab cronfile
+# To list current crontab contents:
+#    crontab -l
+#
+# minute  hour  day_of_month  month  weekday command
+#
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~ Add crontab entries ~~~~~~~~~~~~~~~~~~~~~~~ #
+#
+# 00,15,30,45 * * * * DATE=`date '+%Y_%m_%d_%H_%M_%S'` && /u01/app/oracle/dbtop/general/sh/report_invalid_objects.sh > /u01/app/oracle/dbtop/general/log/report_invalid_objects..log 2>&1
+# 00,15,30,45 * * * * DATE=`date '+%Y_%m_%d_%H_%M_%S'` && ls -l $HOME > $HOME/report_invalid_objects.${DATE}.log 2>&1

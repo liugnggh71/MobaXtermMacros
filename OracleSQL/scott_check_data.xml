@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>scott_check_data</name>
+   <desc>Full code file: scott_check_data.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">prompt ==========================================</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">prompt Scott user data checking ===============</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">prompt ==========================================</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">clear screen</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT * FROM scott.emp;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT * FROM scott.dept;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT * FROM scott.bonus;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT * FROM scott.salgrade;</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

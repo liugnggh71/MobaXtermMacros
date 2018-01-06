@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>01_set_log_archive_dest</name>
+   <desc>Full code file: 01_set_log_archive_dest.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">clear screen</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">archive log list;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT name, VALUE description</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  FROM v$parameter</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"> WHERE name IN ('log_archive_dest', 'log_archive_dest_1');</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"> </line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">prompt alter database archivelog;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">prompt alter system set log_archive_dest='/archivelog/oradata/fast_recovery_area/apxdev/' scope=both;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">prompt alter system set log_archive_dest_1='LOCATION=/archivelog/oradata/fast_recovery_area/apxdev/' scope=both;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">prompt alter system set log_archive_dest_1='LOCATION=USE_DB_RECOVERY_FILE_DEST' scope=both;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">set numwidth 18</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD HH24:MI:SS';</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select name, first_time, first_change# from </line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">(select * from v$archived_log order by first_time desc)</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">where rownum&lt;2;</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

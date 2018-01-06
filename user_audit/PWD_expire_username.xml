@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>PWD_expire_username</name>
+   <desc>Full code file: PWD_expire_username.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">clear screen</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">alter user &amp;username. password expire;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT u.USERNAME,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       u.ACCOUNT_STATUS,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       u.EXPIRY_DATE</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  FROM dba_users u</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"> WHERE username = upper('&amp;username');</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">DEFINE username</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

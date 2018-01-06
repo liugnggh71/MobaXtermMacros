@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>exp_imp_tables_sqlldr_ctl</name>
+   <desc>Full code file: exp_imp_tables_sqlldr_ctl.txt</desc>
+   <environment>Vi</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">vi exp_imp_tables_sqlldr_ctl.txt</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">i</line>
+   <line type="Text">-- SQL Loader Control and Data File created by TOAD</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">-- Variable length, terminated enclosed data formatting</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">-- </line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">-- The format for executing this file with SQL Loader is:</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">-- SQLLDR control=&lt;filename&gt; Be sure to substitute your</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">-- version of SQL LOADER and the filename for this file.</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">--</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">-- Note: Nested table datatypes are not supported here and</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">--       will be exported as nulls.</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">-- sqlldr dbsnmp/uC52tdnsSFG6H! control=exp_imp_tables_sqlldr_ctl.txt</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">OPTIONS (DIRECT=FALSE, PARALLEL=FALSE)</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">LOAD DATA</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">INFILE *</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">BADFILE './EXP_IMP_TABLES.BAD'</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">DISCARDFILE './EXP_IMP_TABLES.DSC'</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">TRUNCATE INTO TABLE DBSNMP.EXP_IMP_TABLES</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">Fields terminated by ";" Optionally enclosed by '"'</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">(</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  OWNER,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  TABLE_NAME</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">)</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">BEGINDATA</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">"EDW";"ABC"</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="KeyPress">ESCAPE</line>
+   <line type="KeyPress">COLON</line>
+   <line type="Text">x</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

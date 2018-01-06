@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>SQL_Tutorial</name>
+   <desc>Full code file: SQL_Tutorial.txt</desc>
+   <environment>WebBrowser</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" </line>
+   <line type="Text">http://www.oracle-dba-online.com/sql/oracle_sql_tutorial.htm</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

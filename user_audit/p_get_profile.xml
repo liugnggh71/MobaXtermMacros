@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>p_get_profile</name>
+   <desc>Full code file: p_get_profile.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">COLUMN PROFILE NEW_VALUE PROFILE</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT PROFILE</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  FROM (  SELECT profile, COUNT (1) user_count</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">            FROM dba_users</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">        GROUP BY profile</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">        ORDER BY user_count DESC)</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"> WHERE ROWNUM &lt; 2;</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

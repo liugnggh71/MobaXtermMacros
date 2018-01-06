@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>create_new_user</name>
+   <desc>Full code file: create_new_user.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">create user &amp;username identified by "&amp;passwd"; </line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">define username</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">define passwd</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

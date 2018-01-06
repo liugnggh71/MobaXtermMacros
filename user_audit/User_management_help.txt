@@ -1,0 +1,37 @@
+== Prepare ==
+
+* Run default tablespace report, check database level tablespace setting
+
+== Create user ==
+
+* Accept username
+* Get random password
+* Create user
+* Accept role
+* Grant role
+* Get tbs default tablespace or tbs_database property
+* tbs_default_tablespace_100mb
+* proxy_empi_grant
+* proxy_user_report
+
+== Connect to database ==
+
+S_call_define_pick
+Then pick Oracle SID
+
+Click S_conn sysdba
+And then click S_fancy_prompt
+
+== Pick existing user or accept new user ==
+
+* Accept new user: S_accept_user_name
+* Pick existing user: S_call_define_username
+
+== Save definition of original user ==
+
+* S_call_gen_user_ddl
+
+== Create new user or reset password ==
+
+* Call S_get_random_passwd to pick a random password
+* If function is not defined run S_CreateGenPassword to create random password function

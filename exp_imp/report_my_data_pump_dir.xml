@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>report_my_data_pump_dir</name>
+   <desc>Full code file: report_my_data_pump_dir.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">prompt suggested directory /archivelog/dpdump/bdwprod/</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">prompt suggested directory /archivelog/oradata/dpdump/bdwprod/</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select * from dba_directories where directory_name='MY_DATA_PUMP_DIR';</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

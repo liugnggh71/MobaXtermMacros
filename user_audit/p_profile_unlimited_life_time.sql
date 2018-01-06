@@ -1,0 +1,1 @@
+ALTER PROFILE &profile LIMIT PASSWORD_LIFE_TIME Unlimited;

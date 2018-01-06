@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>audit_report</name>
+   <desc>Full code file: audit_report.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">clear screen</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">@sqlplus/spool_html.sql</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select * from dba_role_privs;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select * from dba_sys_privs;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select * from dba_tab_privs;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select * from dba_users;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select * from dba_profiles;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">Select * from dba_users_with_defpwd;</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

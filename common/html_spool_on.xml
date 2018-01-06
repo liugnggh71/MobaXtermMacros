@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+    <name>HTML spool on</name>
+    <desc>Turn on HTML spool</desc>
+    <environment>SqlPlus</environment>
+    <hotkey>0</hotkey>
+    <line type="Text">@sqlplus/display_call_sql.sql spool_html</line>
+    <line type="KeyPress">RETURN</line>
+</macro>

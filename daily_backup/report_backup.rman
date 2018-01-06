@@ -1,0 +1,5 @@
+set echo on
+list backup by file completed after 'sysdate-10'; # after "to_date('2017-06-15 23:45:56','YYYY-MM-DD HH24:MI:SS')";
+REPORT NEED BACKUP INCREMENTAL 3;
+REPORT NEED BACKUP RECOVERY WINDOW OF 2 days;
+REPORT SCHEMA;

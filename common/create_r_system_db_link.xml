@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>create_r_system_db_link</name>
+   <desc>Full code file: create_r_system_db_link.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">DROP DATABASE LINK R_SYSTEM;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">CREATE DATABASE LINK R_SYSTEM CONNECT TO &amp;&amp;r_system_username IDENTIFIED BY &amp;&amp;r_system_password USING '&amp;&amp;r_connect_string';</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select host_name, instance_name from v$instance@r_system;</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>TEST_RMAN_BCK</name>
+   <desc>Full code file: TEST_RMAN_BCK.ksh</desc>
+   <environment>KornShell</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">rman &lt;&lt; EOC</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">connect target</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">backup current controlfile;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">exit</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">EOC</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

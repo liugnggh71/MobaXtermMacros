@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>p_create_tmp_unlimit_profile</name>
+   <desc>Full code file: p_create_tmp_unlimit_profile.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">CREATE PROFILE TMP_UNLIMIT LIMIT</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  SESSIONS_PER_USER UNLIMITED</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  CPU_PER_SESSION UNLIMITED</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  CPU_PER_CALL UNLIMITED</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  CONNECT_TIME UNLIMITED</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  IDLE_TIME UNLIMITED</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  LOGICAL_READS_PER_SESSION UNLIMITED</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  LOGICAL_READS_PER_CALL UNLIMITED</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  COMPOSITE_LIMIT UNLIMITED</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  PRIVATE_SGA UNLIMITED</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  FAILED_LOGIN_ATTEMPTS UNLIMITED</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  PASSWORD_LIFE_TIME UNLIMITED</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  PASSWORD_REUSE_TIME UNLIMITED</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  PASSWORD_REUSE_MAX UNLIMITED</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  PASSWORD_LOCK_TIME 1</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  PASSWORD_GRACE_TIME 7</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  PASSWORD_VERIFY_FUNCTION NULL;</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

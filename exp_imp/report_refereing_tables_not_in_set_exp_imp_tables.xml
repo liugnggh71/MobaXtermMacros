@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>report_refereing_tables_not_in_set_exp_imp_tables</name>
+   <desc>Full code file: report_refereing_tables_not_in_set_exp_imp_tables.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">drop table dbsnmp.refering_tables_to_the_set;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">CREATE TABLE dbsnmp.refering_tables_to_the_set</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">AS</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">      SELECT DISTINCT owner, table_name</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">        FROM dba_constraints</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       WHERE (r_owner, r_constraint_name) IN</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">                 (SELECT owner, constraint_name</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">                    FROM dba_constraints</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">                   WHERE (owner, table_name) IN (SELECT owner, table_name</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">                                                   FROM DBSNMP.EXP_IMP_TABLES))</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">    ORDER BY 1, 2;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">    </line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select * from dbsnmp.refering_tables_to_the_set;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select * from dbsnmp.refering_tables_to_the_set</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">minus</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select * from dbsnmp.exp_imp_tables;</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>p_change_profile_verify_null</name>
+   <desc>Full code file: p_change_profile_verify_null.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">SET VERIFY ON</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">ALTER PROFILE &amp;profile LIMIT PASSWORD_VERIFY_FUNCTION NULL;</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

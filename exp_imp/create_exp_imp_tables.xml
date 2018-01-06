@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>create_exp_imp_tables</name>
+   <desc>Full code file: create_exp_imp_tables.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">create table exp_imp_tables as select owner, table_name from dba_tables where 0=1;</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

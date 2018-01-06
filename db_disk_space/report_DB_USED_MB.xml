@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>report_DB_USED_MB</name>
+   <desc>Full code file: report_DB_USED_MB.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">COLUMN value NEW_VALUE dbblocksz NOPRINT</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT VALUE</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  FROM v$parameter</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"> WHERE name = 'db_block_size';</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">COLUMN used_mb FORMAT 999,999,999.99</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">COLUMN tablespace_mb FORMAT 999,999,999.99</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">COLUMN used_percent FORMAT 990.99</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT sum          (used_space * &amp;dbblocksz) / (1024 * 1024)    used_mb</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">   FROM dba_tablespace_usage_metrics</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  ORDER BY used_percent DESC;</line>
+   <line type="KeyPress">RETURN</line>
+</macro>
