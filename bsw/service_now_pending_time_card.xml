@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>service_now_pending_time_card</name>
+   <desc>Full code file: service_now_pending_time_card.txt</desc>
+   <environment>WebBrowser</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" </line>
+   <line type="Text">https://bswhelp.service-now.com/nav_to.do?uri=%2Fu_time_card_summary_list.do%3Fsysparm_userpref_module%3D44855a79e995f10015ab838e895aebd5%26sysparm_query%3Du_user%3Djavascript:gs.getUserID()%5Eu_state%3DPending%5EEQ%26sysparm_clear_stack%3Dtrue    </line>
+   <line type="KeyPress">RETURN</line>
+</macro>

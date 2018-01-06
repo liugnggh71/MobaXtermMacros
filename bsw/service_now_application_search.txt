@@ -1,0 +1,1 @@
+https://bswhelp.service-now.com/nav_to.do?uri=%2Fcmdb_ci_appl_list.do%3Fsysparm_userpref_module%3Df37169380a0a0a6f00ce8107646dd3ab%26sysparm_query%3Doperational_status!%3D2%5Esys_class_name%3Dcmdb_ci_appl%5Eu_divisionISNOTEMPTY%5EEQ%26sysparm_clear_stack%3Dtrue

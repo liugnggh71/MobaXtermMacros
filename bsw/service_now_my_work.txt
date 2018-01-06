@@ -1,0 +1,1 @@
+https://bswhelp.service-now.com/nav_to.do?uri=%2Ftask_list.do%3Fsysparm_userpref_module%3D1523b8d4c611227b00be8216ec331b9a%26sysparm_query%3Dactive%3Dtrue%5Eassigned_to%3Djavascript:getMyAssignments()%5EEQ%26sysparm_clear_stack%3Dtrue

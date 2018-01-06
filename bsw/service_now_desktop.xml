@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>service_now_desktop</name>
+   <desc>Full code file: service_now_desktop.txt</desc>
+   <environment>WebBrowser</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" </line>
+   <line type="Text">https://bswhelp.service-now.com/service_center</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

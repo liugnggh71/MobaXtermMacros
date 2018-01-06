@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>service_now_my_work</name>
+   <desc>Full code file: service_now_my_work.txt</desc>
+   <environment>WebBrowser</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" </line>
+   <line type="Text">https://bswhelp.service-now.com/nav_to.do?uri=%2Ftask_list.do%3Fsysparm_userpref_module%3D1523b8d4c611227b00be8216ec331b9a%26sysparm_query%3Dactive%3Dtrue%5Eassigned_to%3Djavascript:getMyAssignments()%5EEQ%26sysparm_clear_stack%3Dtrue</line>
+   <line type="KeyPress">RETURN</line>
+</macro>
