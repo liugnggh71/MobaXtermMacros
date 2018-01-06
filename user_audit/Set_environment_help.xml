@@ -7,6 +7,20 @@
    <hotkey>0</hotkey>
    <line type="Text">cat &lt;&lt; EOH</line>
    <line type="KeyPress">RETURN</line>
+   <line type="Text">On target database </line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">Run codes</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">PWD_CreateGenPassword</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">p_create_appuser_profile</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">p_create_safe_user_profile</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">p_create_tmp_ulimit_profile</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">p_create_verify_password</line>
+   <line type="KeyPress">RETURN</line>
    <line type="Text">On database server run 3 scripts to create 3 codes </line>
    <line type="KeyPress">RETURN</line>
    <line type="Text">V_define_connect_db_pick</line>

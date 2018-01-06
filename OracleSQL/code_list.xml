@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../parse_unparsed_code.xsl"?>
+
+<codes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../code_list.xsd">
+    <directory>OracleSQL</directory>
+    <file>delete_audit_files.ksh</file>
+    <file>set_tmp_diag.sql</file>
+    <file>scott_user_create.sql</file>
+    <file>scott_schema_check.sql</file>
+    <file>scott_check_data.sql</file>
+    <file>scott_user_drop.sql</file>
+    <file>scott_CONNECT.sql</file>
+    <file>sample_format_output.sql</file>
+    <file>scott_new_dept_create.sql</file>
+    <file>union_minus_intersect.sql</file>
+    <file action="WebBrowser">SQL_Tutorial.txt</file>
+    <file>check_sample_schemas.sql</file>
+    <file>break_on_report_sample.sql</file>
+    <file>break_on_2_column_sample.sql</file>
+    <!--     
+    <file action="WebBrowser">Daily_bck_issue.txt</file>
+    <file action="vi">multi_day_db_bck_apxdev.ksh</file>
+    <file action="Help">SPACE_ticket_help.txt</file>
+ -->    
+</codes>

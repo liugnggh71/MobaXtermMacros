@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../gen_moba_xterm_macro.xsl"?>
+<xmoba_macros xmlns:xi="http://www.w3.org/2001/XInclude">
+    <file>OracleSQLTutorial</file>
+    <xi:include href="../common/______BCK_all_macro.xml"/>
+    <xi:include href="../common/____Macro_DIR.xml"/>
+    <xi:include href="../common/cmd.xml"/>
+    <xi:include href="../common/sqlplus_nolog.xml"/>
+    <xi:include href="../common/conn_syscc.xml"/>
+    <xi:include href="../common/conn_sysdba.xml"/>
+    <xi:include href="../common/html_spool_on.xml"/>
+    <xi:include href="../common/html_spool_off.xml"/>
+    <xi:include href="../common/conn_syscc_local.xml"/>
+    <xi:include href="../common/conn_dbsnmp_local.xml"/>
+    <xi:include href="../common/conn_rocc_local.xml"/>
+    <xi:include href="../common/conn_sysdba_local.xml"/>
+    <xi:include href="../common/call_define_pick.xml"/>
+    <xi:include href="../common/fancy_prompt.xml"/>
+    <xi:include href="../common/conn_dbinv.xml"/>
+
+    <xi:include href="../common/define_oracle_home.xml"/>
+    <xi:include href="../common/cd_general_scripts.xml"/>
+    <xi:include href="../common/rman_connect_target.xml"/>
+    <xi:include href="../common/define_connect_db_pick.xml"/>
+    <xi:include href="../OracleSQL/scott_user_create.xml"/>
+    <xi:include href="../OracleSQL/scott_check_data.xml"/>
+    <xi:include href="../OracleSQL/scott_schema_check.xml"/>
+    <xi:include href="../OracleSQL/scott_check_data.xml"/>
+    <xi:include href="../OracleSQL/scott_user_drop.xml"/>
+    <xi:include href="../OracleSQL/scott_CONNECT.xml"/>
+    <xi:include href="../OracleSQL/sample_format_output.xml"/>
+    <xi:include href="../OracleSQL/scott_new_dept_create.xml"/>
+    <xi:include href="../OracleSQL/union_minus_intersect.xml"/>
+    <xi:include href="../OracleSQL/SQL_Tutorial.xml"/>
+    <xi:include href="../OracleSQL/check_sample_schemas.xml"/>
+    <xi:include href="../OracleSQL/break_on_report_sample.xml"/>
+    <xi:include href="../OracleSQL/break_on_2_column_sample.xml"/>
+    <transfer_map>
+        <transfer>
+            <source_xml>../unparsed_code/code_list.xml</source_xml>
+            <transfer_xsl>../parse_unparsed_code.xsl</transfer_xsl>
+            <master_output>../unparsed_code/code_list.txt</master_output>
+        </transfer>
+        <transfer>
+            <source_xml>code_list.xml</source_xml>
+            <transfer_xsl>../parse_unparsed_code.xsl</transfer_xsl>
+            <master_output>code_list.txt</master_output>
+        </transfer>
+        <transfer>
+            <source_xml>NEW_TOPIC_TEMPLATE.xml</source_xml>
+            <transfer_xsl>../gen_moba_xterm_macro.xsl</transfer_xsl>
+            <master_output>NEW_TOPIC_TEMPLATE.txt</master_output>
+        </transfer>
+    </transfer_map>
+    <!-- java -jar $jar_file -o:$out_file $xml_file $xsl_file -->
+</xmoba_macros>

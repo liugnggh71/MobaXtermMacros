@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../parse_unparsed_code.xsl"?>
+
+<codes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../code_list.xsd">
+    <directory>user_audit</directory>
+    <file>accept_user_name.sql</file>
+    <file>accept_password.sql</file>
+    <file>accept_profile.sql</file>
+    <file>accept_default_tablespace.sql</file>
+    <file>accept_temporary_tablespace.sql</file>
+    <file>accept_role.sql</file>
+    <file>create_new_user.sql</file>
+    
+    <file>PWD_get_random_password.sql</file>
+    <file>PWD_change_user_password.sql</file>
+    <file>PWD_CreateGenPassword.sql</file>
+    <file>PWD_expire_username.sql</file>
+    <file>PWD_lock_username.sql</file>
+    <file>PWD_unlock_username.sql</file>
+    <file>PWD_call_gen_user_ddl.sql</file>
+
+    <file>tbs_get_default_tablespace.sql</file>
+    <file>tbs_get_temporary_tablespace.sql</file>
+    <file>tbs_change_default_tablespace.sql</file>
+    <file>tbs_change_temporary_tablespace.sql</file>
+    <file>tbs_database_property.sql</file>
+    <file>tbs_default_tablespace_100mb.sql</file>
+
+    <file>p_get_profile.sql</file>
+    <file>p_create_verify_password.sql</file>
+    <file>p_create_appuser_profile.sql</file>
+    <file>p_create_safe_user_profile.sql</file>
+    <file>p_create_tmp_unlimit_profile.sql</file>
+    <file>p_change_user_profile.sql</file>
+    <file>p_profile_unlimited_life_time.sql</file>
+    <file>p_profile_180d_life_time.sql</file>
+    <file>p_change_profile_verify_null.sql</file>
+    <file>p_change_profile_verify_password.sql</file>
+
+    <file>grant_role.sql</file>
+
+    <file>proxy_user_report.sql</file>
+    <file>proxy_empi_grant.sql</file>
+
+    <file>audit_report.sql</file>
+
+    <file>report_profile.sql</file>
+    <file>report_single_user.sql</file>
+
+    <file>cc_create_sys_cc_user.sql</file>
+    <file>cc_dbsnmp_fixed_password.sql</file>
+    <file>cc_create_ro_cc_user.sql</file>
+
+    <file>grant_select_any_to_user.sql</file>
+
+    <file action="vi">gen_user_ddl.sql</file>
+
+    <file action="Help">Set_environment_help.txt</file>
+    <file action="Help">User_management_help.txt</file>
+    <!--     
+    <file action="WebBrowser">Daily_bck_issue.txt</file>
+    <file action="vi">multi_day_db_bck_apxdev.ksh</file>
+    <file action="Help">SPACE_ticket_help.txt</file>
+-->
+</codes>

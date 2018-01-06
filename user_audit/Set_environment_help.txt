@@ -1,3 +1,13 @@
+On target database 
+
+Run codes
+
+PWD_CreateGenPassword
+p_create_appuser_profile
+p_create_safe_user_profile
+p_create_tmp_ulimit_profile
+p_create_verify_password
+
 On database server run 3 scripts to create 3 codes 
 
 V_define_connect_db_pick

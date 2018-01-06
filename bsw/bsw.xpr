@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="19.1">
+    <meta>
+        <filters directoryPatterns="" filePatterns="db_disk_space.xpr" positiveFilePatterns="" showHiddenFiles="false"/>
+        <options/>
+    </meta>
+    <projectTree name="bsw.xpr">
+        <folder path="."/>
+        <file name="bsw.xml"/>
+        <file name="code_list.xml"/>
+        <file name="../gen_moba_xterm_macro.xsl"/>
+        <file name="../parse_unparsed_code.xsl"/>
+    </projectTree>
+</project>

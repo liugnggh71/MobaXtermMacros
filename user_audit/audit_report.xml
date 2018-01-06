@@ -7,8 +7,6 @@
    <hotkey>0</hotkey>
    <line type="Text">clear screen</line>
    <line type="KeyPress">RETURN</line>
-   <line type="Text">@sqlplus/spool_html.sql</line>
-   <line type="KeyPress">RETURN</line>
    <line type="Text">select * from dba_role_privs;</line>
    <line type="KeyPress">RETURN</line>
    <line type="Text">select * from dba_sys_privs;</line>

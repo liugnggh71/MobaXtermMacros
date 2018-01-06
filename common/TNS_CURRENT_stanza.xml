@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>TNS_CURRENT_stanza</name>
+   <desc>Full code file: TNS_CURRENT_stanza.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">clear screen</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">column host_name new_value host_name</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">column instance_name new_value instance_name</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select host_name, instance_name from v$instance;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">column service_name new_value service_name</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select value service_name from v$parameter where name='service_names';</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">set long 4000</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">var TNS_SID clob;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">var TNS_SERVICE clob;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">DECLARE</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">    v_service   VARCHAR2 (4000)</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">                := q'#&amp;host_name._&amp;instance_name. =</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  (DESCRIPTION =</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">    (ADDRESS_LIST =</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">      (ADDRESS = (PROTOCOL = TCP)(HOST = &amp;host_name.)(PORT = 1521))</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">    )</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">    (CONNECT_DATA =</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">      (SERVICE_NAME = &amp;service_name.)</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">    )</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  )#';</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">    v_sid  VARCHAR2 (4000)</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">                := q'#&amp;host_name._&amp;instance_name. =</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  (DESCRIPTION =</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">    (ADDRESS_LIST =</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">      (ADDRESS = (PROTOCOL = TCP)(HOST = &amp;host_name.)(PORT = 1521))</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">    )</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">    (CONNECT_DATA =</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">        (SERVER = DEDICATED)</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">        (SID = &amp;instance_name.)</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">    )</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  )#';</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">BEGIN</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">    :TNS_SID :=  v_sid;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">    :TNS_SERVICE :=  v_service;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">END;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">/</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">print TNS_SID</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">print TNS_SERVICE</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

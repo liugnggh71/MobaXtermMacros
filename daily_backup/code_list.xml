@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../parse_unparsed_code.xsl"?>
+<codes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../code_list.xsd">
+    <directory>daily_backup</directory>
+    <file action="WebBrowser">Daily_bck_issue.txt</file>
+    <file action="WebBrowser">legacy_1.txt</file>
+    <file action="WebBrowser">legacy_2.txt</file>
+    <file action="WebBrowser">recollect_bck_info.txt</file>
+    <file action="WebBrowser">schedule_cloud_bck_job.txt</file>
+    <file action="WebBrowser">00_DDBoost_BCK_setup_upgrade.txt</file>
+    <file>full_db_backup.rman</file>
+    <file>report_backup.rman</file>
+    <file>CONFIG_DDBoost_pwd.ksh</file>
+    <file>DDBoost_Springvalley.ksh</file>
+    <file>DDBoost_Mainstreet.ksh</file>
+    <file>00_reset_rman_config.rman</file>
+    <file>01_rman_config_tape_basic.rman</file>
+    <file>GEN_makeup_bck_code.sql</file>
+    <file>emctl_stop.ksh</file>
+    <file>emctl_start.ksh</file>
+    <file>restore_progress_check.sql</file>
+    <file>CC_weekly_incremental.rman</file>
+    <file>CC_weekly_full.rman</file>
+    <file>CC_daily.rman</file>
+    <file action="vi">gen_multi_day_db_bck.sql</file>
+    <file action="vi">multi_day_db_bck_apxdev.ksh</file>
+    <file>crontab_sample.txt</file>
+    <file>check_db_bck_scheduler_job.sql</file>
+    <file>check_db_bck_run_status.sql</file>
+    <file action="vi">restart_oracle_agent.ksh</file>
+    <file>TEST_RMAN_BCK.ksh</file>
+    <file>report_backup_config.sql</file>
+    <file>00_set_control_file_record_keep_time_62.sql</file>
+    <file>01_set_log_archive_dest.sql</file>
+    <file>02_set_db_recovery_file_dest.sql</file>
+    <file>03_set_force_logging.sql</file>
+    <file>04_block_corruption_protect.sql</file>
+    <file>05_block_tracking_help.sql</file>
+    <file>backup_and_delete_archivelog.rman</file>
+    <!--     
+    <file>copy_exp_imp_tables.sql</file>
+    <file action="WebBrowser">Daily_bck_issue.txt</file>
+    <file action="vi">multi_day_db_bck_apxdev.ksh</file>
+    <file action="Help">SPACE_ticket_help.txt</file>
+-->
+</codes>
