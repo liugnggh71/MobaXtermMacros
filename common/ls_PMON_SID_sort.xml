@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>ls_PMON_SID_sort</name>
+   <desc>Full code file: ls_PMON_SID_sort.ksh</desc>
+   <environment>KornShell</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">ps -ef | grep pmon | cut -d "_" -f3 | sort -f</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

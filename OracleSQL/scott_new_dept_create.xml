@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>scott_new_dept_create</name>
+   <desc>Full code file: scott_new_dept_create.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">DROP TABLE SCOTT.NEW_DEPT;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">CREATE TABLE SCOTT.NEW_DEPT AS SELECT * FROM SCOTT.DEPT;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">DELETE FROM SCOTT.NEW_DEPT WHERE DEPTNO=20;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">INSERT INTO SCOTT.NEW_DEPT VALUES (50,'IT','HOUSTON');</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">commit;</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

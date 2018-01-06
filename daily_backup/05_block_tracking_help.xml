@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>05_block_tracking_help</name>
+   <desc>Full code file: 05_block_tracking_help.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">set linesize 132</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">COLUMN block_change_file NEW_VALUE block_change_file</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT    SUBSTR (</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">              VALUE,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">              1,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">              LENGTH (VALUE) - REGEXP_INSTR (reverse (VALUE), '/|\\') + 1)</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       || instance_name</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       || '_bct.chg'</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">           block_change_file</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  FROM v$parameter, v$instance</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"> WHERE name = 'dg_broker_config_file1';</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"> </line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">column FILENAME format A70</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT b.STATUS, b.FILENAME, b.BYTES FROM V$BLOCK_CHANGE_TRACKING b;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">prompt alter database enable block change tracking;;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">prompt alter database enable block change tracking using file '/u01/app/oracvle/mysid/data/block_change_tracking.chg';;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">prompt alter database enable block change tracking using file '&amp;block_change_file';;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">prompt alter database disable block change tracking;;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">show parameter DB_CREATE_FILE_DEST</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">prompt ALTER SYSTEM SET DB_CREATE_FILE_DEST = '/u02/oradata' scope=both;;</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

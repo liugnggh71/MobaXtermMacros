@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>report_backup</name>
+   <desc>Full code file: report_backup.rman</desc>
+   <environment>RMAN</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">set echo on</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">list backup by file completed after 'sysdate-10'; # after "to_date('2017-06-15 23:45:56','YYYY-MM-DD HH24:MI:SS')";</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">REPORT NEED BACKUP INCREMENTAL 3;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">REPORT NEED BACKUP RECOVERY WINDOW OF 2 days;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">REPORT SCHEMA;</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

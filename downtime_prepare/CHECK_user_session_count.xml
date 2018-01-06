@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>CHECK_user_session_count</name>
+   <desc>Full code file: CHECK_user_session_count.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">select username from v$session;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select username, count(1) session_count from v$session where username is not null group by username;</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

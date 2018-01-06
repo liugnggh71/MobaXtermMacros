@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>cd_Download_DDBoost</name>
+   <desc>Full code file: cd_DDBoost_Download.ksh</desc>
+   <environment>MobaXterm</environment>
+   <hotkey>0</hotkey>
+    <line type="Text">cd /drives/c/Users/gangl/Downloads/DDboost</line>
+   <line type="KeyPress">RETURN</line>
+    <line type="Text">pwd</line>
+    <line type="KeyPress">RETURN</line>
+</macro>

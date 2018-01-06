@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>PWD_call_gen_user_ddl</name>
+   <desc>Full code file: PWD_call_gen_user_ddl.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">@gen_user_ddl</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

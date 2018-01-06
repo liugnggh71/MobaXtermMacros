@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>crontab_sample</name>
+   <desc>Full code file: crontab_sample.txt</desc>
+   <environment/>
+   <hotkey>0</hotkey>
+   <line type="Text"># ================================================================================================== #</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"># crontab file for the oracle account on the ??????????? server.</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"># The numbered parameters are as follows:</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"># First number       - minute of the hour to run.</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"># Second number      - hour of the day to run.</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"># Third number       - day of the month to run.</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"># Fourth number      - month of the year.</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"># Fifth number       - day of the week to run (0 (Sun) thru 6 (Sat)).</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"># Asterisk (*)       - wildcard parameter.</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"># Example:</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">#    10 4 * * 5      - Will run at 4:10 AM every Friday.</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"># To submit this file to cron:</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">#    cd</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">#    crontab cronfile</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"># To list current crontab contents:</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">#    crontab -l</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">#</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"># minute  hour  day_of_month  month  weekday command</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">#</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"># ~~~~~~~~~~~~~~~~~~~~~~~~~~ Add crontab entries ~~~~~~~~~~~~~~~~~~~~~~~ #</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">#</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"># 00,15,30,45 * * * * DATE=`date '+%Y_%m_%d_%H_%M_%S'` &amp;&amp; /u01/app/oracle/dbtop/general/sh/report_invalid_objects.sh &gt; /u01/app/oracle/dbtop/general/log/report_invalid_objects..log 2&gt;&amp;1</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"># 00,15,30,45 * * * * DATE=`date '+%Y_%m_%d_%H_%M_%S'` &amp;&amp; ls -l $HOME &gt; $HOME/report_invalid_objects.${DATE}.log 2&gt;&amp;1</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>tbs_get_temporary_tablespace</name>
+   <desc>Full code file: tbs_get_temporary_tablespace.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">COLUMN DEFAULT_TEMP_TABLESPACE NEW_VALUE DEFAULT_TEMP_TABLESPACE</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT PROPERTY_VALUE DEFAULT_TEMP_TABLESPACE</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  FROM database_properties</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"> WHERE property_name = 'DEFAULT_TEMP_TABLESPACE';</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">COLUMN mostused_temporary_tablespace NEW_VALUE mostused_temporary_tablespace</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT temporary_tablespace mostused_temporary_tablespace</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  FROM (  SELECT temporary_tablespace, COUNT (1) user_count</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">            FROM dba_users</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">        GROUP BY temporary_tablespace</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">        ORDER BY user_count DESC)</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"> WHERE ROWNUM &lt; 2;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">UNDEFINE temporary_tablespace</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">COLUMN temporary_tablespace NEW_VALUE temporary_tablespace</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT DEFAULT_TEMP_TABLESPACE temporary_tablespace</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  FROM (SELECT PROPERTY_VALUE DEFAULT_TEMP_TABLESPACE</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">          FROM database_properties</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">         WHERE property_name = 'DEFAULT_TEMP_TABLESPACE') a,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       (SELECT temporary_tablespace mostused_temp_tablespace</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">          FROM (  SELECT temporary_tablespace, COUNT (1) user_count</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">                    FROM dba_users</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">                GROUP BY temporary_tablespace</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">                ORDER BY user_count DESC)</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">         WHERE ROWNUM &lt; 2) b</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"> WHERE DEFAULT_TEMP_TABLESPACE = mostused_temp_tablespace;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">DEFINE temporary_tablespace</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">DEFINE mostused_temporary_tablespace</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">DEFINE DEFAULT_TEMP_TABLESPACE</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

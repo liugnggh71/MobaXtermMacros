@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>union_minus_intersect</name>
+   <desc>Full code file: union_minus_intersect.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">prompt union minus intersect samples</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">prompt ===============================</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">clear screen</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select * from scott.dept</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">union all </line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select * from scott.new_dept;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select * from  scott.dept</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">union</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select * from scott.new_dept;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select * from scott.dept</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">intersect</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select * from scott.new_dept;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select * from scott.dept</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">minus</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select * from scott.new_dept;</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

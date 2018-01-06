@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>backup_and_delete_archivelog</name>
+   <desc>Full code file: backup_and_delete_archivelog.rman</desc>
+   <environment>RMAN</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">BACKUP filesperset 1 archivelog all delete input;</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

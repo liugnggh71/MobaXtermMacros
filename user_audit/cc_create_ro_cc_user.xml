@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>cc_create_ro_cc_user</name>
+   <desc>Full code file: cc_create_ro_cc_user.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">CREATE USER RO_CC</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  IDENTIFIED BY "H0tsummerd2y**"</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  DEFAULT TABLESPACE SYSAUX</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  TEMPORARY TABLESPACE TEMP;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  GRANT CONNECT TO RO_CC;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  GRANT OEM_MONITOR TO RO_CC;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  ALTER USER RO_CC DEFAULT ROLE ALL;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  GRANT SELECT ANY DICTIONARY TO RO_CC;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  GRANT UNLIMITED TABLESPACE TO RO_CC;</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

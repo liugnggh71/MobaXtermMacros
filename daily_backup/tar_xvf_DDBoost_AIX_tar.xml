@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>tar xvf DDBoost_AIX.tar</name>
+   <desc>Full code file: cd_DDBoost_Download.ksh</desc>
+   <environment>KornShell</environment>
+   <hotkey>0</hotkey>
+    <line type="Text">rm -Rf DDBoost_AIX</line>
+    <line type="KeyPress">RETURN</line>
+    <line type="Text">tar xvf DDBoost_AIX.tar</line>
+    <line type="KeyPress">RETURN</line>
+    <line type="Text">cd DDBoost_AIX</line>
+    <line type="KeyPress">RETURN</line>
+</macro>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>grant_role</name>
+   <desc>Full code file: grant_role.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">GRANT &amp;ROLE TO &amp;username;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">ALTER USER &amp;username DEFAULT ROLE ALL;</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

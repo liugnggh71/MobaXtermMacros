@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>PWD_lock_username</name>
+   <desc>Full code file: PWD_lock_username.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">clear screen</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">alter user &amp;username. account lock;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT u.USERNAME, u.ACCOUNT_STATUS, u.LOCK_DATE</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  FROM dba_users u</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"> WHERE username = upper('&amp;username');</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">DEFINE username</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

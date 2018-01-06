@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>Set_environment_help</name>
+   <desc>Full code file: Set_environment_help.txt</desc>
+   <environment>Help</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">cat &lt;&lt; EOH</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">On database server run 3 scripts to create 3 codes </line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">V_define_connect_db_pick</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">V_define_username</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">V_gen_user_ddl</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">EOH</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>restore_progress_check</name>
+   <desc>Full code file: restore_progress_check.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">/* Formatted on 11/29/2017 2:23:06 PM (QP5 v5.300) */</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SET LINESIZE 1000</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT l.opname,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       l.START_TIME,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       l.LAST_UPDATE_TIME,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       l.time_remaining,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       l.ELAPSED_SECONDS,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       l.sofar,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       l.totalwork,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       l.units,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       l.MESSAGE</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  FROM v$session_longops l</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"> WHERE time_remaining &gt; 0 AND OPNAME LIKE 'RMAN%';</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

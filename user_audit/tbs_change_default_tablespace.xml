@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>tbs_change_default_tablespace</name>
+   <desc>Full code file: tbs_change_default_tablespace.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">ALTER USER &amp;username DEFAULT TABLESPACE &amp;DEFAULT_TABLESPACE;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">define username</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">define DEFAULT_TABLESPACE</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

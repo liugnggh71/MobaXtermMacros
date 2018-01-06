@@ -1,0 +1,4 @@
+sql 'alter system checkpoint';
+sql 'alter system switch logfile';
+CONFIGURE CONTROLFILE AUTOBACKUP ON;
+BACKUP filesperset 1 archivelog all NOT BACKED UP;

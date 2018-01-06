@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>break_on_report_sample</name>
+   <desc>Full code file: break_on_report_sample.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">COMPUTE SUM LABEL 'TOTAL' OF mb on report</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">BREAK ON REPORT</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">column MB format 999,999,999,999.99</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select name, bytes/1024/1024 mb from v$datafile</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">union all</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select name , bytes/1024/1024 mb from v$tempfile</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">union all</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select member, l.bytes/1024/1024 mb from v$logfile f, v$log l where f.group#=l.group#;</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

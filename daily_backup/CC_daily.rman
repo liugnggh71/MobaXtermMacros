@@ -1,0 +1,12 @@
+SET ECHO ON
+backup filesperset 1 database;
+backup filesperset 1 archivelog all not backed up;
+backup filesperset 1 archivelog all delete all input;
+backup spfile;
+CONFIGURE CONTROLFILE AUTOBACKUP ON;
+backup current controlfile;
+CONFIGURE CONTROLFILE AUTOBACKUP OFF;
+crosscheck archivelog all;
+delete force noprompt expired archivelog all; 
+delete noprompt obsolete;
+delete force noprompt backup completed before "sysdate-45";

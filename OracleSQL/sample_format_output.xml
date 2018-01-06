@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>sample_format_output</name>
+   <desc>Full code file: sample_format_output.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">set linesize 150</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">col username format a30</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">alter session set nls_date_format='dd-Mon-yyyy hh:mi:ss AM';</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select * from all_users;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">col sal format $999,99,999.99</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">set numformat "999,99,999.99"</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">set numwidth 15</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">col empno format 9999999</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">col mgr format 9999999</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select * from scott.emp;</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

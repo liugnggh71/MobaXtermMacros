@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>emctl_stop</name>
+   <desc>Full code file: emctl_stop.ksh</desc>
+   <environment>KornShell</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">export ORACLE_HOME=/u01/app/oracle/agent/core/12.1.0.5.0</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">export ORACLE_BASE=/u01/app/oracle</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">export PATH=$ORACLE_HOME/bin:$PATH</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">emctl stop agent</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">emctl status agent</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>proxy_user_report</name>
+   <desc>Full code file: proxy_user_report.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">set linesize 132</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">set pagesize 100</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT * FROM proxy_users order by 1;</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

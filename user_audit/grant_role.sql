@@ -1,0 +1,2 @@
+GRANT &ROLE TO &username;
+ALTER USER &username DEFAULT ROLE ALL;

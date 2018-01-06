@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>00_set_control_file_record_keep_time_62</name>
+   <desc>Full code file: 00_set_control_file_record_keep_time_62.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">clear screen</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">alter system set control_file_record_keep_time=62 scope=both;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">set linesize 252</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">column name format a30</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">column value format a40</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">column description format a50</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT name, VALUE, description</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  FROM v$parameter</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"> WHERE name = 'control_file_record_keep_time';</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

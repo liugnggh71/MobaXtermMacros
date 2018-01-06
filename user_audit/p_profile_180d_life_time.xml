@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>p_profile_180d_life_time</name>
+   <desc>Full code file: p_profile_180d_life_time.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">ALTER PROFILE &amp;profile LIMIT PASSWORD_LIFE_TIME 180;</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

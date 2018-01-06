@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>scott_schema_check</name>
+   <desc>Full code file: scott_schema_check.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">prompt ==========================================</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">prompt Scott user schema checking ===============</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">prompt ==========================================</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">clear screen</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">prompt Scott table count 4</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select count(1) table_count from dba_tables where owner='SCOTT';</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">prompt Scott table column count 18</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select count(1) column_count from dba_tab_columns where owner='SCOTT';</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">prompt Scott object count 6</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select count(1) object_count from dba_objects where owner='SCOTT';</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">prompt Scott constraint count 3</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select count(1) constraint_count from dba_constraints where owner='SCOTT';</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">prompt Scott constraint column count 3</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select count(1) cons_column_count from dba_cons_columns where owner='SCOTT';</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

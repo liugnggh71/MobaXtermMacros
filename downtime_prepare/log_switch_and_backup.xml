@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>log_switch_and_backup</name>
+   <desc>Full code file: log_switch_and_backup.rman</desc>
+   <environment>RMAN</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">sql 'alter system checkpoint';</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">sql 'alter system switch logfile';</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">CONFIGURE CONTROLFILE AUTOBACKUP ON;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">BACKUP filesperset 1 archivelog all NOT BACKED UP;</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>report_profile</name>
+   <desc>Full code file: report_profile.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">clear screen</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">set linesize 132</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT *</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">    FROM dba_profiles</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  ORDER BY profile, resource_name;</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>gen_multi_day_db_bck</name>
+   <desc>Full code file: gen_multi_day_db_bck.sql</desc>
+   <environment>Vi</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">vi gen_multi_day_db_bck.sql</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">i</line>
+   <line type="Text">CONNECT / as sysdba</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SET FEEDBACK OFF</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SET HEADING OFF</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SET LINESIZE 32000</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SET LONG 32000</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SET LONGCHUNKSIZE 32000</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SET PAGESIZE 0</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SET SPACE 0</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SET TERMOUT OFF</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SET TRIMSPOOL ON</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SET VERIFY OFF</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">DEFINE part_count=&amp;1</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">-- ACCEPT part_count NUMBER PROMPT 'Enter backup part counts: '</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">spool multi_day_db_bck.rman</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">prompt SET ECHO ON</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">WITH backup_file_list</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">     AS (SELECT file#</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">           FROM v$datafile</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">          WHERE MOD (file#, &amp;part_count) =</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">                    MOD (</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">                        FLOOR (</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">                            SYSDATE - TO_DATE ('2000-01-01', 'YYYY-MM-DD')),</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">                        &amp;part_count))</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT    'backup filesperset 1 datafile '</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       || LISTAGG (file#, ',') WITHIN GROUP (ORDER BY file#)</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       || ' plus archivelog delete input;'</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">           partial_backup_command</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  FROM backup_file_list;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">prompt backup spfile;;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">prompt crosscheck archivelog all;;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">prompt delete force noprompt expired archivelog all;;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">prompt delete noprompt obsolete;;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">prompt delete force noprompt backup completed before "sysdate-45";;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">spool off</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">exit</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="KeyPress">ESCAPE</line>
+   <line type="KeyPress">COLON</line>
+   <line type="Text">x</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

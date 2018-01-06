@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>report_single_user</name>
+   <desc>Full code file: report_single_user.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">select * from dba_users where username=upper('&amp;username'); </line>
+   <line type="KeyPress">RETURN</line>
+</macro>
