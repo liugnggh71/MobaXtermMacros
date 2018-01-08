@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>OPATCH_UPGRADE_unzip_install_opatch</name>
+   <desc>Full code file: OPATCH_UPGRADE_unzip_install_opatch.ksh</desc>
+   <environment>KornShell</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">unzip p6880880_*.zip -d $ORACLE_HOME</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

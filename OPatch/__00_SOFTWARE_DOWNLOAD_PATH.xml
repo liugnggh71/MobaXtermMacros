@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>__00_SOFTWARE_DOWNLOAD_PATH</name>
+   <desc>Full code file: __00_SOFTWARE_DOWNLOAD_PATH.ksh</desc>
+   <environment>KornShell</environment>
+   <hotkey>0</hotkey>
+   <line type="Text"># /u01/install/12102/grid/patches/26610308</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"># chown -R oracle.oinstall /u01/install</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"># find /u01/install -type f | xargs chmod a+r</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"># find /u01/install -type d | xargs chmod a+rx</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"># D:\install\12102\grid\patches\26610308</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>PSU_DEINSTALL_DB_11G_PSU_rollback</name>
+   <desc>Full code file: PSU_DEINSTALL_DB_11G_PSU_rollback.ksh</desc>
+   <environment>KornShell</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">cd $ORACLE_HOME/rdbms/admin</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"># sqlplus / as sysdba</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"># startup</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"># @catbundle_PSU_&lt;database SID&gt;_ROLLBACK.sql</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"># @?/rdbms/admin/utlrp.sql</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"># QUIT</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

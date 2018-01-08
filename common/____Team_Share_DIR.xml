@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
-    <name>____Macro_DIR</name>
-    <desc>Change to Macro location</desc>
+    <name>____Team_Share_DIR</name>
+    <desc>Change to Team_Share location</desc>
     <environment>cmd</environment>
     <hotkey>0</hotkey>
-    <line type="Text">explorer C:\Users\gangl\Documents\MobaXterm\home\MobaXtermMacros</line>
+    <line type="Text">explorer \\bhcs.pvt\dfsdata\Systems_Support\DatabaseAdministration\Software\Oracle\dvd\AIX</line>
     <line type="KeyPress">RETURN</line>
 </macro>

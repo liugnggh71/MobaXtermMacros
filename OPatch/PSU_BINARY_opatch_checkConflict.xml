@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>PSU_BINARY_opatch_checkConflict</name>
+   <desc>Full code file: PSU_BINARY_opatch_checkConflict.ksh</desc>
+   <environment>KornShell</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">$ORACLE_HOME/OPatch/opatch prereq CheckConflictAgainstOHWithDetail -ph ./</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

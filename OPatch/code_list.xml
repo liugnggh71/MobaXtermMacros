@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <?xml-stylesheet type="text/xsl" href="../parse_unparsed_code.xsl"?>
+
+<codes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../code_list.xsd">
+    <directory>OPatch</directory>
+    <file>export_PATCH_ID.ksh</file>
+    <file>report_registry_history.sql</file>
+    <file>utlrp.sql</file>
+    <file>PSU_DEINSTALL_DB_11G_PSU_rollback.ksh</file>
+    <file>PSU_DEINSTALL_DB_11G_JVM_postdeinstall.ksh</file>
+    <file>PSU_DEINSTALL_BINARY_rollback_patch_id.ksh</file>
+    <file>PSU_DB_11G_JVM_postinstall.ksh</file>
+    <file>PSU_DB_11G_catbundle.ksh</file>
+    <file>PSU_BINARY_opatch_lsinventory_detail.ksh</file>
+    <file>PSU_BINARY_opatch_lsinventory.ksh</file>
+    <file>PSU_BINARY_opatch_checkConflict.ksh</file>
+    <file>PSU_BINARY_opatch_apply.ksh</file>
+    <file>OPATCH_UPGRADE_unzip_list_patch.ksh</file>
+    <file>OPATCH_UPGRADE_BACKUP_rename_OPATCH.ksh</file>
+    <file>OPATCH_UPGRADE_unzip_install_opatch.ksh</file>
+    <file>__00_SOFTWARE_DOWNLOAD_PATH.ksh</file>
+    <file>__000_OPATCH_MASTER_NOTES.ksh</file>
+    <!--    
+    <file action="WebBrowser">Daily_bck_issue.txt</file>
+    <file action="vi">multi_day_db_bck_apxdev.ksh</file>
+    <file action="Help">SPACE_ticket_help.txt</file>
+ -->
+</codes>

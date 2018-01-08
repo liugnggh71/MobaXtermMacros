@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>PSU_DB_11G_JVM_postinstall</name>
+   <desc>Full code file: PSU_DB_11G_JVM_postinstall.ksh</desc>
+   <environment>KornShell</environment>
+   <hotkey>0</hotkey>
+   <line type="Text"># cd $ORACLE_HOME/sqlpatch/${PATCH_ID}</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"># sqlplus / as sysdba</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"># startup upgrade</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"># @postinstall.sql</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"># @?/rdbms/admin/utlrp.sql</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"># shutdown</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"># startup</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

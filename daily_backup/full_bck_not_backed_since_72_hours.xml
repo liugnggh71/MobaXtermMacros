@@ -11,6 +11,6 @@
    <line type="KeyPress">RETURN</line>
    <line type="Text">backup INCREMENTAL LEVEL 0 filesperset 1 DATABASE NOT BACKED UP SINCE TIME 'SYSDATE-3';</line>
    <line type="KeyPress">RETURN</line>
-   <line type="Text">BACKUP archivelog NOT BACKED UP;</line>
+   <line type="Text">BACKUP filesperset 1 archivelog ALL NOT BACKED UP;</line>
    <line type="KeyPress">RETURN</line>
 </macro>
