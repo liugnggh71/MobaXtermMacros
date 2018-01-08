@@ -38,6 +38,7 @@
     <file>04_block_corruption_protect.sql</file>
     <file>05_block_tracking_help.sql</file>
     <file>backup_and_delete_archivelog.rman</file>
+    <file>full_bck_not_backed_since_72_hours.rman</file>
     <!--     
     <file>copy_exp_imp_tables.sql</file>
     <file action="WebBrowser">Daily_bck_issue.txt</file>

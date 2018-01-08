@@ -63,6 +63,7 @@
     <xi:include href="../daily_backup/02_set_db_recovery_file_dest.xml"/>
     <xi:include href="../daily_backup/03_set_force_logging.xml"/>
     <xi:include href="../daily_backup/backup_and_delete_archivelog.xml"/>
+    <xi:include href="../daily_backup/full_bck_not_backed_since_72_hours.xml"/>
     <transfer_map>
         <transfer>
             <source_xml>../unparsed_code/code_list.xml</source_xml>

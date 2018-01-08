@@ -5,6 +5,7 @@
     <xi:include href="../common/____Macro_DIR.xml">af</xi:include>
     <xi:include href="../common/cmd.xml"/>
     <xi:include href="../common/cd_MobaXtermMacros.xml"/>
+    <xi:include href="../bsw/service_now.xml"/>
     <xi:include href="../bsw/service_now_desktop.xml"/>
     <xi:include href="../bsw/service_now_pending_time_card.xml"/>
     <xi:include href="../bsw/service_now_my_work.xml"/>
