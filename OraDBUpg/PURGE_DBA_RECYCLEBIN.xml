@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>PURGE_DBA_RECYCLEBIN</name>
+   <desc>Full code file: PURGE_DBA_RECYCLEBIN.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">select count(1) row_count_before_purge from dba_recyclebin;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">purge dba_recyclebin;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select count(1) row_count_after_purge from dba_recyclebin;</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<upgrade_project>
+    <project_name>EDW upgrade from 11.2.0.2 to 11.2.0.4</project_name>
+    <product>
+        <name>Oracle Enterprise Edition Database Server</name>
+        <from_version>11.2.0.2</from_version>
+        <to_version>
+            <release>11.2.0.4.0</release>
+            <opatch_version>11.2.0.3.17</opatch_version>
+            <PSU_combo_patch_id>26636031</PSU_combo_patch_id>
+            <PSU_combo_MOS doc_id="26636031.8">Bug 26636031 - Combo of 11.2.0.4.171017 OJVM PSU and
+                11.2.0.4.171017 DB PSU (Oct 2017)</PSU_combo_MOS>
+            <PSU_patch_id>26392168</PSU_patch_id>
+            <PSU_MOS doc_id="26392168.8">Bug 26392168 - 11.2.0.4.171017 (Oct 2017) Database Patch
+                Set Update (DB PSU)</PSU_MOS>
+            <OJVM_PSU_patch_id>26635834</OJVM_PSU_patch_id>
+            <OJVM_PSU_MOS doc_id="26635834.8">Oracle JavaVM Component 11.2.0.4.171017 Database PSU
+                (Oct 2017) (OJVM PSU)</OJVM_PSU_MOS>
+        </to_version>
+    </product>
+    <host>
+        <dns_name>edwdev</dns_name>
+        <opatch_update_zip_file>/u01/install/11204/patches/p6880880_112000_AIX64-5L.zip</opatch_update_zip_file>
+        <patch_binary_dir>
+            <PSU_combo_patch_binary_dir>/u01/install/11204/patches/26636031</PSU_combo_patch_binary_dir>
+            <PSU_patch_binary_dir>/u01/install/11204/patches/26636031/26392168</PSU_patch_binary_dir>
+            <OJVM_PSU_patch_binary_dir>/u01/install/11204/patches/26636031/26635834</OJVM_PSU_patch_binary_dir>
+        </patch_binary_dir>
+        <database_instances>
+            <instance>
+                <sid>codedev</sid>
+                <upgrade>
+                    <method>DBUA</method>
+                    <log_fie>/u01/app/oracle/cfgtoollogs/dbua/t11202/upgrade1</log_fie>
+                    <start_time>2018-01-30T17:17:00</start_time>
+                    <purge_dba_recyclebin>
+                        <start_time>2018-01-30T17:17:29</start_time>
+                        <start_time>2018-01-30T17:17:30</start_time>
+                    </purge_dba_recyclebin>
+                    <gather_dictionary_stats>
+                        <start_time>2018-01-30T17:17:33</start_time>
+                        <start_time>2018-01-30T17:17:34</start_time>
+                    </gather_dictionary_stats>
+                    <DBUA>
+                        <start_time>2018-01-30T17:17:37</start_time>
+                        <warning ignored="y">Database contains schemas with objects dependent on DBMS_LDAP
+                            package. Refer to the 11g Upgrade Guide for instructions to configure
+                            Network ACLs.</warning>
+                        <thread>7</thread>
+                        <register_CC>yes</register_CC>
+                        <ignore_errors>
+                            <error_hit>2018-01-30T17:18:18</error_hit>
+                            <error_count>7</error_count>
+                            <upgrade_progress_pct>78</upgrade_progress_pct>
+                        </ignore_errors>
+                        <perform_post_upgrade>
+                            <upgrade_progress_pct>80</upgrade_progress_pct>
+                            <issue>looks_hang, never finish, pct do not move</issue>
+                            <solution>Cancel in 2 hours, looks OK for the result</solution>
+                        </perform_post_upgrade>
+                        <Configure_DB_with_OEM>Not done, in future do not register OEM</Configure_DB_with_OEM>
+                    </DBUA>
+                    <backup_config>Use daily_backup Macros to get the backup configured</backup_config>
+                    <improvement>create_restore_point</improvement>
+                </upgrade>
+            </instance>
+            <instance>
+                <sid>t11202</sid>
+                <upgrade>
+                    <log_fie>/u01/app/oracle/cfgtoollogs/dbua/t11202/upgrade1</log_fie>
+                    <upg_date>2017-11-20</upg_date>
+                    <errors>
+                        <grep_result>
+                            <![CDATA[
+
+                            EDWDEV
+                            COGDEV
+                            DSRDEV
+                            INFADEV
+                            BDWDEV
+                            
+                            EDWTST
+                            COGTEST
+                            DSRTEST
+                            INFATEST
+                            TWSTEST
+                            BDWTEST
+                            
+                            EDWPRD
+                            COGPROD
+                            DSRPROD
+                            INFAPROD
+                            TWSPROD
+                            BDWPROD
+
+oracle@edwdev [t11202]  [/u01/app/oracle/cfgtoollogs/dbua/t11202/upgrade1]
+                            $ grep "^ORA-" *.log
+                            Oracle_Server.log:ORA-01034: ORACLE not available
+                            Oracle_Server.log:ORA-01034: ORACLE not available
+                            Oracle_Server.log:ORA-01034: ORACLE not available
+                            Oracle_Server.log:ORA-01034: ORACLE not available
+                            Oracle_Server.log:ORA-04043: object DROP_AW_ELIST_ALL does not exist
+                            Oracle_Server.log:ORA-02303: cannot drop or replace a type with type or table dependents
+                            Oracle_Server.log:ORA-02303: cannot drop or replace a type with type or table dependents
+                            Oracle_Server.log:ORA-02303: cannot drop or replace a type with type or table dependents
+                            Oracle_Server.log:ORA-02303: cannot drop or replace a type with type or table dependents
+                            Oracle_Server.log:ORA-00955: name is already used by an existing object
+                            Oracle_Server.log:ORA-00955: name is already used by an existing object
+                            Oracle_Server.log:ORA-00955: name is already used by an existing object
+                            Oracle_Server.log:ORA-00955: name is already used by an existing object
+                            PreUpgrade.log:ORA-01034: ORACLE not available
+                            ]]>
+                        </grep_result>
+                    </errors>
+                </upgrade>
+            </instance>
+        </database_instances>
+    </host>
+</upgrade_project>

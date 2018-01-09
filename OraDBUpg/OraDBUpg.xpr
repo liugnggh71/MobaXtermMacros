@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="19.1">
+    <meta>
+        <filters directoryPatterns="" filePatterns="OraDBUpg.xpr" positiveFilePatterns="" showHiddenFiles="false"/>
+        <options/>
+    </meta>
+    <projectTree name="OraDBUpg.xpr">
+        <folder path="."/>
+        <file name="code_list.xml"/>
+        <file name="OraDBUpg.xml"/>
+    </projectTree>
+</project>

@@ -33,3 +33,7 @@ SELECT *
  WHERE ROWNUM < 2;
 
 select flashback_on from v$database;
+
+SET NUMFORMAT 999,999,999,999
+SELECT * FROM V$RECOVERY_FILE_DEST;
+SET NUMFORMAT ""
