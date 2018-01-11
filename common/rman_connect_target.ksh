@@ -1,2 +1,0 @@
-rman
-connect target

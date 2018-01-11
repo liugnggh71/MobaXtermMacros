@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+    <name>check RMAN restore progress</name>
+    <desc>Check RMAN restore progress</desc>
+    <environment>SqlPlus</environment>
+    <hotkey>0</hotkey>
+    <line type="Text">@sqlplus/display_call_sql.sql restore_progress_check</line>
+    <line type="KeyPress">RETURN</line>
+</macro>

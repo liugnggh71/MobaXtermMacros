@@ -57,6 +57,8 @@
 
     <file action="Help">Set_environment_help.txt</file>
     <file action="Help">User_management_help.txt</file>
+    
+    <file>gen_kill_session_of_username.sql</file>
     <!--     
     <file action="WebBrowser">Daily_bck_issue.txt</file>
     <file action="vi">multi_day_db_bck_apxdev.ksh</file>

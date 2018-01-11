@@ -4,6 +4,7 @@
     <file>exp_imp</file>
     <xi:include href="../common/______BCK_all_macro.xml"/>
     <xi:include href="../common/____Macro_DIR.xml"/>
+    <xi:include href="../common/______cd_common.xml"/>
     <xi:include href="../common/cmd.xml"/>
     <xi:include href="../common/sqlplus_nolog.xml"/>
     <xi:include href="../common/sqlplus_as_sysdba.xml"/>

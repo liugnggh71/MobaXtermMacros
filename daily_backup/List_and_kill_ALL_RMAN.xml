@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>List_and_kill_ALL_RMAN</name>
+   <desc>Full code file: List_and_kill_ALL_RMAN.ksh</desc>
+   <environment>KornShell</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">ps -ef | grep rman | grep -v grep | while read c1 c2 c3; do echo $c2; done</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"># ps -ef | grep rman | grep -v grep | while read c1 c2 c3; do kill -9 $c2; done</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

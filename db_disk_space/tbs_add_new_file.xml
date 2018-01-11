@@ -11,7 +11,7 @@
    <line type="KeyPress">RETURN</line>
    <line type="Text">  FROM DBA_DATA_FILES</line>
    <line type="KeyPress">RETURN</line>
-   <line type="Text"> WHERE TABLESPACE_NAME = 'USERS';</line>
+   <line type="Text"> WHERE TABLESPACE_NAME = '&amp;TABLESPACE_NAME';</line>
    <line type="KeyPress">RETURN</line>
    <line type="Text">COLUMN  file_suffix NEW_VALUE file_suffix</line>
    <line type="KeyPress">RETURN</line>

@@ -23,6 +23,8 @@
     <file>report_db_files_parameter.sql</file>
     <file>report_diag_parameter.sql</file>
     <file>report_DB_USED_MB.sql</file>
+    <file>report_space_history_by_hour_day.sql</file>
+    <file>report_TEMP_tbs.sql</file>
     <!--     
     <file action="WebBrowser">Daily_bck_issue.txt</file>
     <file action="vi">multi_day_db_bck_apxdev.ksh</file>

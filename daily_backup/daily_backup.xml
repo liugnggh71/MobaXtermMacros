@@ -4,12 +4,14 @@
     <file>daily_backup</file>
     <xi:include href="../common/______BCK_all_macro.xml"/>
     <xi:include href="../common/____Macro_DIR.xml"/>
+    <xi:include href="../common/______cd_common.xml"/>
     <xi:include href="../common/cmd.xml"/>
     <xi:include href="../common/sqlplus_nolog.xml"/>
     <xi:include href="../common/conn_syscc.xml"/>
     <xi:include href="../common/conn_sysdba.xml"/>
     <xi:include href="../common/conn_dbsnmp_local.xml"/>
     <xi:include href="../common/conn_rocc_local.xml"/>
+    <xi:include href="../common/conn_system.xml"/>
     <xi:include href="../common/conn_syscc_local.xml"/>
     <xi:include href="../common/conn_dbinv.xml"/>
     <xi:include href="../common/html_spool_on.xml"/>
@@ -17,14 +19,15 @@
     <xi:include href="../common/fancy_prompt.xml"/>
     <xi:include href="../common/call_define_pick.xml"/>
     <xi:include href="../common/cd_MobaXtermMacros.xml"/>
-    <xi:include href="../common/ls_PMON_SID_sort.xml"/>
     <xi:include href="../common/call_define_current_connection.xml"/>
+    <xi:include href="../common/ls_PMON_SID_sort.xml"/>
 
     <xi:include href="../common/define_oracle_home.xml"/>
     <xi:include href="../common/sqlplus_as_sysdba.xml"/>
     <xi:include href="../common/cd_general_scripts.xml"/>
     <xi:include href="../common/rman_connect_target.xml"/>
     <xi:include href="../common/define_connect_db_pick.xml"/>
+
     <xi:include href="../daily_backup/Daily_bck_issue.xml"/>
     <xi:include href="../daily_backup/legacy_1.xml"/>
     <xi:include href="../daily_backup/legacy_2.xml"/>
@@ -64,6 +67,11 @@
     <xi:include href="../daily_backup/03_set_force_logging.xml"/>
     <xi:include href="../daily_backup/backup_and_delete_archivelog.xml"/>
     <xi:include href="../daily_backup/full_bck_not_backed_since_72_hours.xml"/>
+    <xi:include href="../daily_backup/List_and_kill_ALL_RMAN.xml"/>
+    <xi:include href="../daily_backup/SBT_current_SETTING.xml"/>
+    <xi:include href="../daily_backup/point_sv03.xml"/>
+    <xi:include href="../daily_backup/point_ms03.xml"/>
+    <xi:include href="../daily_backup/02_rman_config_tape_channel_count.xml"/>
     <transfer_map>
         <transfer>
             <source_xml>../unparsed_code/code_list.xml</source_xml>

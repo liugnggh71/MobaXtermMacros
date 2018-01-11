@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+    <name>______cd_common</name>
+    <desc>Change directory to common</desc>
+    <environment>MobaXterm</environment>
+    <hotkey>0</hotkey>
+    <line type="Text">cd ~/MobaXtermMacros/common</line>
+    <line type="KeyPress">RETURN</line>
+</macro>

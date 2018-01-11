@@ -17,9 +17,9 @@
    <line type="KeyPress">RETURN</line>
    <line type="Text">      SBT_PARMS=(ORACLE_HOME=${ORACLE_HOME})';</line>
    <line type="KeyPress">RETURN</line>
-   <line type="Text">  send 'set username ddboostninja password baylor01 servername BHDAMSDD02.BHCS.PVT';</line>
+   <line type="Text">  send 'set username ddboostninja password baylor01 servername BSWMSDD03.BHCS.PVT';</line>
    <line type="KeyPress">RETURN</line>
-   <line type="Text">  send 'set username ddboostninja password baylor01 servername BHDASVDD02.BHCS.PVT';</line>
+   <line type="Text">  send 'set username ddboostninja password baylor01 servername BSWSVDD03.BHCS.PVT';</line>
    <line type="KeyPress">RETURN</line>
    <line type="Text">  RELEASE CHANNEL C1;</line>
    <line type="KeyPress">RETURN</line>

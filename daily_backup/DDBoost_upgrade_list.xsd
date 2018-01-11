@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="DDBoost_PlugIn_Upgrade">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="host"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="host">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="dns_name"/>
+        <xs:element maxOccurs="unbounded" ref="sid"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="dns_name" type="xs:NCName"/>
+  <xs:element name="sid">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:NCName">
+          <xs:attribute name="sbt_dir" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="oracle_ms03_lsu1"/>
+                <xs:enumeration value="oracle_sv03_lsu1"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="sbt_version" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="2.1.0.1"/>
+                <xs:enumeration value="1.1.0.1"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

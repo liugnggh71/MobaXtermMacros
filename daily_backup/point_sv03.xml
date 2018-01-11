@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>point_sv03</name>
+   <desc>Full code file: point_sv03.ksh</desc>
+   <environment>Vi</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">vi point_sv03.ksh</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">i</line>
+   <line type="Text">rman &lt;&lt;EOR</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">connect target</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">sql 'begin DBMS_BACKUP_RESTORE.resetconfig; end;';</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">CONFIGURE RETENTION POLICY TO RECOVERY WINDOW OF 35 DAYS;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">CONFIGURE DEFAULT DEVICE TYPE TO 'SBT_TAPE';</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">CONFIGURE CONTROLFILE AUTOBACKUP ON;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">CONFIGURE ARCHIVELOG DELETION POLICY TO BACKED UP 2 TIMES TO 'SBT_TAPE';</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">CONFIGURE DEVICE TYPE 'SBT_TAPE' PARALLELISM 1 BACKUP TYPE TO BACKUPSET;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">exit</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">EOR</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"># /u01/app/oracle/general/ddb2_sv.sh</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">rman &lt;&lt; EOF</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">connect target</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">CONFIGURE CHANNEL DEVICE TYPE 'SBT_TAPE'  PARMS 'BLKSIZE=1048576, SBT_LIBRARY=${ORACLE_HOME}/lib/libddobk.so, SBT_PARMS=(STORAGE_UNIT=oracle_sv03_lsu1, BACKUP_HOST=BSWSVDD03.BHCS.PVT, ORACLE_HOME=${ORACLE_HOME})';</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">EOF</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">rman &lt;&lt; EOC</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">connect target</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">backup current controlfile;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">exit</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">EOC</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">sqlplus /nolog &lt;&lt; EOS</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">connect / as sysdba</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">alter session set nls_date_format = 'YYYY-MM-DD HH24:MI:SS';</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">set sqlprompt "_user '@' _connect_identifier &gt; "</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT DISTINCT start_time, completion_time, media, comments</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  FROM v\$backup_piece</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">   WHERE start_time IN (SELECT MAX (start_time)</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">                           FROM v\$backup_piece</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">                     WHERE SYSDATE - completion_time &lt; 3);</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">EXIT</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">EOS</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="KeyPress">ESCAPE</line>
+   <line type="KeyPress">COLON</line>
+   <line type="Text">x</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

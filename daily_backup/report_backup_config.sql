@@ -44,3 +44,5 @@ SELECT NAME, VALUE,description
 ORDER BY NAME;
 
 SELECT DBID, NAME, LOG_MODE, FORCE_LOGGING, FLASHBACK_ON FROM v$database;
+
+select distinct media, comments from v$backup_piece where sysdate-completion_time<3;
