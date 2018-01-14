@@ -1,0 +1,33 @@
+
+
+A "stair-step" figure is made of alternating black and white squares in each row. Rows $1$ through $4$ are shown. All rows begin and end with a white square. The number of black squares in the $37\text{th}$ row is
+
+\begin{figure}[H]    
+\centering         
+\begin{asy}         
+import "./olympiad.asy" as olympiad;
+size(0,120);         
+draw((0,0)--(7,0)--(7,1)--(0,1)--cycle); draw((1,0)--(6,0)--(6,2)--(1,2)--cycle); draw((2,0)--(5,0)--(5,3)--(2,3)--cycle); draw((3,0)--(4,0)--(4,4)--(3,4)--cycle); fill((1,0)--(2,0)--(2,1)--(1,1)--cycle,black); fill((3,0)--(4,0)--(4,1)--(3,1)--cycle,black); fill((5,0)--(6,0)--(6,1)--(5,1)--cycle,black); fill((2,1)--(3,1)--(3,2)--(2,2)--cycle,black); fill((4,1)--(5,1)--(5,2)--(4,2)--cycle,black); fill((3,2)--(4,2)--(4,3)--(3,3)--cycle,black); 
+\end{asy}         
+\end{figure}         
+
+$\text{(A)}\ 34 \qquad \text{(B)}\ 35 \qquad \text{(C)}\ 36 \qquad \text{(D)}\ 37 \qquad \text{(E)}\ 38$
+\\
+Solution 1
+\\
+The best way to solve this problem is to find patterns and to utilize them to our advantage. For example, we can't really do anything without knowing how many squares there are in the 37th row. But who wants to continue the diagram for 37 rows? And what if the problem said 100,000th row? It'll still be possible - but not if your method is to continue the diagram...
+
+So hopefully there's a pattern. We find a pattern by noticing what is changing from row 1 to row 2. Basically, for the next row, we are just adding 2 squares (1 on each side) to the number of squares we had in the previous row. So each time we're adding 2. So how can we find $N$, if $N$ is the number of squares in the $a^\text{th}$ row of this diagram? We can't just say that $N = 1 + 2a$, because it doesn't work for the first row. But since 1 is the first term, we have to EXCLUDE the first term, meaning that we must subtract 1 from a. Thus, $N = 1 + 2\times(a - 1) = 2a - 1$. So in the 37th row we will have $2 \times 37 - 1 = 74 - 1 = 73$.
+
+You may now be thinking - aha, we're finished. But we're only half finished. We still need to find how many black squares there are in these 73 squares. Well let's see - they alternate white-black-white-black... but we can't divide by two - there aren't exactly as many white squares as black squares... there's always 1 more white square... aha! If we subtract 1 from the number of squares (1 white square), we will have exactly 2 times the number of black squares.
+
+Thus, the number of black squares is $\frac{73 - 1}{2} = \frac{72}{2} = 36$
+
+36 is $\boxed{\text{C}}$
+\\
+Solution 2
+\\
+Note that each row adds one black and one white square to the end of the previous one, and then shifts the new row over a little. Since the first row had no black squares, the number of black squares in any row is one less than the row number.
+
+Now that this has been established, we just have $37-1=36\rightarrow \boxed{\text{C}}$
+

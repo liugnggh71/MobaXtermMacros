@@ -1,0 +1,60 @@
+
+
+The area of polygon $ABCDEF$, in square units, is
+
+$\text{(A)}\ 24 \qquad \text{(B)}\ 30 \qquad \text{(C)}\ 46 \qquad \text{(D)}\ 66 \qquad \text{(E)}\ 74$
+
+\begin{figure}[H]    
+\centering         
+\begin{asy}         
+import "./olympiad.asy" as olympiad;
+size(0,120);         
+
+draw((0,9)--(6,9)--(6,0)--(2,0)--(2,4)--(0,4)--cycle); label("A",(0,9),NW); label("B",(6,9),NE); label("C",(6,0),SE); label("D",(2,0),SW); label("E",(2,4),NE); label("F",(0,4),SW); label("6",(3,9),N); label("9",(6,4.5),E); label("4",(4,0),S); label("5",(0,6.5),W); 
+\end{asy}         
+\end{figure}         
+Solution 1
+\\
+\begin{figure}[H]    
+\centering         
+\begin{asy}         
+import "./olympiad.asy" as olympiad;
+size(0,120);         
+
+draw((0,9)--(6,9)--(6,0)--(2,0)--(2,4)--(0,4)--cycle); draw((2,4)--(6,4),dashed); label("A",(0,9),NW); label("B",(6,9),NE); label("C",(6,0),SE); label("D",(2,0),SW); label("E",(2,4),NE); label("F",(0,4),SW); label("G",(6,4),SW); label("6",(3,9),N); label("9",(6,4.5),E); label("4",(4,0),S); label("5",(0,6.5),W); 
+\end{asy}         
+\end{figure}         
+Obviously, there are no formulas to find the area of such a messed up shape, but we do recognize some shapes we do know how to find the area of.
+
+If we continue segment $\overline{FE}$ until it reaches the right side at $G$, we create two rectangles - one on the top and one on the bottom.
+
+We know how to find the area of a rectangle, and we're given the sides! We can easily find that the area of $ABGF$ is $6\times5 = 30$. For the rectangle on the bottom, we do know the length of one of its sides, but we don't know the other.
+
+Note that $GC+GB=9$, and $GB=AF=5$, so we must have \[GC+5=9\Rightarrow GC=4\]
+The area of the bottom rectangle is then \[(DC)(GC)=4\times 4=16\]
+Finally, we just add the areas of the rectangles together to get $16 + 30 = 46$.
+
+$\boxed{\text{C}}$
+\\
+Solution 2
+\\
+\begin{figure}[H]    
+\centering         
+\begin{asy}         
+import "./olympiad.asy" as olympiad;
+size(0,120);         
+
+draw((0,9)--(6,9)--(6,0)--(2,0)--(2,4)--(0,4)--cycle); draw((0,4)--(0,0),dashed); draw((0,0)--(2,0),dashed); label("A",(0,9),NW); label("B",(6,9),NE); label("C",(6,0),SE); label("D",(2,0),SW); label("E",(2,4),NE); label("F",(0,4),SW); label("G",(0,0),SW); label("6",(3,9),N); label("9",(6,4.5),E); label("4",(4,0),S); label("5",(0,6.5),W); 
+\end{asy}         
+\end{figure}         
+Let $\langle ABCDEF \rangle$ be the area of polygon $ABCDEF$. Also, let $G$ be the intersection of $DC$ and $AF$ when both are extended.
+
+Clearly, \[\langle ABCDEF \rangle = \langle ABCG \rangle - \langle GFED \rangle\]
+Since $AB=6$ and $BC=9$, $\langle ABCG \rangle =6\times 9=54$.
+
+To compute the area of $GFED$, note that \[AB=GD+DC\]\[BC=GF+FA\]
+We know that $AB=6$, $DC=4$, $BC=9$, and $FA=5$, so \[6=GD+4\Rightarrow GD=2\]\[9=GF+5\Rightarrow GF=4\]
+Thus $\langle GFED \rangle = 4\times 2=8$
+
+Finally, we have \begin{align*} \langle ABCDEF \rangle &= \langle ABCG \rangle - \langle GFED \rangle \\ &= 54-8 \\ &= 46 \\ \end{align*}
+This is answer choice $\boxed{\text{C}}$
