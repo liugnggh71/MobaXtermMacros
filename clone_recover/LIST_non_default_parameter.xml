@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>LIST_non_default_parameter</name>
+   <desc>Full code file: LIST_non_default_parameter.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">COLUMN NAME FORMAT A25</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">COLUMN VALUE FORMAT A60</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SET LINESIZE 132</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

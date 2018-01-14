@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>report_DDBoost_config</name>
+   <desc>Full code file: report_DDBoost_config.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">CLEAR SCREEN</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT DISTINCT start_time, completion_time, media, comments</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  FROM v$backup_piece</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">   WHERE start_time IN (SELECT MAX (start_time)</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">                           FROM v$backup_piece</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">                     WHERE SYSDATE - completion_time &lt; 3);</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">COLUMN BCK_GB FORMAT 999,999,999.00</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">COLUMN back_piece_count FORMAT 999,999,999</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">column max_minutes format 999,999.00</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  SELECT media,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">         comments,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">         COUNT (1)                                       back_piece_count,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">         MAX (completion_time - start_time) * 24 * 60  max_minutes,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">         TO_CHAR (MAX (start_time), 'YYYY-MM-DD HH24:MI:SS')</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">             lastest_backup_time,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">         TO_CHAR (MIN (start_time), 'YYYY-MM-DD HH24:MI:SS')</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">             earlist_backup_time,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">         SUM (BYTES) / 1024 / 1024 / 1024                BCK_GB</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">    FROM v$backup_piece</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">   WHERE SYSDATE - start_time &lt; 45</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">GROUP BY media, comments;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SET NUMFORMAT ""</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

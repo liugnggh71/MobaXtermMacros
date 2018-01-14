@@ -63,6 +63,7 @@
     <xi:include href="../exp_imp/Job_kill_stop_resume.xml"/>
     <xi:include href="../exp_imp/GEN_schema_list_impdp.xml"/>
     <xi:include href="../exp_imp/accept_SCHEMAS.xml"/>
+    <xi:include href="../exp_imp/nohup_imp_sample.xml"/>
 
     <xi:include href="../db_disk_space/report_TBS_usage.xml"/>
     <xi:include href="../db_disk_space/report_DB_USED_MB.xml"/>

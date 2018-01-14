@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>report_object_on_file_no_block_id</name>
+   <desc>Full code file: report_object_on_file_no_block_id.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">column owner new_value v_owner</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">column segment_name new_value v_segment_name</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT owner, segment_name, segment_type, block_id, blocks</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">   FROM   dba_extents</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">   WHERE</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">          file_id = &amp;&amp;v_file_no</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">   AND</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">          ( &amp;&amp;v_block_id BETWEEN block_id AND ( block_id + blocks ) );</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select OWNER,TABLE_NAME, COLUMN_NAME, tablespace_name from dba_lobs where SEGMENT_NAME='&amp;&amp;v_segment_name';</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

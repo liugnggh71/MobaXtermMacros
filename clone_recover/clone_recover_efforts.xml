@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<efforts>
+    <effort>
+        <effort_type>flashback</effort_type>
+        <ticket_number>RITM0790308</ticket_number>
+        <contact>Divyesh</contact>
+        <desc>Need to restore table content of 3 tables to 2018-01-11-11:00am</desc>
+        <solution>
+            <![CDATA[
+create table INFO_PULSE.save1 as select * from INFO_PULSE.CORE_INDICATOR_PROVIDER_FCT;
+create table INFO_PULSE.save2 as select * from INFO_PULSE.CORE_ENCOUNTER_INDICATOR_FCT ;
+create table INFO_PULSE.save3 as select * from INFO_PULSE.CORE_INDICATOR_METRIC_FCT;
+
+ALTER TABLE INFO_PULSE.CORE_INDICATOR_PROVIDER_FCT ENABLE ROW MOVEMENT;
+ALTER TABLE INFO_PULSE.CORE_ENCOUNTER_INDICATOR_FCT ENABLE ROW MOVEMENT;
+ALTER TABLE INFO_PULSE.CORE_INDICATOR_METRIC_FCT ENABLE ROW MOVEMENT;
+
+FLASHBACK TABLE INFO_PULSE.CORE_INDICATOR_PROVIDER_FCT TO TIMESTAMP TO_TIMESTAMP ('2018-01-11 11:15:00', 'YYYY-MM-DD HH24:MI:SS');
+FLASHBACK TABLE INFO_PULSE.CORE_ENCOUNTER_INDICATOR_FCT TO TIMESTAMP TO_TIMESTAMP ('2018-01-11 11:15:00', 'YYYY-MM-DD HH24:MI:SS');
+FLASHBACK TABLE INFO_PULSE.CORE_INDICATOR_METRIC_FCT TO TIMESTAMP TO_TIMESTAMP ('2018-01-11 11:15:00', 'YYYY-MM-DD HH24:MI:SS');
+            ]]>
+        </solution>
+    </effort>
+</efforts>

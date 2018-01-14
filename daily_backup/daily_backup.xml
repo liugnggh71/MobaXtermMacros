@@ -21,12 +21,16 @@
     <xi:include href="../common/cd_MobaXtermMacros.xml"/>
     <xi:include href="../common/call_define_current_connection.xml"/>
     <xi:include href="../common/ls_PMON_SID_sort.xml"/>
+    <xi:include href="../common/window_host_uptime.xml"/>
 
     <xi:include href="../common/define_oracle_home.xml"/>
     <xi:include href="../common/sqlplus_as_sysdba.xml"/>
     <xi:include href="../common/cd_general_scripts.xml"/>
     <xi:include href="../common/rman_connect_target.xml"/>
     <xi:include href="../common/define_connect_db_pick.xml"/>
+
+    <xi:include href="../common/HOST_RMAN_TARGET_SYSCC.xml"/>
+    <xi:include href="../common/HOST_RMAN_TARGET_SYSDBA.xml"/>
 
     <xi:include href="../daily_backup/Daily_bck_issue.xml"/>
     <xi:include href="../daily_backup/legacy_1.xml"/>
@@ -72,6 +76,10 @@
     <xi:include href="../daily_backup/point_sv03.xml"/>
     <xi:include href="../daily_backup/point_ms03.xml"/>
     <xi:include href="../daily_backup/02_rman_config_tape_channel_count.xml"/>
+    <xi:include href="../db_disk_space/report_recent_created_files.xml"/>
+    <xi:include href="../daily_backup/report_DDBoost_config.xml"/>
+    <xi:include href="../daily_backup/get_DDBoost_AIX.xml"/>
+    <xi:include href="../daily_backup/CONFIG_DDBoost_pwd_sample.xml"/>
     <transfer_map>
         <transfer>
             <source_xml>../unparsed_code/code_list.xml</source_xml>

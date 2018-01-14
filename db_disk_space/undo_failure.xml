@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>undo_failure</name>
+   <desc>Full code file: undo_failure.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">set pagesize 25</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">set linesize 100</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">column UNXPSTEALCNT heading "# Unexpired|Stolen"</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">column EXPSTEALCNT heading "# Expired|Reused"</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">column SSOLDERRCNT heading "ORA-1555|Error"</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">column NOSPACEERRCNT heading "Out-Of-space|Error"</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">column MAXQUERYLEN heading "Max Query|Length"</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select inst_id, to_char(begin_time,'MM/DD/YYYY HH24:MI') begin_time,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">UNXPSTEALCNT, EXPSTEALCNT , SSOLDERRCNT, NOSPACEERRCNT, MAXQUERYLEN, TUNED_UNDORETENTION</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">from gv$undostat</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">order by inst_id, begin_time;</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>MS_DDBoost</name>
+   <desc>Full code file: MS_DDBoost.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">var v_replace clob;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">BEGIN</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"> :v_replace := q'[</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">CONFIGURE CHANNEL DEVICE TYPE 'SBT_TAPE'  PARMS 'BLKSIZE=1048576, SBT_LIBRARY=XXXX/lib/libddobk.so, SBT_PARMS=(STORAGE_UNIT=oracle_ms02_lsu1, BACKUP_HOST=BHDAMSDD02.BHCS.PVT, ORACLE_HOME=XXXX)';</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">allocate channel c1 TYPE 'SBT_TAPE' PARMS 'BLKSIZE=1048576, SBT_LIBRARY=XXXX/lib/libddobk.so, SBT_PARMS=(STORAGE_UNIT=oracle_ms02_lsu1, BACKUP_HOST=BHDAMSDD02.BHCS.PVT, ORACLE_HOME=XXXX)';</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">allocate auxiliary channel a1 TYPE 'SBT_TAPE'  PARMS 'BLKSIZE=1048576, SBT_LIBRARY=XXXX/lib/libddobk.so, SBT_PARMS=(STORAGE_UNIT=oracle_ms02_lsu1, BACKUP_HOST=BHDAMSDD02.BHCS.PVT, ORACLE_HOME=XXXX)';</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">     ]';</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">	 </line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  :v_replace :=replace(:v_replace, 'XXXX', '&amp;ORACLE_HOME');</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">END;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">/</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">set long 2000</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">print v_replace</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">column v_replace new_value v_replace</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">column v_replace format A2000</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">set linesize 2000</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select :v_replace v_replace from dual;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">define v_replace</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

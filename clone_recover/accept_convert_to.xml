@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>accept_convert_to</name>
+   <desc>Full code file: accept_convert_to.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">DEFINE convert_to</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">accept convert_to CHAR prompt 'Enter Convert to(Sampple /idmdev/): '</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

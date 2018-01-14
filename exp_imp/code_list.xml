@@ -40,6 +40,7 @@
     <file>GEN_10thread_compressed_table_list_impdp_full.sql</file>
     <file>GEN_schema_list_impdp.sql</file>
     <file>accept_SCHEMAS.sql</file>
+    <file>nohup_imp_sample.ksh</file>
     <!--     
     <file action="WebBrowser">Daily_bck_issue.txt</file>
     <file action="vi">multi_day_db_bck_apxdev.ksh</file>

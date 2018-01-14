@@ -7,6 +7,9 @@
    <hotkey>0</hotkey>
    <line type="Text">vi point_sv03.ksh</line>
    <line type="KeyPress">RETURN</line>
+   <line type="KeyPress">COLON</line>
+   <line type="Text">1,$ d</line>
+   <line type="KeyPress">RETURN</line>
    <line type="Text">i</line>
    <line type="Text">rman &lt;&lt;EOR</line>
    <line type="KeyPress">RETURN</line>
@@ -27,8 +30,6 @@
    <line type="Text">exit</line>
    <line type="KeyPress">RETURN</line>
    <line type="Text">EOR</line>
-   <line type="KeyPress">RETURN</line>
-   <line type="Text"># /u01/app/oracle/general/ddb2_sv.sh</line>
    <line type="KeyPress">RETURN</line>
    <line type="Text">rman &lt;&lt; EOF</line>
    <line type="KeyPress">RETURN</line>

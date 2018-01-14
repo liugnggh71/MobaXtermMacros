@@ -7,6 +7,5 @@ RUN {
   send 'set username ddboostninja password baylor01 servername BSWMSDD03.BHCS.PVT';
   send 'set username ddboostninja password baylor01 servername BSWSVDD03.BHCS.PVT';
   RELEASE CHANNEL C1;
-  backup current controlfile;
 }
 EOF

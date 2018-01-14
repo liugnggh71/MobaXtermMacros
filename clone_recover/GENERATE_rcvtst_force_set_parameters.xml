@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>GENERATE_rcvtst_force_set_parameters</name>
+   <desc>Full code file: GENERATE_rcvtst_force_set_parameters.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">COLUMN set_code FORMAT A132</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SET LINESIZE 132</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT 'alter system set ' || name || '=''' || VALUE || ''' scope=spfile;' set_code</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">    FROM v$parameter</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">   WHERE name IN ('undo_tablespace', 'db_name', 'compatible')</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">union all</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT 'alter system set ' || name || '=''' || NVL(DISPLAY_VALUE, '1000G') || ''' scope=spfile;' set_code</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">    FROM v$parameter</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">   WHERE name IN ('db_recovery_file_dest_size')</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">union all</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT 'alter system set ' || name || '=''' || NVL(DISPLAY_VALUE, '/find/a/place') || ''' scope=spfile;' set_code</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">    FROM v$parameter</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">   WHERE name IN ('db_recovery_file_dest');</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

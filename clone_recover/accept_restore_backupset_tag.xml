@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>accept_restore_backupset_tag</name>
+   <desc>Full code file: accept_restore_backupset_tag.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">DEFINE restore_backupset_tag</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">accept restore_backupset_tag CHAR prompt 'Enter restore backupset tag(Sample TAG20180109T112551): '</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

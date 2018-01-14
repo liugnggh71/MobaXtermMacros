@@ -95,6 +95,9 @@
                                     <xsl:value-of select="$v_file_name"/>
                                 </line>
                                 <line type="KeyPress">RETURN</line>
+                                <line type="KeyPress">COLON</line>
+                                <line type="Text">1,$ d</line>
+                                <line type="KeyPress">RETURN</line>
                                 <line type="Text">i</line>
                             </xsl:when>
                             <xsl:when test="$action eq 'Help'">

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>list_recent_archivelog</name>
+   <desc>Full code file: list_recent_archivelog.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">set numwidth 18</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">ALTER SESSION SET NLS_DATE_FORMAT ='YYYY-MM-DD HH24:MI:SS';</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT name,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       SEQUENCE#,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       FIRST_CHANGE#,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       first_time</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  FROM v$archived_log</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

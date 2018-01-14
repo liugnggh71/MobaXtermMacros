@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../gen_moba_xterm_macro.xsl"?>
+<xmoba_macros xmlns:xi="http://www.w3.org/2001/XInclude">
+    <file>clone_recover</file>
+    <xi:include href="../common/____Macro_DIR.xml">af</xi:include>
+    <xi:include href="../common/cmd.xml"/>
+    <xi:include href="../common/cd_MobaXtermMacros.xml"/>
+    <xi:include href="../clone_recover/gen_copy_clone_control_file.xml"/>
+    <xi:include href="../clone_recover/gen_rename_logfile_tempfile.xml"/>
+    <xi:include href="../clone_recover/gen_restore_archivelog.xml"/>
+    <xi:include href="../clone_recover/gen_restore_datafile.xml"/>
+    <xi:include href="../clone_recover/convert_sample_set.xml"/>
+    <xi:include href="../clone_recover/MS_DDBoost.xml"/>
+    <xi:include href="../clone_recover/SV_DDBoost.xml"/>
+    <xi:include href="../clone_recover/define_oracle_home.xml"/>
+    <xi:include href="../clone_recover/expdp_impdp_job_report.xml"/>
+    <xi:include href="../clone_recover/GENERATE_rcvtst_force_set_parameters.xml"/>
+    <xi:include href="../clone_recover/list_all_db_file_paths.xml"/>
+    <xi:include href="../clone_recover/list_all_db_files.xml"/>
+    <xi:include href="../clone_recover/list_datafile_header.xml"/>
+    <xi:include href="../clone_recover/LIST_non_default_parameter.xml"/>
+    <xi:include href="../clone_recover/list_recent_archivelog.xml"/>
+    <xi:include href="../clone_recover/select_recover_file.xml"/>
+    <xi:include href="../clone_recover/LIST_DATA_PUMP_DIR.xml"/>
+    <xi:include href="../clone_recover/match_file_copy.xml"/>
+    <xi:include href="../clone_recover/recover_until_cancel.xml"/>
+    <xi:include href="../clone_recover/______rman_codedev_rcvtst.xml"/>
+    <xi:include href="../clone_recover/______sqlplus_codedev_rcvtst.xml"/>
+    <xi:include href="../downtime_prepare/log_switch_and_backup.xml"/>
+    <xi:include href="../clone_recover/accept_convert_from.xml"/>
+    <xi:include href="../clone_recover/accept_convert_to.xml"/>
+    <xi:include href="../clone_recover/accept_restore_backupset_tag.xml"/>
+    <transfer_map>
+        <transfer>
+            <source_xml>../unparsed_code/code_list.xml</source_xml>
+            <transfer_xsl>../parse_unparsed_code.xsl</transfer_xsl>
+            <master_output>../unparsed_code/code_list.txt</master_output>
+        </transfer>
+        <transfer>
+            <source_xml>code_list.xml</source_xml>
+            <transfer_xsl>../parse_unparsed_code.xsl</transfer_xsl>
+            <master_output>code_list.txt</master_output>
+        </transfer>
+        <transfer>
+            <source_xml>NEW_TOPIC_TEMPLATE.xml</source_xml>
+            <transfer_xsl>../gen_moba_xterm_macro.xsl</transfer_xsl>
+            <master_output>NEW_TOPIC_TEMPLATE.txt</master_output>
+        </transfer>
+    </transfer_map>
+    <!-- java -jar $jar_file -o:$out_file $xml_file $xsl_file -->
+</xmoba_macros>

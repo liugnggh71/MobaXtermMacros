@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>list_all_db_files</name>
+   <desc>Full code file: list_all_db_files.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">set pagesize 1000 heading on feedback on</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">column name format A90</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select name from v$controlfile</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">union all</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select name from v$datafile</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">union all</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select name from v$tempfile</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">union all</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select member from v$logfile;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">COMPUTE SUM LABEL 'TOTAL' OF mb on report</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">BREAK ON REPORT</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">column MB format 999,999,999,999.99</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select name, block_size*file_size_blks/1024/1024 mb from v$controlfile</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">union all</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select name, bytes/1024/1024 mb from v$datafile</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">union all</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select name , bytes/1024/1024 mb from v$tempfile</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">union all</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select member, l.bytes/1024/1024 mb from v$logfile f, v$log l where f.group#=l.group#;</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

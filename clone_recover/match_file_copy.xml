@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>match_file_copy</name>
+   <desc>Full code file: match_file_copy.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">set linesize 132</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">column DATAFILE_NAME format A50</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">column file_copy_name format A50</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT d.file#, d.name datafile_name, c.name file_copy_name</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  FROM v$datafile_copy c, v$datafile d</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"> WHERE d.file# = c.file#(+);</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

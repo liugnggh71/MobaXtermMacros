@@ -25,6 +25,12 @@
     <file>report_DB_USED_MB.sql</file>
     <file>report_space_history_by_hour_day.sql</file>
     <file>report_TEMP_tbs.sql</file>
+    <file>report_recent_created_files.sql</file>
+    <file>du_u01.ksh</file>
+    <file>accept_file_no.sql</file>
+    <file>accept_block_id.sql</file>
+    <file>report_object_on_file_no_block_id.sql</file>
+    <file>undo_failure.sql</file>
     <!--     
     <file action="WebBrowser">Daily_bck_issue.txt</file>
     <file action="vi">multi_day_db_bck_apxdev.ksh</file>

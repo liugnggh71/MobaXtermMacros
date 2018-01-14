@@ -3,7 +3,7 @@
 <macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
     <name>conn sysdba</name>
     <desc>Connect to sysdba account</desc>
-    <environment>SqlPlus</environment>
+    <environment>SQLPlus</environment>
     <hotkey>0</hotkey>
     <line type="Text">conn &amp;sysdba as sysdba</line>
     <line type="KeyPress">RETURN</line>

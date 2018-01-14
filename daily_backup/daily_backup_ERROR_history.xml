@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<backup_fix_history>
+    <journal>
+        <date>2018-01-11</date>
+        <issue>
+            <instance>labdb1_scc</instance>
+        </issue>
+        <issue>
+            <instance>provdb1srv_provbhcs</instance>
+            <detect>Check report and find ONLY 2 new files are not backed up</detect>
+            <cause>New file not backed up</cause>
+            <fix>Backup new file from SQLPlus using RMAN host out</fix>
+        </issue>
+    </journal>
+    <journal>
+        <date>2018-01-10</date>
+        <issue>
+            <instance>asmtest_aclone1</instance>
+            <detect>Check report and find no data collected, test system connection remotely rejected with expired password</detect>
+            <cause>system user password expiration</cause>
+            <fix>Reset system password to old one and create app_user profile and assign system to it</fix>
+        </issue>
+        <issue>
+            <instance>apextst_mytst11</instance>
+            <detect>Check report and find no data collected, test system connection remotely rejected with expired password</detect>
+            <cause>system user password expiration</cause>
+            <fix>Reset system password to old one and create app_user profile and assign system to it</fix>
+        </issue>
+        <issue>
+            <instance>bhdamsdlpdb01_protect</instance>
+            <detect>Check report and find no data collected, test connection from sqlplus using sysdba, rejected</detect>
+            <cause>database instance is not even mounted, host is rebooted 1 day before Jan 9th, 4pm</cause>
+            <fix>mount and open database, recollect data and analyze data again from APEX interface</fix>
+        </issue>
+        <issue>
+            <instance>cmparch_cscpsft</instance>
+            <detect>Check report and find no data collected</detect>
+            <cause>I shut it down myself last night</cause>
+            <fix>mount and open database, recollect data and analyze data again from APEX interface</fix>
+        </issue>
+    </journal>
+</backup_fix_history>

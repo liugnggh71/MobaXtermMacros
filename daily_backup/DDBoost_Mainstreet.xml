@@ -5,8 +5,6 @@
    <desc>Full code file: DDBoost_Mainstreet.ksh</desc>
    <environment>KornShell</environment>
    <hotkey>0</hotkey>
-   <line type="Text"># /u01/app/oracle/general/ddb2_ms.sh</line>
-   <line type="KeyPress">RETURN</line>
    <line type="Text">rman &lt;&lt; EOF</line>
    <line type="KeyPress">RETURN</line>
    <line type="Text">connect target</line>

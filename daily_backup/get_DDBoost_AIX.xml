@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>get_DDBoost_AIX</name>
+   <desc>Full code file: get_DDBoost_AIX.pl</desc>
+   <environment>Vi</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">vi get_DDBoost_AIX.pl</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="KeyPress">COLON</line>
+   <line type="Text">1,$ d</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">i</line>
+   <line type="Text">use Net::FTP;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">chdir("/home/oracle");</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">$ftp = Net::FTP-&gt;new("edwprd.bhcs.pvt", Debug =&gt; 0)</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">or die "Cannot connect to edwprd.bhcs.pvt: $@";</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">$ftp-&gt;login("oracle",'Papaya01')</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">or die "Cannot login ", $ftp-&gt;message;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">$ftp-&gt;binary();</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">$ftp-&gt;cwd("/home/oracle")</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">or die "Cannot change working directory ", $ftp-&gt;message;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">$ftp-&gt;get("DDBoost_AIX.tar");</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">mkdir("/u01/app/oracle/admin");</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">mkdir("/u01/app/oracle/admin/general");</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">mkdir("/u01/app/oracle/admin/general/scripts");</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">chdir("/u01/app/oracle/admin/general/scripts");</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">$ftp-&gt;ascii();</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">$ftp-&gt;cwd("/u01/app/oracle/admin/general/scripts");</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">$ftp-&gt;get("CONFIG_DDBoost_pwd_sample.ksh");</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">$ftp-&gt;get("CONFIG_DDBoost_pwd.ksh");</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">$ftp-&gt;get("point_ms03.ksh");</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">$ftp-&gt;get("point_sv03.ksh");</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">1;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="KeyPress">ESCAPE</line>
+   <line type="KeyPress">COLON</line>
+   <line type="Text">x</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

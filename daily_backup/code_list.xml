@@ -12,7 +12,8 @@
     <file action="WebBrowser">DDBoostUpgrade.txt</file>
     <file>full_db_backup.rman</file>
     <file>report_backup.rman</file>
-    <file>CONFIG_DDBoost_pwd.ksh</file>
+    <file action="vi">CONFIG_DDBoost_pwd.ksh</file>
+    <file action="vi">CONFIG_DDBoost_pwd_sample.ksh</file>
     <file>DDBoost_Springvalley.ksh</file>
     <file>DDBoost_Mainstreet.ksh</file>
     <file>00_reset_rman_config.rman</file>
@@ -45,6 +46,8 @@
     <file action="vi">point_sv03.ksh</file>
     <file action="vi">point_ms03.ksh</file>
     <file>02_rman_config_tape_channel_count.rman</file>
+    <file>report_DDBoost_config.sql</file>
+    <file action="vi">get_DDBoost_AIX.pl</file>
     <!--     
     <file>copy_exp_imp_tables.sql</file>
     <file action="WebBrowser">Daily_bck_issue.txt</file>
