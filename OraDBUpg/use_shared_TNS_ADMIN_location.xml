@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>use_shared_TNS_ADMIN_location</name>
+   <desc>Full code file: use_shared_TNS_ADMIN_location.ksh</desc>
+   <environment>KornShell</environment>
+   <hotkey>0</hotkey>
+   <line type="Text"># cd $ORACLE_HOME/network</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"># ln -s /u01/app/oracle/network/admin admin</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"># cd cd $ORACLE_HOME/network/admin</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"># vi listener.ora</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"># change sid home information in database upgrade if new home installed</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

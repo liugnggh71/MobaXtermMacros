@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../gen_moba_xterm_macro.xsl"?>
+<xmoba_macros xmlns:xi="http://www.w3.org/2001/XInclude">
+    <file>OraDBUpg</file>
+    <xi:include href="../common/____Macro_DIR.xml"/>
+    <xi:include href="../common/______cd_common.xml"/>
+    <xi:include href="../common/cmd.xml"/>
+    <xi:include href="../common/cd_MobaXtermMacros.xml"/>
+    <xi:include href="../common/sqlplus_nolog.xml"/>
+    <xi:include href="../common/sqlplus_as_sysdba.xml"/>
+    <xi:include href="../common/cd_general_scripts.xml"/>
+    <xi:include href="../common/mkdir_general_scripts.xml"/>
+    <xi:include href="../common/create_restore_point_before_down_time.xml"/>
+    <xi:include href="../common/conn_dbinv.xml"/>
+    <xi:include href="../common/conn_rocc.xml"/>
+    <xi:include href="../common/conn_syscc.xml"/>
+    <xi:include href="../common/conn_sysdba.xml"/>
+    <xi:include href="../common/conn_system.xml"/>
+    <xi:include href="../common/call_define_pick.xml"/>
+    <xi:include href="../common/call_define_current_connection.xml"/>
+
+    <xi:include href="../OraDBUpg/EXPORT_DISPLAY_main_working_PC.xml"/>
+    <xi:include href="../OraDBUpg/PURGE_DBA_RECYCLEBIN.xml"/>
+    <xi:include href="../OraDBUpg/GATHER_dictionary_stats.xml"/>
+    <xi:include href="../OPatch/report_registry_history.xml"/>
+    <xi:include href="../OPatch/utlrp.xml"/>
+    <xi:include href="../OraDBUpg/edw_11204_upgrade.xml"/>
+    <xi:include href="../OraDBUpg/use_shared_TNS_ADMIN_location.xml"/>
+    <transfer_map>
+        <transfer>
+            <source_xml>../unparsed_code/code_list.xml</source_xml>
+            <transfer_xsl>../parse_unparsed_code.xsl</transfer_xsl>
+            <master_output>../unparsed_code/code_list.txt</master_output>
+        </transfer>
+        <transfer>
+            <source_xml>code_list.xml</source_xml>
+            <transfer_xsl>../parse_unparsed_code.xsl</transfer_xsl>
+            <master_output>code_list.txt</master_output>
+        </transfer>
+        <transfer>
+            <source_xml>NEW_TOPIC_TEMPLATE.xml</source_xml>
+            <transfer_xsl>../gen_moba_xterm_macro.xsl</transfer_xsl>
+            <master_output>NEW_TOPIC_TEMPLATE.txt</master_output>
+        </transfer>
+    </transfer_map>
+    <!-- java -jar $jar_file -o:$out_file $xml_file $xsl_file -->
+</xmoba_macros>

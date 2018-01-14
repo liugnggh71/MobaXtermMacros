@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>block_tracking_help</name>
+   <desc>Full code file: block_tracking_help.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>

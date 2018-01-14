@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>SBT_current_SETTING</name>
+   <desc>Full code file: SBT_current_SETTING.ksh</desc>
+   <environment>KornShell</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">sqlplus /nolog &lt;&lt; EOS</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">connect / as sysdba</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">alter session set nls_date_format = 'YYYY-MM-DD HH24:MI:SS';</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">set sqlprompt "_user '@' _connect_identifier &gt; "</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT DISTINCT start_time, completion_time, media, comments</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  FROM v\$backup_piece</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"> WHERE start_time IN (SELECT MAX (start_time)</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">                        FROM v\$backup_piece</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">                       WHERE SYSDATE - completion_time &lt; 3);</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">EXIT</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">EOS</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

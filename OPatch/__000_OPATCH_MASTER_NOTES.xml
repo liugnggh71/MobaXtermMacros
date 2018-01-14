@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>__000_OPATCH_MASTER_NOTES</name>
+   <desc>Full code file: __000_OPATCH_MASTER_NOTES.ksh</desc>
+   <environment>KornShell</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">#Release Schedule of Current Database Releases (Doc ID 742060.1)</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">#Master Note for Database Proactive Patch Program (Doc ID 756671.1)</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">#Master Note For OPatch (Doc ID 293369.1)</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">#Patch Set Updates for Oracle Products (Doc ID 854428.1)</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">#https://updates.oracle.com/download/6880880.html</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

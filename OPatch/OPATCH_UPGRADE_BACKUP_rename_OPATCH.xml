@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>OPATCH_UPGRADE_BACKUP_rename_OPATCH</name>
+   <desc>Full code file: OPATCH_UPGRADE_BACKUP_rename_OPATCH.ksh</desc>
+   <environment>KornShell</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">export PS1="`whoami`@`/bin/hostname` [\$PWD]$ "</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">cd $ORACLE_HOME</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">d=`date +%Y_%m_%d_%H_%M_%S`</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">echo $d</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">ls -l | grep OPatch</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"># mv OPatch OPatch.$d</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

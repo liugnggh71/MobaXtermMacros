@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>nohup_imp_sample</name>
+   <desc>Full code file: nohup_imp_sample.ksh</desc>
+   <environment>KornShell</environment>
+   <hotkey>0</hotkey>
+   <line type="Text"># nohup imp parfile=import_legacy_v500.par &amp;</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+    <name>HOST_RMAN_TARGET_SYSDBA</name>
+    <desc>Host rman connect to target using SYSDBA define SQLPlus variable</desc>
+    <environment>SQLPlus</environment>
+    <hotkey>0</hotkey>
+    <line type="Text">host rman target=&amp;SYSDBA</line>
+    <line type="KeyPress">RETURN</line>
+</macro>

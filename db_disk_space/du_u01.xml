@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>du_u01</name>
+   <desc>Full code file: du_u01.ksh</desc>
+   <environment>KornShell</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">du -sg /u01/*</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">du -sg /u01/app/*</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">du -sg /u01/app/oracle/*</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">du -sg /u01/app/oracle/diag/*</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">du -sg /u01/app/oracle/diag/rdbms/*</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

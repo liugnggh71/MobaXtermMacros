@@ -2,6 +2,7 @@
 V_.gitignore=12:0:0:vi .gitignore|258:13:1835009:RETURN|12:0:0:i|12:0:0:log.txt|258:13:1835009:RETURN|12:0:0:/dir2|258:13:1835009:RETURN|258:27:65537:ESCAPE|258:58:2555905:COLON|12:0:0:x|258:13:1835009:RETURN|
 K_0 git config=12:0:0:git config --global user.name 'Gang Liu'|258:13:1835009:RETURN|12:0:0:git config --global user.email 'liugng71@gmail.com'|258:13:1835009:RETURN|
 K_0 git init=12:0:0:git init|258:13:1835009:RETURN|
+M_DOS2UNIX_template=12:0:0:cd /home/mobaxterm/MobaXtermMacros|258:13:1835009:RETURN|12:0:0:dos2unix cp_macro.ksh|258:13:1835009:RETURN|12:0:0:dos2unix template/*|258:13:1835009:RETURN|
 V_README=12:0:0:vi README.md|258:13:1835009:RETURN|12:0:0:i|12:0:0:My App|258:13:1835009:RETURN|12:0:0:This is my app|258:13:1835009:RETURN|258:27:65537:ESCAPE|258:58:2555905:COLON|12:0:0:x|258:13:1835009:RETURN|
 C_____Macro_DIR=12:0:0:explorer C__DBLDOT__\Users\gangl\Documents\MobaXterm\home\MobaXtermMacros|258:13:1835009:RETURN|12:0:0:cd|258:13:1835009:RETURN|
 M_cd_MobaXtermMacros=12:0:0:cd /drives/c/Users/gangl/Documents/MobaXterm/home/MobaXtermMacros|258:13:1835009:RETURN|12:0:0:pwd|258:13:1835009:RETURN|
@@ -34,6 +35,7 @@ W_introduction_to_git=12:0:0:__DBLQUO__C__DBLDOT__\Program Files (x86)\Google\Ch
 V_.gitignore=0
 K_0 git config=0
 K_0 git init=0
+M_DOS2UNIX_template=0
 V_README=0
 C_____Macro_DIR=0
 M_cd_MobaXtermMacros=0

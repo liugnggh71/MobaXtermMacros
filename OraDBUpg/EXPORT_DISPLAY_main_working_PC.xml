@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>EXPORT_DISPLAY_main_working_PC</name>
+   <desc>Full code file: EXPORT_DISPLAY_main_working_PC.ksh</desc>
+   <environment>KornShell</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">export DISPLAY=DBBTIS6XQBMX1.bhcs.pvt:0.0</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">echo $DISPLAY</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

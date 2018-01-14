@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>select_recover_file</name>
+   <desc>Full code file: select_recover_file.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">set numwidth 18</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SET linesize 132</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">alter session set nls_date_format='YYYY-MM-DD HH24:MI:SS';</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">column ERROR format A40</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select * from v$recover_file;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select distinct change# from v$recover_file;</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

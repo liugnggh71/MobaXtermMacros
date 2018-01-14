@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>GATHER_dictionary_stats</name>
+   <desc>Full code file: GATHER_dictionary_stats.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">EXEC DBMS_STATS.GATHER_DICTIONARY_STATS;</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

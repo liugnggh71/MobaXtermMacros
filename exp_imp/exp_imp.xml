@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../gen_moba_xterm_macro.xsl"?>
+<xmoba_macros xmlns:xi="http://www.w3.org/2001/XInclude">
+    <file>exp_imp</file>
+    <xi:include href="../common/______BCK_all_macro.xml"/>
+    <xi:include href="../common/____Macro_DIR.xml"/>
+    <xi:include href="../common/______cd_common.xml"/>
+    <xi:include href="../common/cmd.xml"/>
+    <xi:include href="../common/sqlplus_nolog.xml"/>
+    <xi:include href="../common/sqlplus_as_sysdba.xml"/>
+    <xi:include href="../common/conn_syscc.xml"/>
+    <xi:include href="../common/conn_sysdba.xml"/>
+    <xi:include href="../common/conn_rocc.xml"/>
+    <xi:include href="../common/conn_system.xml"/>
+    <xi:include href="../common/conn_dbsnmp_local.xml"/>
+    <xi:include href="../common/conn_rocc_local.xml"/>
+    <xi:include href="../common/conn_syscc_local.xml"/>
+    <xi:include href="../common/fancy_prompt.xml"/>
+    <xi:include href="../common/conn_dbinv.xml"/>
+    <xi:include href="../common/call_define_current_connection.xml"/>
+
+    <xi:include href="../common/html_spool_on.xml"/>
+    <xi:include href="../common/html_spool_off.xml"/>
+    <xi:include href="../common/call_define_pick.xml"/>
+    <xi:include href="../common/define_oracle_home.xml"/>
+    <xi:include href="../common/cd_general_scripts.xml"/>
+    <xi:include href="../common/rman_connect_target.xml"/>
+    <xi:include href="../common/define_connect_db_pick.xml"/>
+    <xi:include href="../exp_imp/list_datapump_jobs.xml"/>
+    <xi:include href="../exp_imp/list_datapump_report.xml"/>
+    <xi:include href="../exp_imp/gen_std_expdp_full.xml"/>
+    <xi:include href="../exp_imp/CREATE_MY_DATA_PUMP_DIR.xml"/>
+    <xi:include href="../exp_imp/GEN_10thread_compressed_expdp_full.xml"/>
+    <xi:include href="../exp_imp/GEN_10thread_compressed_expdp_tables.xml"/>
+    <xi:include href="../exp_imp/check_full_expdp_temp_tables.xml"/>
+    <xi:include href="../exp_imp/NLS_LANG.xml"/>
+    <xi:include href="../exp_imp/gen_legacy_exp_full.xml"/>
+    <xi:include href="../exp_imp/gen_legacy_imp_full.xml"/>
+    <xi:include href="../exp_imp/gen_legacy_imp_schema.xml"/>
+    <xi:include href="../exp_imp/gen_legacy_exp_schema.xml"/>
+    <xi:include href="../exp_imp/get_dump_file.xml"/>
+    <xi:include href="../exp_imp/exp_imp_blogger.xml"/>
+    <xi:include href="../exp_imp/Exp_imp_help.xml"/>
+    <xi:include href="../exp_imp/report_schema_table_object_counts.xml"/>
+    <xi:include href="../exp_imp/irvrad_prddb1_schema_migration.xml"/>
+    <xi:include href="../exp_imp/create_exp_imp_tables.xml"/>
+    <xi:include href="../exp_imp/exp_imp_tables_sqlldr_ctl.xml"/>
+    <xi:include href="../exp_imp/CREATE_MY_DATA_PUMP_DIR.xml"/>
+    <xi:include href="../exp_imp/accept_MY_DATA_PUMP_DIR.xml"/>
+    <xi:include href="../exp_imp/report_my_data_pump_dir.xml"/>
+    <xi:include href="../exp_imp/report_owner_tbs_exp_imp_tables.xml"/>
+    <xi:include href="../exp_imp/copy_exp_imp_tables.xml"/>
+    <xi:include href="../exp_imp/edw_36_table_export.xml"/>
+    <xi:include href="../exp_imp/report_dependent_tables_constraint.xml"/>
+    <xi:include href="../exp_imp/report_refereing_tables_not_in_set_exp_imp_tables.xml"/>
+    <xi:include href="../exp_imp/insert_table_missing_in_set_exp_imp_tables.xml"/>
+    <xi:include href="../exp_imp/drop_exp_imp_tables.xml"/>
+    <xi:include href="../exp_imp/report_list_exp_imp_tables.xml"/>
+    <xi:include href="../exp_imp/gen_drop_exp_imp_listed_tables.xml"/>
+    <xi:include href="../exp_imp/GEN_10thread_compressed_table_list_impdp_full.xml"/>
+    <xi:include href="../exp_imp/GEN_remote_expdp_tables.xml"/>
+    <xi:include href="../exp_imp/GEN_remote_impdp_tables.xml"/>
+    <xi:include href="../exp_imp/Job_kill_stop_resume.xml"/>
+    <xi:include href="../exp_imp/GEN_schema_list_impdp.xml"/>
+    <xi:include href="../exp_imp/accept_SCHEMAS.xml"/>
+    <xi:include href="../exp_imp/nohup_imp_sample.xml"/>
+
+    <xi:include href="../db_disk_space/report_TBS_usage.xml"/>
+    <xi:include href="../db_disk_space/report_DB_USED_MB.xml"/>
+    <xi:include href="../db_disk_space/list_all_db_files.xml"/>
+    <xi:include href="../db_disk_space/list_all_tbs.xml"/>
+    <xi:include href="../db_disk_space/tbs_gen_create_all_tbs.xml"/>
+    <xi:include href="../db_disk_space/tbs_gen_add_files_all_tbs.xml"/>
+
+    <transfer_map>
+        <transfer>
+            <source_xml>../unparsed_code/code_list.xml</source_xml>
+            <transfer_xsl>../parse_unparsed_code.xsl</transfer_xsl>
+            <master_output>../unparsed_code/code_list.txt</master_output>
+        </transfer>
+        <transfer>
+            <source_xml>code_list.xml</source_xml>
+            <transfer_xsl>../parse_unparsed_code.xsl</transfer_xsl>
+            <master_output>code_list.txt</master_output>
+        </transfer>
+        <transfer>
+            <source_xml>daily_backup.xml</source_xml>
+            <transfer_xsl>../gen_moba_xterm_macro.xsl</transfer_xsl>
+            <master_output>daily_backup.txt</master_output>
+        </transfer>
+    </transfer_map>
+    <!-- java -jar $jar_file -o:$out_file $xml_file $xsl_file -->
+</xmoba_macros>

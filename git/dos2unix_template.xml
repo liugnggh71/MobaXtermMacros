@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>DOS2UNIX_template</name>
+   <desc>Convert template directory and cp_macro.ksh to UNIX format</desc>
+   <environment>MobaXterm</environment>
+   <hotkey>0</hotkey>
+    <line type="Text">cd /home/mobaxterm/MobaXtermMacros</line>
+    <line type="KeyPress">RETURN</line>
+    <line type="Text">dos2unix cp_macro.ksh</line>
+    <line type="KeyPress">RETURN</line>
+    <line type="Text">dos2unix template/*</line>
+    <line type="KeyPress">RETURN</line>
+</macro>

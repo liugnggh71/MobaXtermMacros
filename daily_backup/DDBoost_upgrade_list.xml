@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DDBoost_PlugIn_Upgrade xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="DDBoost_upgrade_list.xsd">
+    <host>
+        <dns_name>apexdev</dns_name>
+        <sid sbt_dir="oracle_sv03_lsu1" sbt_version="2.1.0.1">apxdev</sid>
+        <sid sbt_dir="oracle_sv03_lsu1" sbt_version="2.1.0.1">mycode</sid>
+    </host>
+    <host>
+        <dns_name>centdbp</dns_name>
+        <sid sbt_dir="oracle_ms03_lsu1" sbt_version="2.1.0.1">cpoemr</sid>
+    </host>
+    <host>
+        <dns_name>cmicdb</dns_name>
+        <sid sbt_dir="oracle_ms03_lsu1" sbt_version="2.1.0.1">INFRA</sid>
+        <sid sbt_dir="oracle_ms03_lsu1" sbt_version="2.1.0.1">PROD</sid>
+        <sid sbt_dir="oracle_ms03_lsu1" sbt_version="2.1.0.1">TEST</sid>
+    </host>
+    <host>
+        <dns_name>cmparch</dns_name>
+        <sid sbt_dir="oracle_ms03_lsu1" sbt_version="2.1.0.1">cpo</sid>
+        <sid sbt_dir="oracle_ms03_lsu1" sbt_version="2.1.0.1">cpoemr</sid>
+        <sid sbt_dir="oracle_ms03_lsu1" sbt_version="2.1.0.1">CSCPSFT</sid>
+        <sid sbt_dir="oracle_ms03_lsu1" sbt_version="2.1.0.1">dbadmin</sid>
+        <sid sbt_dir="oracle_ms03_lsu1" sbt_version="2.1.0.1">dwparch</sid>
+        <sid sbt_dir="oracle_ms03_lsu1" sbt_version="2.1.0.1">hpdev</sid>
+        <sid sbt_dir="oracle_ms03_lsu1" sbt_version="2.1.0.1">IARC</sid>
+        <sid sbt_dir="oracle_ms03_lsu1" sbt_version="2.1.0.1">IPRO</sid>
+        <sid sbt_dir="oracle_ms03_lsu1" sbt_version="2.1.0.1">pharmarc</sid>
+        <sid sbt_dir="oracle_ms03_lsu1" sbt_version="2.1.0.1">prddb1</sid>
+    </host>
+    <host>
+        <dns_name>edwdev</dns_name>
+        <sid sbt_dir="oracle_sv03_lsu1" sbt_version="2.1.0.1">bdwdev</sid>
+        <sid sbt_dir="oracle_sv03_lsu1" sbt_version="2.1.0.1">codedev</sid>
+        <sid sbt_dir="oracle_sv03_lsu1" sbt_version="2.1.0.1">cogdev</sid>
+        <sid sbt_dir="oracle_sv03_lsu1" sbt_version="2.1.0.1">dsrdev</sid>
+        <sid sbt_dir="oracle_sv03_lsu1" sbt_version="2.1.0.1">infadev</sid>
+        <sid sbt_dir="oracle_sv03_lsu1" sbt_version="2.1.0.1">n12db</sid>
+        <sid sbt_dir="oracle_sv03_lsu1" sbt_version="2.1.0.1">t11202</sid>
+    </host>
+    <host>
+        <dns_name>edwprd</dns_name>
+        <sid sbt_dir="oracle_ms03_lsu1" sbt_version="2.1.0.1">bdwprod</sid>
+        <sid sbt_dir="oracle_ms03_lsu1" sbt_version="2.1.0.1">cogprod</sid>
+        <sid sbt_dir="oracle_ms03_lsu1" sbt_version="2.1.0.1">dsrprod</sid>
+        <sid sbt_dir="oracle_ms03_lsu1" sbt_version="2.1.0.1">infaprod</sid>
+        <sid sbt_dir="oracle_ms03_lsu1" sbt_version="2.1.0.1">twsprod</sid>
+    </host>
+    <host>
+        <dns_name>edwtst</dns_name>
+        <sid sbt_dir="oracle_sv03_lsu1" sbt_version="2.1.0.1">apxtest</sid>
+        <sid sbt_dir="oracle_sv03_lsu1" sbt_version="2.1.0.1">bdwtest</sid>
+        <sid sbt_dir="oracle_sv03_lsu1" sbt_version="2.1.0.1">codetst</sid>
+        <sid sbt_dir="oracle_sv03_lsu1" sbt_version="2.1.0.1">cogtest</sid>
+        <sid sbt_dir="oracle_sv03_lsu1" sbt_version="2.1.0.1">dsrtest</sid>
+        <sid sbt_dir="oracle_sv03_lsu1" sbt_version="2.1.0.1">infatest</sid>
+        <sid sbt_dir="oracle_sv03_lsu1" sbt_version="2.1.0.1">twstest</sid>
+    </host>
+    <host>
+        <dns_name>empidbp</dns_name>
+        <sid sbt_dir="oracle_ms03_lsu1" sbt_version="2.1.0.1">empi10pd</sid>
+    </host>
+    <host>
+        <dns_name>empidbt</dns_name>
+        <sid sbt_dir="oracle_sv03_lsu1" sbt_version="2.1.0.1">empi10ts</sid>
+        <sid sbt_dir="oracle_sv03_lsu1" sbt_version="2.1.0.1">empi10vr</sid>
+        <sid sbt_dir="oracle_sv03_lsu1" sbt_version="2.1.0.1">empidev</sid>
+    </host>
+    <host>
+        <dns_name>idmdbdev</dns_name>
+        <sid sbt_dir="oracle_sv03_lsu1" sbt_version="2.1.0.1">idmdev</sid>
+        <sid sbt_dir="oracle_sv03_lsu1" sbt_version="2.1.0.1">mycode</sid>
+    </host>
+</DDBoost_PlugIn_Upgrade>

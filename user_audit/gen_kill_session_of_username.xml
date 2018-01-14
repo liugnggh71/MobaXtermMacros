@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>gen_kill_session_of_username</name>
+   <desc>Full code file: gen_kill_session_of_username.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">SELECT 'ALTER SYSTEM KILL SESSION ''' || S.SID || ',' || S.SERIAL# || ''';'</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  FROM V$SESSION S</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"> WHERE USERNAME = '&amp;USERNAME';</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

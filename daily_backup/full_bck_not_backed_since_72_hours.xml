@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>full_bck_not_backed_since_72_hours</name>
+   <desc>Full code file: full_bck_not_backed_since_72_hours.rman</desc>
+   <environment>RMAN</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">set echo on</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">CONFIGURE CONTROLFILE AUTOBACKUP ON;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">backup INCREMENTAL LEVEL 0 filesperset 1 DATABASE NOT BACKED UP SINCE TIME 'SYSDATE-3';</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">BACKUP filesperset 1 archivelog ALL NOT BACKED UP;</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

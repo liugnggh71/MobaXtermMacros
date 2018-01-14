@@ -1,0 +1,951 @@
+<?xml version="1.0" encoding="UTF-8"?><html xmlns:functx="http://www.functx.com">
+   <head>
+      <style type="text/css">
+         h1.intro {
+         color: blue;
+         }
+         *.attention {
+         color: red;
+         }
+         *.css_warning {
+         background-color: #FBEFEF;
+         }
+         *.code {
+         background-color: #FBFBEF;
+         }
+         *.check {
+         background-color: #FBEFEF;
+         }
+         *.judge {
+         background-color: #FBFBEF;
+         }
+         *.align {
+         background-color: #E0ECF8;
+         }
+      </style>
+      <title>clone_recover</title>
+   </head>
+   <body>
+      <h1>clone_recover</h1>
+      <table border="1">
+         <tr>
+            <th>Name</th>
+            <th>Desc</th>
+            <th>Environment</th>
+            <th>Definition</th>
+         </tr>
+         <tr>
+            <td>C_____Macro_DIR</td>
+            <td>Change to Macro location</td>
+            <td>cmd</td>
+            <td>
+               <ul>
+                  <li>explorer C:\Users\gangl\Documents\MobaXterm\home\MobaXtermMacros</li>
+                  <li>KeyPress:RETURN</li>
+               </ul>
+            </td>
+         </tr>
+         <tr>
+            <td>M_______rman rcvtst codedev</td>
+            <td>RMAN Connect to codedev database for recovery test</td>
+            <td>MobaXterm</td>
+            <td>
+               <ul>
+                  <li>rman target=SYS/edwora001@edwdev:1521/codedev</li>
+                  <li>KeyPress:RETURN</li>
+               </ul>
+            </td>
+         </tr>
+         <tr>
+            <td>M_______sqlplus rcvtst codedev</td>
+            <td>Connect to codedev database for recovery test</td>
+            <td>MobaXterm</td>
+            <td>
+               <ul>
+                  <li>sqlplus "SYS/edwora001@edwdev:1521/codedev as sysdba"</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>set sqlprompt "_user '@' _connect_identifier &gt; "</li>
+                  <li>KeyPress:RETURN</li>
+               </ul>
+            </td>
+         </tr>
+         <tr>
+            <td>M_cd_MobaXtermMacros</td>
+            <td>Full code file: cd_apple_latex.ksh</td>
+            <td>MobaXterm</td>
+            <td>
+               <ul>
+                  <li>cd /drives/c/Users/gangl/Documents/MobaXterm/home/MobaXtermMacros</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>pwd</li>
+                  <li>KeyPress:RETURN</li>
+               </ul>
+            </td>
+         </tr>
+         <tr>
+            <td>M_cmd</td>
+            <td>Get into Windows cmd environment</td>
+            <td>MobaXterm</td>
+            <td>
+               <ul>
+                  <li>cmd</li>
+                  <li>KeyPress:RETURN</li>
+               </ul>
+            </td>
+         </tr>
+         <tr>
+            <td>R_log_switch_and_backup</td>
+            <td>Full code file: log_switch_and_backup.rman</td>
+            <td>RMAN</td>
+            <td>
+               <ul>
+                  <li>sql 'alter system checkpoint';</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>sql 'alter system switch logfile';</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>CONFIGURE CONTROLFILE AUTOBACKUP ON;</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>BACKUP filesperset 1 archivelog all NOT BACKED UP;</li>
+                  <li>KeyPress:RETURN</li>
+               </ul>
+            </td>
+         </tr>
+         <tr>
+            <td>S_GENERATE_rcvtst_force_set_parameters</td>
+            <td>Full code file: GENERATE_rcvtst_force_set_parameters.sql</td>
+            <td>SQLPlus</td>
+            <td>
+               <ul>
+                  <li>COLUMN set_code FORMAT A132</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>SET LINESIZE 132</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>SELECT 'alter system set ' || name || '=''' || VALUE || ''' scope=spfile;' set_code</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>    FROM v$parameter</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>   WHERE name IN ('undo_tablespace', 'db_name', 'compatible')</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>union all</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>SELECT 'alter system set ' || name || '=''' || NVL(DISPLAY_VALUE, '1000G') || '''
+                     scope=spfile;' set_code
+                  </li>
+                  <li>KeyPress:RETURN</li>
+                  <li>    FROM v$parameter</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>   WHERE name IN ('db_recovery_file_dest_size')</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>union all</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>SELECT 'alter system set ' || name || '=''' || NVL(DISPLAY_VALUE, '/find/a/place')
+                     || ''' scope=spfile;' set_code
+                  </li>
+                  <li>KeyPress:RETURN</li>
+                  <li>    FROM v$parameter</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>   WHERE name IN ('db_recovery_file_dest');</li>
+                  <li>KeyPress:RETURN</li>
+               </ul>
+            </td>
+         </tr>
+         <tr>
+            <td>S_LIST_DATA_PUMP_DIR</td>
+            <td>Full code file: LIST_DATA_PUMP_DIR.sql</td>
+            <td>SQLPlus</td>
+            <td>
+               <ul>
+                  <li>set linesize 132</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>column DIRECTORY_PATH format A80</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>column OWNER format A10</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>SELECT *</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>  FROM dba_directories</li>
+                  <li>KeyPress:RETURN</li>
+                  <li> WHERE directory_name = 'DATA_PUMP_DIR';</li>
+                  <li>KeyPress:RETURN</li>
+                  <li> </li>
+                  <li>KeyPress:RETURN</li>
+               </ul>
+            </td>
+         </tr>
+         <tr>
+            <td>S_LIST_non_default_parameter</td>
+            <td>Full code file: LIST_non_default_parameter.sql</td>
+            <td>SQLPlus</td>
+            <td>
+               <ul>
+                  <li>COLUMN NAME FORMAT A25</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>COLUMN VALUE FORMAT A60</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>SET LINESIZE 132</li>
+                  <li>KeyPress:RETURN</li>
+               </ul>
+            </td>
+         </tr>
+         <tr>
+            <td>S_MS_DDBoost</td>
+            <td>Full code file: MS_DDBoost.sql</td>
+            <td>SQLPlus</td>
+            <td>
+               <ul>
+                  <li>var v_replace clob;</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>BEGIN</li>
+                  <li>KeyPress:RETURN</li>
+                  <li> :v_replace := q'[</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>CONFIGURE CHANNEL DEVICE TYPE 'SBT_TAPE'  PARMS 'BLKSIZE=1048576, SBT_LIBRARY=XXXX/lib/libddobk.so,
+                     SBT_PARMS=(STORAGE_UNIT=oracle_ms02_lsu1, BACKUP_HOST=BHDAMSDD02.BHCS.PVT, ORACLE_HOME=XXXX)';
+                  </li>
+                  <li>KeyPress:RETURN</li>
+                  <li>allocate channel c1 TYPE 'SBT_TAPE' PARMS 'BLKSIZE=1048576, SBT_LIBRARY=XXXX/lib/libddobk.so,
+                     SBT_PARMS=(STORAGE_UNIT=oracle_ms02_lsu1, BACKUP_HOST=BHDAMSDD02.BHCS.PVT, ORACLE_HOME=XXXX)';
+                  </li>
+                  <li>KeyPress:RETURN</li>
+                  <li>allocate auxiliary channel a1 TYPE 'SBT_TAPE'  PARMS 'BLKSIZE=1048576, SBT_LIBRARY=XXXX/lib/libddobk.so,
+                     SBT_PARMS=(STORAGE_UNIT=oracle_ms02_lsu1, BACKUP_HOST=BHDAMSDD02.BHCS.PVT, ORACLE_HOME=XXXX)';
+                  </li>
+                  <li>KeyPress:RETURN</li>
+                  <li>     ]';</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>	 </li>
+                  <li>KeyPress:RETURN</li>
+                  <li>  :v_replace :=replace(:v_replace, 'XXXX', '&amp;ORACLE_HOME');</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>END;</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>/</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>set long 2000</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>print v_replace</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>column v_replace new_value v_replace</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>column v_replace format A2000</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>set linesize 2000</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>select :v_replace v_replace from dual;</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>define v_replace</li>
+                  <li>KeyPress:RETURN</li>
+               </ul>
+            </td>
+         </tr>
+         <tr>
+            <td>S_SV_DDBoost</td>
+            <td>Full code file: SV_DDBoost.sql</td>
+            <td>SQLPlus</td>
+            <td>
+               <ul>
+                  <li>var v_replace clob;</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>BEGIN</li>
+                  <li>KeyPress:RETURN</li>
+                  <li> :v_replace := q'[</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>CONFIGURE CHANNEL DEVICE TYPE 'SBT_TAPE'  PARMS 'BLKSIZE=1048576, SBT_LIBRARY=XXXX/lib/libddobk.so,
+                     SBT_PARMS=(STORAGE_UNIT=oracle_sv02_lsu1, BACKUP_HOST=BHDASVDD02.BHCS.PVT, ORACLE_HOME=XXXX)';
+                  </li>
+                  <li>KeyPress:RETURN</li>
+                  <li>allocate channel c1 TYPE 'SBT_TAPE' PARMS 'BLKSIZE=1048576, SBT_LIBRARY=XXXX/lib/libddobk.so,
+                     SBT_PARMS=(STORAGE_UNIT=oracle_sv02_lsu1, BACKUP_HOST=BHDASVDD02.BHCS.PVT, ORACLE_HOME=XXXX)';
+                  </li>
+                  <li>KeyPress:RETURN</li>
+                  <li>allocate auxiliary channel a1 TYPE 'SBT_TAPE'  PARMS 'BLKSIZE=1048576, SBT_LIBRARY=XXXX/lib/libddobk.so,
+                     SBT_PARMS=(STORAGE_UNIT=oracle_sv02_lsu1, BACKUP_HOST=BHDASVDD02.BHCS.PVT, ORACLE_HOME=XXXX)';
+                  </li>
+                  <li>KeyPress:RETURN</li>
+                  <li>     ]';</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>	 </li>
+                  <li>KeyPress:RETURN</li>
+                  <li>  :v_replace :=replace(:v_replace, 'XXXX', '&amp;ORACLE_HOME');</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>END;</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>/</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>set long 2000</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>print v_replace</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>column v_replace new_value v_replace</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>column v_replace format A2000</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>set linesize 2000</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>select :v_replace v_replace from dual;</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>define v_replace</li>
+                  <li>KeyPress:RETURN</li>
+               </ul>
+            </td>
+         </tr>
+         <tr>
+            <td>S_accept_convert_from</td>
+            <td>Full code file: accept_convert_from.sql</td>
+            <td>SQLPlus</td>
+            <td>
+               <ul>
+                  <li>DEFINE convert_from</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>accept convert_from CHAR prompt 'Enter Convert from(Sampple /idmprd/): '</li>
+                  <li>KeyPress:RETURN</li>
+               </ul>
+            </td>
+         </tr>
+         <tr>
+            <td>S_accept_convert_to</td>
+            <td>Full code file: accept_convert_to.sql</td>
+            <td>SQLPlus</td>
+            <td>
+               <ul>
+                  <li>DEFINE convert_to</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>accept convert_to CHAR prompt 'Enter Convert to(Sampple /idmdev/): '</li>
+                  <li>KeyPress:RETURN</li>
+               </ul>
+            </td>
+         </tr>
+         <tr>
+            <td>S_accept_restore_backupset_tag</td>
+            <td>Full code file: accept_restore_backupset_tag.sql</td>
+            <td>SQLPlus</td>
+            <td>
+               <ul>
+                  <li>DEFINE restore_backupset_tag</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>accept restore_backupset_tag CHAR prompt 'Enter restore backupset tag(Sample TAG20180109T112551):
+                     '
+                  </li>
+                  <li>KeyPress:RETURN</li>
+               </ul>
+            </td>
+         </tr>
+         <tr>
+            <td>S_convert_sample_set</td>
+            <td>Full code file: convert_sample_set.sql</td>
+            <td>SQLPlus</td>
+            <td>
+               <ul>
+                  <li>-- alter system set db_file_name_convert='/idmprd/','/idmdev/' scope=spfile;</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>-- alter system set log_file_name_convert='/idmprd/','/idmdev/' scope=spfile;</li>
+                  <li>KeyPress:RETURN</li>
+               </ul>
+            </td>
+         </tr>
+         <tr>
+            <td>S_define_oracle_home</td>
+            <td>Full code file: define_oracle_home.sql</td>
+            <td>SQLPlus</td>
+            <td>
+               <ul>
+                  <li>var oracle_home clob;</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>exec SYS.dbms_system.get_env('ORACLE_HOME', :oracle_home);</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>print oracle_home</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>column oracle_home new_value oracle_home</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>select :oracle_home oracle_home from dual;</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>define oracle_home</li>
+                  <li>KeyPress:RETURN</li>
+               </ul>
+            </td>
+         </tr>
+         <tr>
+            <td>S_expdp_impdp_job_report</td>
+            <td>Full code file: expdp_impdp_job_report.sql</td>
+            <td>SQLPlus</td>
+            <td>
+               <ul>
+                  <li>set linesize 2000 </li>
+                  <li>KeyPress:RETURN</li>
+                  <li>column OWNER_NAME format A15</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>column job_name format A25</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>column OPERATION FORMAT A20</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>column JOB_MODE FORMAT A15</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>SELECT * FROM dba_datapump_jobs;</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>SELECT * FROM v$datapump_job;</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>SELECT b.username,</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>         a.sid,</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>         b.opname,</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>         b.target,</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>         ROUND (b.SOFAR * 100 / b.TOTALWORK, 0) || '%' AS "%DONE",</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>         TO_CHAR (b.start_time, 'YYYY/MM/DD HH24:MI:SS') start_time,</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>         b.TIME_REMAINING</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>    FROM v$session_longops b, v$session a</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>   WHERE a.sid = b.sid and TIME_REMAINING&gt;0</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>  ORDER BY 6;</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>SELECT sl.sid,</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>       sl.serial#,</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>       sl.sofar,</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>       sl.totalwork,</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>       dp.owner_name,</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>       dp.state,</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>       dp.job_mode</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>  FROM v$session_longops sl, v$datapump_job dp</li>
+                  <li>KeyPress:RETURN</li>
+                  <li> WHERE sl.opname = dp.job_name AND sl.sofar != sl.totalwork;</li>
+                  <li>KeyPress:RETURN</li>
+                  <li> </li>
+                  <li>KeyPress:RETURN</li>
+                  <li>COLUMN SQL_TEXT FORMAT A150</li>
+                  <li>KeyPress:RETURN</li>
+                  <li> </li>
+                  <li>KeyPress:RETURN</li>
+                  <li>SELECT x.job_name,</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>       b.state,</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>       b.job_mode,</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>       b.degree,</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>       x.owner_name,</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>       z.sql_text,</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>       p.MESSAGE,</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>       p.totalwork,</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>       p.sofar,</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>       ROUND ( (p.sofar / p.totalwork) * 100, 2) done,</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>       p.time_remaining,</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>	   y.sid,</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>	   y.serial#</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>  FROM dba_datapump_jobs  b</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>       LEFT JOIN dba_datapump_sessions x ON (x.job_name = b.job_name)</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>       LEFT JOIN v$session y ON (y.saddr = x.saddr)</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>       LEFT JOIN v$sql z ON (y.sql_id = z.sql_id)</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>       LEFT JOIN v$session_longops p ON (p.sql_id = y.sql_id)</li>
+                  <li>KeyPress:RETURN</li>
+                  <li> WHERE y.module = 'Data Pump Worker' AND p.time_remaining &gt; 0;</li>
+                  <li>KeyPress:RETURN</li>
+               </ul>
+            </td>
+         </tr>
+         <tr>
+            <td>S_gen_copy_clone_control_file</td>
+            <td>Full code file: gen_copy_clone_control_file.sql</td>
+            <td>SQLPlus</td>
+            <td>
+               <ul>
+                  <li>prompt connect target sys/asdf@target_host:1521:sid</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>prompt connect auxiliary sys/asdf@aux_host:1521:sid</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>prompt run</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>prompt {</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>prompt #   set until scn 2309242958785;</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>prompt    sql clone "alter system set  db_name = ''IDMPRD'' comment= ''Modified by
+                     RMAN duplicate'' scope=spfile";
+                  </li>
+                  <li>KeyPress:RETURN</li>
+                  <li>prompt    sql clone "alter system set  db_unique_name = ''IDMDEV'' comment= ''Modified
+                     by RMAN duplicate'' scope=spfile";
+                  </li>
+                  <li>KeyPress:RETURN</li>
+                  <li>prompt    shutdown clone immediate;</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>prompt    startup clone force nomount</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>prompt    allocate channel c1 TYPE 'SBT_TAPE' PARMS 'BLKSIZE=1048576, SBT_LIBRARY=/u01/app/oracle/product/11.2.0.3/prod/lib/libddobk.so,
+                     SBT_PARMS=(STORAGE_UNIT=oracle_ms02_lsu1, BACKUP_HOST=BHDAMSDD02.BHCS.PVT, ORACLE_HOME=/u01/app/oracle/product/11.2.0.3/prod)';
+                  </li>
+                  <li>KeyPress:RETURN</li>
+                  <li>prompt    allocate auxiliary channel a1 TYPE 'SBT_TAPE'  PARMS 'BLKSIZE=1048576, SBT_LIBRARY=/u01/app/oracle/product/11.2.0.3/lib/libddobk.so,
+                     SBT_PARMS=(STORAGE_UNIT=oracle_ms02_lsu1, BACKUP_HOST=BHDAMSDD02.BHCS.PVT, ORACLE_HOME=/u01/app/oracle/product/11.2.0.3)';
+                  </li>
+                  <li>KeyPress:RETURN</li>
+                  <li>prompt    backup current controlfile;</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>prompt    restore clone primary controlfile;</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>prompt    alter clone database mount;</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>prompt }</li>
+                  <li>KeyPress:RETURN</li>
+               </ul>
+            </td>
+         </tr>
+         <tr>
+            <td>S_gen_rename_logfile_tempfile</td>
+            <td>Full code file: gen_rename_logfile_tempfile.sql</td>
+            <td>SQLPlus</td>
+            <td>
+               <ul>
+                  <li>prompt Sample command:</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>prompt alter database rename file '/u02/oradata/idmprd/temp02.dbf' to '/u02/oradata/idmdev/temp02.dbf';</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>prompt ####################################################</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>prompt ### Formal code</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>prompt ####################################################</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>set heading off feedback off echo off verify off</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>SELECT    'alter database rename file '''</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>       || name</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>       || ''' to '''</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>       || REPLACE (name, '&amp;CONVERT_FROM', '&amp;CONVERT_TO')</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>       || ''';'</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>  FROM (SELECT name FROM v$tempfile</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>        UNION ALL</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>        SELECT MEMBER FROM v$logfile);</li>
+                  <li>KeyPress:RETURN</li>
+               </ul>
+            </td>
+         </tr>
+         <tr>
+            <td>S_gen_restore_archivelog</td>
+            <td>Full code file: gen_restore_archivelog.sql</td>
+            <td>SQLPlus</td>
+            <td>
+               <ul>
+                  <li>-- run {</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>-- allocate channel c1 TYPE 'SBT_TAPE'  PARMS 'BLKSIZE=1048576, SBT_LIBRARY=/u01/app/oracle/product/11.2.0.3/lib/libddobk.so,
+                     SBT_PARMS=(STORAGE_UNIT=oracle_ms02_lsu1, BACKUP_HOST=BHDAMSDD02.BHCS.PVT, ORACLE_HOME=/u01/app/oracle/product/11.2.0.3)';
+                  </li>
+                  <li>KeyPress:RETURN</li>
+                  <li>-- restore archivelog  from time="to_date('2017-11-19 02:08:49','YYYY-MM-DD HH24:MI:SS')";
+                     
+                  </li>
+                  <li>KeyPress:RETURN</li>
+                  <li>-- }</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>COLUMN ARCHIVE_START_TIME NEW_VALUE ARCHIVE_START_TIME</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>SELECT TO_CHAR (MIN (start_time), 'YYYY-MM-DD HH24:MI:SS') ARCHIVE_START_TIME</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>  FROM v$backup_piece</li>
+                  <li>KeyPress:RETURN</li>
+                  <li> WHERE tag = '&amp;restore_backupset_tag';</li>
+                  <li>KeyPress:RETURN</li>
+                  <li> </li>
+                  <li>KeyPress:RETURN</li>
+                  <li>DEFINE ARCHIVE_START_TIME </li>
+                  <li>KeyPress:RETURN</li>
+                  <li>set heading off feedback off echo off verify off</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>-- ####################################################</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>-- ### Formal code</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>-- ####################################################</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>-- run {</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>-- # allocate channel c1 TYPE 'SBT_TAPE'  PARMS 'BLKSIZE=1048576, SBT_LIBRARY=/u01/app/oracle/product/11.2.0.4/dbhome_2/lib/libddobk.so,
+                     SBT_PARMS=(STORAGE_UNIT=oracle_ms02_lsu1, BACKUP_HOST=BHDAMSDD02.BHCS.PVT, ORACLE_HOME=/u01/app/oracle/product/11.2.0.4/dbhome_2)';
+                  </li>
+                  <li>KeyPress:RETURN</li>
+                  <li>-- restore archivelog  from time="to_date('&amp;ARCHIVE_START_TIME','YYYY-MM-DD HH24:MI:SS')";
+                     
+                  </li>
+                  <li>KeyPress:RETURN</li>
+                  <li>-- }</li>
+                  <li>KeyPress:RETURN</li>
+               </ul>
+            </td>
+         </tr>
+         <tr>
+            <td>S_gen_restore_datafile</td>
+            <td>Full code file: gen_restore_datafile.sql</td>
+            <td>SQLPlus</td>
+            <td>
+               <ul>
+                  <li>prompt run</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>prompt {</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>prompt    set until scn  2309242958785;</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>prompt    sql clone 'alter database flashback off';</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>prompt    set newname for datafile  1 to "/u02/oradata/idmdev/system01.dbf";</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>prompt    set newname for datafile  2 to "/u02/oradata/idmdev/sysaux01.dbf";</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>prompt    set newname for datafile  3 to "/u02/oradata/idmdev/undotbs01.dbf";</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>prompt    set newname for datafile  4 to "/u02/oradata/idmdev/users01.dbf";</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>prompt    set newname for datafile  5 to "/u04/oradata/idmdev/identityiq_ts.dbf";</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>prompt    set newname for datafile  6 to "/u02/oradata/idmdev/undotbs02.dbf";</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>prompt    restore clone database</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>prompt    ;</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>prompt }</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>prompt ####################################################</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>prompt ### Formal code</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>prompt ####################################################</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>prompt run</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>prompt {</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>prompt    #set until scn  2309242958785;;</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>prompt # allocate channel c1 TYPE 'SBT_TAPE'  PARMS 'BLKSIZE=1048576, SBT_LIBRARY=/u01/app/oracle/product/11.2.0.4/dbhome_2/lib/libddobk.so,
+                     SBT_PARMS=(STORAGE_UNIT=oracle_ms02_lsu1, BACKUP_HOST=BHDAMSDD02.BHCS.PVT, ORACLE_HOME=/u01/app/oracle/product/11.2.0.4/dbhome_2)';
+                  </li>
+                  <li>KeyPress:RETURN</li>
+                  <li>set heading off feedback off echo off verify off</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>select 'set newname for datafile ' || file# || ' to "' || replace (name, '&amp;CONVERT_FROM',
+                     '&amp;CONVERT_TO') || '";' from v$datafile;
+                  </li>
+                  <li>KeyPress:RETURN</li>
+                  <li>prompt restore database from tag="&amp;restore_backupset_tag";;</li>
+                  <li>KeyPress:RETURN</li>
+               </ul>
+            </td>
+         </tr>
+         <tr>
+            <td>S_list_all_db_file_paths</td>
+            <td>Full code file: list_all_db_file_paths.sql</td>
+            <td>SQLPlus</td>
+            <td>
+               <ul>
+                  <li>set linesize 132</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>column FILE_PATH format a75</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>WITH db_files</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>     AS (SELECT name FROM v$datafile</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>         UNION ALL</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>         SELECT MEMBER name FROM v$logfile</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>         UNION ALL</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>         SELECT name FROM v$tempfile)</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>SELECT DISTINCT SUBSTR (name,</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>                        1,</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>                          LENGTH (name)</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>                        - REGEXP_INSTR (reverse (name),</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>                                        '[/\]',</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>                                        1,</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>                                        1)</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>                        + 1) file_path</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>  FROM db_files;</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>  </li>
+                  <li>KeyPress:RETURN</li>
+                  <li>WITH db_files</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>     AS (SELECT name FROM v$controlfile</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>         )</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>SELECT DISTINCT SUBSTR (name,</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>                        1,</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>                          LENGTH (name)</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>                        - REGEXP_INSTR (reverse (name),</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>                                        '[/\]',</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>                                        1,</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>                                        1)</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>                        + 1) control_file_path</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>  FROM db_files;</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>  </li>
+                  <li>KeyPress:RETURN</li>
+                  <li>SELECT SUBSTR (name,</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>                 1,</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>                 INSTR (name,</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>                        '/',</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>                        -1,</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>                        1))</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>            file_path,</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>         ROUND (SUM (bytes) / 1024 / 1024) MB</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>    FROM (SELECT name, bytes FROM v$datafile</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>          UNION ALL</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>          SELECT name, bytes FROM v$tempfile</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>          UNION ALL</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>          SELECT F.MEMBER name, l.bytes</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>            FROM v$logfile f, v$log l</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>           WHERE F.GROUP# = L.GROUP#)</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>GROUP BY SUBSTR (name,</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>                 1,</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>                 INSTR (name,</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>                        '/',</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>                        -1,</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>                        1));</li>
+                  <li>KeyPress:RETURN</li>
+               </ul>
+            </td>
+         </tr>
+         <tr>
+            <td>S_list_all_db_files</td>
+            <td>Full code file: list_all_db_files.sql</td>
+            <td>SQLPlus</td>
+            <td>
+               <ul>
+                  <li>set pagesize 1000 heading on feedback on</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>column name format A90</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>select name from v$controlfile</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>union all</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>select name from v$datafile</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>union all</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>select name from v$tempfile</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>union all</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>select member from v$logfile;</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>COMPUTE SUM LABEL 'TOTAL' OF mb on report</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>BREAK ON REPORT</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>column MB format 999,999,999,999.99</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>select name, block_size*file_size_blks/1024/1024 mb from v$controlfile</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>union all</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>select name, bytes/1024/1024 mb from v$datafile</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>union all</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>select name , bytes/1024/1024 mb from v$tempfile</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>union all</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>select member, l.bytes/1024/1024 mb from v$logfile f, v$log l where f.group#=l.group#;</li>
+                  <li>KeyPress:RETURN</li>
+               </ul>
+            </td>
+         </tr>
+         <tr>
+            <td>S_list_datafile_header</td>
+            <td>Full code file: list_datafile_header.sql</td>
+            <td>SQLPlus</td>
+            <td>
+               <ul>
+                  <li>set numwidth 18</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>SET linesize 200</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>alter session set nls_date_format='YYYY-MM-DD HH24:MI:SS';</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>SELECT dh.FILE#,</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>       recover,</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>       fuzzy,</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>       creation_change#,</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>       creation_time,</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>       tablespace_name,</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>       dh.CHECKPOINT_TIME,</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>       dh.CHECKPOINT_CHANGE#,</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>       BYTES</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>  FROM V$DATAFILE_HEADER dh;</li>
+                  <li>KeyPress:RETURN</li>
+               </ul>
+            </td>
+         </tr>
+         <tr>
+            <td>S_list_recent_archivelog</td>
+            <td>Full code file: list_recent_archivelog.sql</td>
+            <td>SQLPlus</td>
+            <td>
+               <ul>
+                  <li>set numwidth 18</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>ALTER SESSION SET NLS_DATE_FORMAT ='YYYY-MM-DD HH24:MI:SS';</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>SELECT name,</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>       SEQUENCE#,</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>       FIRST_CHANGE#,</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>       first_time</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>  FROM v$archived_log</li>
+                  <li>KeyPress:RETURN</li>
+               </ul>
+            </td>
+         </tr>
+         <tr>
+            <td>S_match_file_copy</td>
+            <td>Full code file: match_file_copy.sql</td>
+            <td>SQLPlus</td>
+            <td>
+               <ul>
+                  <li>set linesize 132</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>column DATAFILE_NAME format A50</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>column file_copy_name format A50</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>SELECT d.file#, d.name datafile_name, c.name file_copy_name</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>  FROM v$datafile_copy c, v$datafile d</li>
+                  <li>KeyPress:RETURN</li>
+                  <li> WHERE d.file# = c.file#(+);</li>
+                  <li>KeyPress:RETURN</li>
+               </ul>
+            </td>
+         </tr>
+         <tr>
+            <td>S_recover_until_cancel</td>
+            <td>Full code file: recover_until_cancel.sql</td>
+            <td>SQLPlus</td>
+            <td>
+               <ul>
+                  <li>var oracle_home clob;</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>exec SYS.dbms_system.get_env('ORACLE_HOME', :oracle_home);</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>print oracle_home</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>column oracle_home new_value oracle_home</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>select :oracle_home oracle_home from dual;</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>define oracle_home</li>
+                  <li>KeyPress:RETURN</li>
+               </ul>
+            </td>
+         </tr>
+         <tr>
+            <td>S_select_recover_file</td>
+            <td>Full code file: select_recover_file.sql</td>
+            <td>SQLPlus</td>
+            <td>
+               <ul>
+                  <li>set numwidth 18</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>SET linesize 132</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>alter session set nls_date_format='YYYY-MM-DD HH24:MI:SS';</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>column ERROR format A40</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>select * from v$recover_file;</li>
+                  <li>KeyPress:RETURN</li>
+                  <li>select distinct change# from v$recover_file;</li>
+                  <li>KeyPress:RETURN</li>
+               </ul>
+            </td>
+         </tr>
+      </table>
+   </body>
+</html>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>report_registry_history</name>
+   <desc>Full code file: report_registry_history.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">set linesize 150</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">set numwidth 10</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">COLUMN action_time format A30</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">COLUMN action format A15</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">COLUMN namespace format A12</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">COLUMN version format A15</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">COLUMN comments format A35</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">COLUMN bundle_series format A12</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select * from sys.registry$history order by action_time;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT comp_id, version, status, modified FROM dba_registry;</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

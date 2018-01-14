@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>LIST_DATA_PUMP_DIR</name>
+   <desc>Full code file: LIST_DATA_PUMP_DIR.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">set linesize 132</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">column DIRECTORY_PATH format A80</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">column OWNER format A10</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT *</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  FROM dba_directories</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"> WHERE directory_name = 'DATA_PUMP_DIR';</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"> </line>
+   <line type="KeyPress">RETURN</line>
+</macro>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>report_TEMP_tbs</name>
+   <desc>Full code file: report_TEMP_tbs.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">SELECT NAME FROM v$tempfile;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SET NUMFORMAT "999,999,999.00"</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT tablespace_name,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">         SUM (bytes) / 1024 / 1024 / 1024  FILE_GB,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">         SUM (MAXBYTES) / 1024 / 1024 / 1024 ALLOCATED_GB</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">    FROM dba_temp_files</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"> GROUP BY tablespace_name;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SET NUMFORMAT ""</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

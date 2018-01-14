@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>CONFIG_DDBoost_pwd_sample</name>
+   <desc>Full code file: CONFIG_DDBoost_pwd_sample.ksh</desc>
+   <environment>Vi</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">vi CONFIG_DDBoost_pwd_sample.ksh</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="KeyPress">COLON</line>
+   <line type="Text">1,$ d</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">i</line>
+   <line type="Text">rman &lt;&lt; EOF</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">connect target</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">RUN {</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  allocate channel C1 device type SBT_TAPE parms</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">     'SBT_LIBRARY=${ORACLE_HOME}/lib/libddobk.so,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">      SBT_PARMS=(ORACLE_HOME=${ORACLE_HOME})';</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  send 'set username USERNAME password PASSWORD servername BSWMSDD03.BHCS.PVT';</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  send 'set username USERNAME password PASSWORD servername BSWSVDD03.BHCS.PVT';</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  RELEASE CHANNEL C1;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">}</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">EOF</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="KeyPress">ESCAPE</line>
+   <line type="KeyPress">COLON</line>
+   <line type="Text">x</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

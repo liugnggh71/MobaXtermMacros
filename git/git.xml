@@ -37,6 +37,7 @@
     <xi:include href="../git/git_status.xml"/>
     <xi:include href="../git/introduction_to_git.xml"/>
     <xi:include href="../git/git_crash_course.xml"/>
+    <xi:include href="../git/dos2unix_template.xml"/>
 
     <transfer_map>
         <transfer>

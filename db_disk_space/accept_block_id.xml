@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>accept_block_id</name>
+   <desc>Full code file: accept_block_id.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">accept v_block_id char prompt 'Block ID: '</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

@@ -44,3 +44,10 @@ SELECT NAME, VALUE,description
 ORDER BY NAME;
 
 SELECT DBID, NAME, LOG_MODE, FORCE_LOGGING, FLASHBACK_ON FROM v$database;
+
+SELECT DISTINCT start_time, completion_time, media, comments
+  FROM v$backup_piece
+   WHERE start_time IN (SELECT MAX (start_time)
+                           FROM v$backup_piece
+                     WHERE SYSDATE - completion_time < 3);
+

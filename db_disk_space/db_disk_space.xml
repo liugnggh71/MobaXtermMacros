@@ -4,6 +4,7 @@
     <file>db_disk_space</file>
     <xi:include href="../common/______BCK_all_macro.xml"/>
     <xi:include href="../common/____Macro_DIR.xml"/>
+    <xi:include href="../common/______cd_common.xml"/>
     <xi:include href="../common/cmd.xml"/>
     <xi:include href="../common/sqlplus_nolog.xml"/>
     <xi:include href="../common/sqlplus_as_sysdba.xml"/>
@@ -43,6 +44,14 @@
     <xi:include href="../db_disk_space/db_disk_space_blogger.xml"/>
     <xi:include href="../db_disk_space/report_diag_parameter.xml"/>
     <xi:include href="../db_disk_space/report_DB_USED_MB.xml"/>
+    <xi:include href="../db_disk_space/report_space_history_by_hour_day.xml"/>
+    <xi:include href="../db_disk_space/report_TEMP_tbs.xml"/>
+    <xi:include href="../db_disk_space/report_recent_created_files.xml"/>
+    <xi:include href="../db_disk_space/du_u01.xml"/>
+    <xi:include href="../db_disk_space/accept_file_no.xml"/>
+    <xi:include href="../db_disk_space/accept_block_id.xml"/>
+    <xi:include href="../db_disk_space/report_object_on_file_no_block_id.xml"/>
+    <xi:include href="../db_disk_space/undo_failure.xml"/>
     <transfer_map>
         <transfer>
             <source_xml>../unparsed_code/code_list.xml</source_xml>

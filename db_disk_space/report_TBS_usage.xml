@@ -5,9 +5,9 @@
    <desc>Full code file: report_TBS_usage.sql</desc>
    <environment>SQLPlus</environment>
    <hotkey>0</hotkey>
-   <line type="Text">COLUMN value NEW_VALUE dbblocksz NOPRINT</line>
+   <line type="Text">COLUMN v_block_size NEW_VALUE v_block_size NOPRINT</line>
    <line type="KeyPress">RETURN</line>
-   <line type="Text">SELECT VALUE</line>
+   <line type="Text">SELECT VALUE v_block_size</line>
    <line type="KeyPress">RETURN</line>
    <line type="Text">  FROM v$parameter</line>
    <line type="KeyPress">RETURN</line>
@@ -19,16 +19,52 @@
    <line type="KeyPress">RETURN</line>
    <line type="Text">COLUMN used_percent FORMAT 990.99</line>
    <line type="KeyPress">RETURN</line>
-   <line type="Text">  SELECT tablespace_name,</line>
+   <line type="Text">SELECT tablespace_name,</line>
    <line type="KeyPress">RETURN</line>
-   <line type="Text">         (used_space * &amp;dbblocksz) / (1024 * 1024)    used_mb,</line>
+   <line type="Text">         (used_space * &amp;v_block_size) / (1024 * 1024)    used_mb,</line>
    <line type="KeyPress">RETURN</line>
-   <line type="Text">         (tablespace_size * &amp;dbblocksz) / (1024 * 1024) tablespace_mb,</line>
+   <line type="Text">         (tablespace_size * &amp;v_block_size) / (1024 * 1024) tablespace_mb,</line>
    <line type="KeyPress">RETURN</line>
    <line type="Text">         used_percent</line>
    <line type="KeyPress">RETURN</line>
    <line type="Text">    FROM dba_tablespace_usage_metrics</line>
    <line type="KeyPress">RETURN</line>
-   <line type="Text">ORDER BY used_percent DESC;</line>
+   <line type="Text"> ORDER BY used_percent DESC;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SET NUMFORMAT "999,999,999,999.00"</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">set linesize 132</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">COMPUTE SUM LABEL 'total_file_gb' OF tbs_file_gb on report</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">COMPUTE SUM LABEL 'total_max_gb' OF tbs_max_gb on report</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">COMPUTE SUM LABEL 'total_allocated_gb' OF tbs_allocated_gb on report</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">BREAK ON REPORT</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT a.name,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">                 SUM (b.file_size)* &amp;v_block_size/1024/1024/1024 tbs_file_gb,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">                 SUM (b.file_maxsize)* &amp;v_block_size/1024/1024/1024 tbs_max_gb,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">                 SUM (b.allocated_space)* &amp;v_block_size/1024/1024/1024 tbs_allocated_gb,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">                 ROUND (SUM (b.allocated_space) / SUM (b.file_maxsize) * 100)</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">                    pct_used</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">            FROM v$tablespace a, v$filespace_usage b</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">           WHERE     a.ts# = b.tablespace_id</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">                 AND a.included_in_database_backup = 'YES'</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">        GROUP BY a.name</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">        ORDER BY 5 DESC;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SET NUMFORMAT ""</line>
    <line type="KeyPress">RETURN</line>
 </macro>

@@ -2,7 +2,7 @@ COLUMN  next_file_sequence NEW_VALUE next_file_sequence
 
 SELECT TRIM (TO_CHAR (COUNT (1) + 1, '009')) next_file_sequence
   FROM DBA_DATA_FILES
- WHERE TABLESPACE_NAME = 'USERS';
+ WHERE TABLESPACE_NAME = '&TABLESPACE_NAME';
 
 COLUMN  file_suffix NEW_VALUE file_suffix
 

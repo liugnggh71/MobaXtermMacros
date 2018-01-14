@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>report_space_history_by_hour_day</name>
+   <desc>Full code file: report_space_history_by_hour_day.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">COLUMN v_block_size NEW_VALUE v_block_size</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT VALUE v_block_size</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  FROM v$parameter</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"> WHERE name = 'db_block_size';</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  SELECT TO_CHAR (TO_DATE (rtime, 'MM/DD/YYYY HH24:MI:SS'),</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">                  'YYYY/MM/DD HH24:MI')</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">             rtime,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">         ROUND (</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">             SUM (tablespace_usedsize) / 1024 / 1024 * &amp;&amp;v_block_size / 1024,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">             2)</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">             used_gb,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">         ROUND (SUM (tablespace_size) / 1024 / 1024 * &amp;&amp;v_block_size / 1024, 2)</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">             allocated_gb</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">    FROM DBA_HIST_TBSPC_SPACE_USAGE</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">GROUP BY rtime</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">ORDER BY 1 DESC;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  SELECT TO_CHAR (TO_DATE (rtime, 'MM/DD/YYYY HH24:MI:SS'),</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">                  'YYYY/MM/DD HH24:MI')</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">             rtime,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">         ROUND (</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">             SUM (tablespace_usedsize) / 1024 / 1024 * &amp;&amp;v_block_size / 1024,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">             2)</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">             used_gb,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">         ROUND (SUM (tablespace_size) / 1024 / 1024 * &amp;&amp;v_block_size / 1024, 2)</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">             allocated_gb</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">    FROM DBA_HIST_TBSPC_SPACE_USAGE</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">   WHERE   TO_DATE (rtime, 'MM/DD/YYYY HH24:MI:SS')</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">         - TRUNC (TO_DATE (rtime, 'MM/DD/YYYY HH24:MI:SS')) &lt; 1 / 48</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">GROUP BY rtime</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">ORDER BY 1 DESC;</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

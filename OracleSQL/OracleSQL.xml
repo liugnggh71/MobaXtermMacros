@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="../gen_moba_xterm_macro.xsl"?>
 <xmoba_macros xmlns:xi="http://www.w3.org/2001/XInclude">
-    <file>OracleSQLTutorial</file>
+    <file>OracleSQL</file>
     <xi:include href="../common/______BCK_all_macro.xml"/>
     <xi:include href="../common/____Macro_DIR.xml"/>
     <xi:include href="../common/cmd.xml"/>

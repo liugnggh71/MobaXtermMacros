@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>create_restore_point_before_down_time</name>
+   <desc>Full code file: create_restore_point_before_down_time.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">show parameter recover</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">show parameter reten</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">-- alter system set db_recovery_file_dest_size=100000M scope=both;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">-- alter system set db_recovery_file_dest='/archivelog/fast_recovery_area' scope=both;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">-- alter system set db_flashback_retention_target=7200 scope=both;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">-- alter database flashback on;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">--</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SET ECHO ON PAGESIZE 100 NUMWIDTH 20</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT * FROM v$instance;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">alter system checkpoint;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">alter system switch logfile;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">set echo on</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">column restore_point_name new_value restore_point_name</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select 'dt_rst_' || to_char(sysdate, 'YYYY_MM_DD_HH24_MI_SS')  restore_point_name from dual;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">create restore point &amp;restore_point_name;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT *</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  FROM v$restore_point</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"> WHERE SYSDATE - 1 &lt; time;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT * FROM GV$FLASHBACK_DATABASE_LOG;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT *</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  FROM (  SELECT *</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">            FROM GV$FLASHBACK_DATABASE_LOGFILE</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">        ORDER BY first_time DESC)</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"> WHERE ROWNUM &lt; 2;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">select flashback_on from v$database;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SET NUMFORMAT 999,999,999,999</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT * FROM V$RECOVERY_FILE_DEST;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SET NUMFORMAT ""</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

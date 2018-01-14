@@ -1,0 +1,21 @@
+# expdp_prakash_table_list.par      
+USERID="SYS/edwora001@edwprd:1521/bdwprod as sysdba"
+DUMPFILE="prakash_table_list_%U.dmp"
+LOGFILE="prakash_table_list.log"
+DIRECTORY=DATA_PUMP_DIR
+JOB_NAME='exp_prakash_table'
+COMPRESSION=ALL
+CONTENT=ALL
+PARALLEL=10
+TABLES=(EDW.DATE_DIM                      ,
+EDW.GL_CORP_DIM                   ,
+EDW.HR_SERVICE_RANGE_DIM          ,
+EDW.GL_COST_CTR_DIM               ,
+EDW.HR_TURNOVER_JOB_FAMILY_DIM    ,
+EDW.HR_DEPARTMENT_DIM             ,
+EDW.HR_DEPARTMENT_FUNCTION_DIM    ,
+EDW.PEOPLE_RET_CC_ROLL12_SNP_FCT  ,
+EDW.PEOPLE_RET_ENT_ROLL12_SNP_FCT ,
+EDW.PEOPLE_RET_FAC_ROLL12_SNP_FCT ,
+EDW.PEOPLE_RET_DEP_ROLL12_SNP_FCT )
+REUSE_DUMPFILES=N

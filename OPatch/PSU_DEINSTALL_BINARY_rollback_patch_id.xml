@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>PSU_DEINSTALL_BINARY_rollback_patch_id</name>
+   <desc>Full code file: PSU_DEINSTALL_BINARY_rollback_patch_id.ksh</desc>
+   <environment>KornShell</environment>
+   <hotkey>0</hotkey>
+   <line type="Text"># $ORACLE_HOME/OPatch/opatch rollback -id ${PATCH_ID}</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

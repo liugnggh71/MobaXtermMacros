@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>export_PATCH_ID</name>
+   <desc>Full code file: export_PATCH_ID.ksh</desc>
+   <environment>KornShell</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">export PATCH_ID=1234567</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

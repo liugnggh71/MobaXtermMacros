@@ -124,7 +124,10 @@
         <folder path="."/>
         <file name="code_list.xml"/>
         <file name="daily_backup.xml"/>
+        <file name="daily_backup_ERROR_history.xml"/>
+        <file name="DDBoost_upgrade_list.xml"/>
         <file name="../gen_moba_xterm_macro.xsl"/>
+        <file name="get_DDBoost_AIX.pl"/>
         <file name="../parse_unparsed_code.xsl"/>
     </projectTree>
 </project>

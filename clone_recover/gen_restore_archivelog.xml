@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>gen_restore_archivelog</name>
+   <desc>Full code file: gen_restore_archivelog.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">-- run {</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">-- allocate channel c1 TYPE 'SBT_TAPE'  PARMS 'BLKSIZE=1048576, SBT_LIBRARY=/u01/app/oracle/product/11.2.0.3/lib/libddobk.so, SBT_PARMS=(STORAGE_UNIT=oracle_ms02_lsu1, BACKUP_HOST=BHDAMSDD02.BHCS.PVT, ORACLE_HOME=/u01/app/oracle/product/11.2.0.3)';</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">-- restore archivelog  from time="to_date('2017-11-19 02:08:49','YYYY-MM-DD HH24:MI:SS')"; </line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">-- }</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">COLUMN ARCHIVE_START_TIME NEW_VALUE ARCHIVE_START_TIME</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT TO_CHAR (MIN (start_time), 'YYYY-MM-DD HH24:MI:SS') ARCHIVE_START_TIME</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  FROM v$backup_piece</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"> WHERE tag = '&amp;restore_backupset_tag';</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"> </line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">DEFINE ARCHIVE_START_TIME </line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">set heading off feedback off echo off verify off</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">-- ####################################################</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">-- ### Formal code</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">-- ####################################################</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">-- run {</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">-- # allocate channel c1 TYPE 'SBT_TAPE'  PARMS 'BLKSIZE=1048576, SBT_LIBRARY=/u01/app/oracle/product/11.2.0.4/dbhome_2/lib/libddobk.so, SBT_PARMS=(STORAGE_UNIT=oracle_ms02_lsu1, BACKUP_HOST=BHDAMSDD02.BHCS.PVT, ORACLE_HOME=/u01/app/oracle/product/11.2.0.4/dbhome_2)';</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">-- restore archivelog  from time="to_date('&amp;ARCHIVE_START_TIME','YYYY-MM-DD HH24:MI:SS')"; </line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">-- }</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

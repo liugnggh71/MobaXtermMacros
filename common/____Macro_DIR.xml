@@ -7,6 +7,4 @@
     <hotkey>0</hotkey>
     <line type="Text">explorer C:\Users\gangl\Documents\MobaXterm\home\MobaXtermMacros</line>
     <line type="KeyPress">RETURN</line>
-    <line type="Text">cd</line>
-    <line type="KeyPress">RETURN</line>
 </macro>

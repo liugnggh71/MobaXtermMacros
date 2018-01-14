@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>gen_rename_logfile_tempfile</name>
+   <desc>Full code file: gen_rename_logfile_tempfile.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">prompt Sample command:</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">prompt alter database rename file '/u02/oradata/idmprd/temp02.dbf' to '/u02/oradata/idmdev/temp02.dbf';</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">prompt ####################################################</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">prompt ### Formal code</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">prompt ####################################################</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">set heading off feedback off echo off verify off</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT    'alter database rename file '''</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       || name</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       || ''' to '''</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       || REPLACE (name, '&amp;CONVERT_FROM', '&amp;CONVERT_TO')</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       || ''';'</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  FROM (SELECT name FROM v$tempfile</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">        UNION ALL</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">        SELECT MEMBER FROM v$logfile);</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

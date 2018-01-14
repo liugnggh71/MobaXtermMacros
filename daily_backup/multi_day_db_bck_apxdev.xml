@@ -7,6 +7,9 @@
    <hotkey>0</hotkey>
    <line type="Text">vi multi_day_db_bck_apxdev.ksh</line>
    <line type="KeyPress">RETURN</line>
+   <line type="KeyPress">COLON</line>
+   <line type="Text">1,$ d</line>
+   <line type="KeyPress">RETURN</line>
    <line type="Text">i</line>
    <line type="Text">#!/bin/sh</line>
    <line type="KeyPress">RETURN</line>

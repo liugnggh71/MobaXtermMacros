@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>OPATCH_UPGRADE_unzip_list_patch</name>
+   <desc>Full code file: OPATCH_UPGRADE_unzip_list_patch.ksh</desc>
+   <environment>KornShell</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">unzip -l p6880880_*.zip</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

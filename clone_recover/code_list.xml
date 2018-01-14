@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <?xml-stylesheet type="text/xsl" href="../parse_unparsed_code.xsl"?>
+
+<codes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../code_list.xsd">
+    <directory>clone_recover</directory>
+    <file>gen_copy_clone_control_file.sql</file>
+    <file>gen_rename_logfile_tempfile.sql</file>
+    <file>gen_restore_archivelog.sql</file>
+    <file>gen_restore_datafile.sql</file>
+    <file>convert_sample_set.sql</file>
+    <file>MS_DDBoost.sql</file>
+    <file>SV_DDBoost.sql</file>
+    <file>define_oracle_home.sql</file>
+    <file>expdp_impdp_job_report.sql</file>
+    <file>GENERATE_rcvtst_force_set_parameters.sql</file>
+    <file>list_all_db_file_paths.sql</file>
+    <file>list_all_db_files.sql</file>
+    <file>list_datafile_header.sql</file>
+    <file>LIST_non_default_parameter.sql</file>
+    <file>list_recent_archivelog.sql</file>
+    <file>select_recover_file.sql</file>
+    <file>LIST_DATA_PUMP_DIR.sql</file>
+    <file>match_file_copy.sql</file>
+    <file>recover_until_cancel.sql</file>
+    <file>accept_convert_from.sql</file>
+    <file>accept_convert_to.sql</file>
+    <file>accept_restore_backupset_tag.sql</file>
+    
+    <!--     
+    <file action="WebBrowser">Daily_bck_issue.txt</file>
+    <file action="vi">multi_day_db_bck_apxdev.ksh</file>
+    <file action="Help">SPACE_ticket_help.txt</file>
+ -->
+</codes>

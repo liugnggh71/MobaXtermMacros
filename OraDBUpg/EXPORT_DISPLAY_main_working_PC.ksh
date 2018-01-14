@@ -1,0 +1,2 @@
+export DISPLAY=DBBTIS6XQBMX1.bhcs.pvt:0.0
+echo $DISPLAY

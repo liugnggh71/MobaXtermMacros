@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>list_datafile_header</name>
+   <desc>Full code file: list_datafile_header.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">set numwidth 18</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SET linesize 200</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">alter session set nls_date_format='YYYY-MM-DD HH24:MI:SS';</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT dh.FILE#,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       recover,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       fuzzy,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       creation_change#,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       creation_time,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       tablespace_name,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       dh.CHECKPOINT_TIME,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       dh.CHECKPOINT_CHANGE#,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">       BYTES</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">  FROM V$DATAFILE_HEADER dh;</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

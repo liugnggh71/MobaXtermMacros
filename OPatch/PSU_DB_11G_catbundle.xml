@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>PSU_DB_11G_catbundle</name>
+   <desc>Full code file: PSU_DB_11G_catbundle.ksh</desc>
+   <environment>KornShell</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">cd $ORACLE_HOME/rdbms/admin</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"># sqlplus /nolog</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"># CONNECT / AS SYSDBA</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"># STARTUP</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"># @?/rdbms/admin/catbundle.sql psu apply</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"># @?/rdbms/admin/utlrp.sql</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"># QUIT</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

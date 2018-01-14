@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
+   <name>report_recent_created_files</name>
+   <desc>Full code file: report_recent_created_files.sql</desc>
+   <environment>SQLPlus</environment>
+   <hotkey>0</hotkey>
+   <line type="Text">SELECT name, 'DATAFILE' TYPE,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">         TO_CHAR (creation_time, 'YYYY-MM-DD HH24:MI:SS') creation_time,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">         bytes / 1024 / 1024                            mb</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">    FROM v$datafile</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">   WHERE SYSDATE - creation_time &lt; 7</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"> UNION ALL</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT name, 'TEMPFILE' TYPE,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">         TO_CHAR (creation_time, 'YYYY-MM-DD HH24:MI:SS') creation_time,</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">         bytes / 1024 / 1024                            mb</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">    FROM v$tempfile</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">   WHERE SYSDATE - creation_time &lt; 7</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text"> ;</line>
+   <line type="KeyPress">RETURN</line>
+</macro>

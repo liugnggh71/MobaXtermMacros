@@ -13,10 +13,10 @@
     <file>mkdir_general_scripts.ksh</file>
     <file>cd_general_scripts.ksh</file>
     <file>create_r_system_db_link.sql</file>
-    <file>rman_connect_target.ksh</file>
     <file>ls_PMON_SID_sort.ksh</file>
     <file>TNS_entry_stanza_list.sql</file>
     <file>TNS_CURRENT_stanza.sql</file>
+    <file>create_restore_point_before_down_time.sql</file>
 <!--     
         
         

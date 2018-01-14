@@ -58,6 +58,12 @@
    <line type="KeyPress">RETURN</line>
    <line type="Text">select flashback_on from v$database;</line>
    <line type="KeyPress">RETURN</line>
+   <line type="Text">SET NUMFORMAT 999,999,999,999</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SELECT * FROM V$RECOVERY_FILE_DEST;</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">SET NUMFORMAT ""</line>
+   <line type="KeyPress">RETURN</line>
    <line type="KeyPress">ESCAPE</line>
    <line type="KeyPress">COLON</line>
    <line type="Text">x</line>

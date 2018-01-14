@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="19.1">
+    <meta>
+        <filters directoryPatterns="" filePatterns="clone_recover.xpr" positiveFilePatterns="" showHiddenFiles="false"/>
+        <options/>
+    </meta>
+    <projectTree name="clone_recover.xpr">
+        <folder path="."/>
+        <file name="clone_recover.xml"/>
+        <file name="code_list.xml"/>
+    </projectTree>
+</project>

@@ -17,9 +17,11 @@
     <xi:include href="../common/conn_dbsnmp_local.xml"/>
     <xi:include href="../common/conn_rocc_local.xml"/>
     <xi:include href="../common/conn_syscc_local.xml"/>
+    <xi:include href="../common/conn_system.xml"/>
     <xi:include href="../common/call_define_current_connection.xml"/>
     <xi:include href="../common/TNS_entry_stanza_list.xml"/>
     <xi:include href="../common/TNS_CURRENT_stanza.xml"/>
+    <xi:include href="../common/______cd_common.xml"/>
 
     <xi:include href="../user_audit/cc_dbsnmp_fixed_password.xml"/>
     <xi:include href="../user_audit/cc_create_sys_cc_user.xml"/>
@@ -83,6 +85,7 @@
 
     <xi:include href="../user_audit/Set_environment_help.xml"/>
     <xi:include href="../user_audit/User_management_help.xml"/>
+    <xi:include href="../user_audit/gen_kill_session_of_username.xml"/>
     <transfer_map>
         <transfer>
             <source_xml>../unparsed_code/code_list.xml</source_xml>

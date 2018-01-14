@@ -3,8 +3,14 @@
        xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
    <name>CONFIG_DDBoost_pwd</name>
    <desc>Full code file: CONFIG_DDBoost_pwd.ksh</desc>
-   <environment>KornShell</environment>
+   <environment>Vi</environment>
    <hotkey>0</hotkey>
+   <line type="Text">vi CONFIG_DDBoost_pwd.ksh</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="KeyPress">COLON</line>
+   <line type="Text">1,$ d</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="Text">i</line>
    <line type="Text">rman &lt;&lt; EOF</line>
    <line type="KeyPress">RETURN</line>
    <line type="Text">connect target</line>
@@ -17,16 +23,18 @@
    <line type="KeyPress">RETURN</line>
    <line type="Text">      SBT_PARMS=(ORACLE_HOME=${ORACLE_HOME})';</line>
    <line type="KeyPress">RETURN</line>
-   <line type="Text">  send 'set username ddboostninja password baylor01 servername BHDAMSDD02.BHCS.PVT';</line>
+   <line type="Text">  send 'set username ddboostninja password baylor01 servername BSWMSDD03.BHCS.PVT';</line>
    <line type="KeyPress">RETURN</line>
-   <line type="Text">  send 'set username ddboostninja password baylor01 servername BHDASVDD02.BHCS.PVT';</line>
+   <line type="Text">  send 'set username ddboostninja password baylor01 servername BSWSVDD03.BHCS.PVT';</line>
    <line type="KeyPress">RETURN</line>
    <line type="Text">  RELEASE CHANNEL C1;</line>
-   <line type="KeyPress">RETURN</line>
-   <line type="Text">  backup current controlfile;</line>
    <line type="KeyPress">RETURN</line>
    <line type="Text">}</line>
    <line type="KeyPress">RETURN</line>
    <line type="Text">EOF</line>
+   <line type="KeyPress">RETURN</line>
+   <line type="KeyPress">ESCAPE</line>
+   <line type="KeyPress">COLON</line>
+   <line type="Text">x</line>
    <line type="KeyPress">RETURN</line>
 </macro>

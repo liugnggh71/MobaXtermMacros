@@ -3,7 +3,7 @@
 <macro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../MobaMacro.xsd">
     <name>conn rocc</name>
     <desc>Connect to cloud read only account</desc>
-    <environment>SqlPlus</environment>
+    <environment>SQLPlus</environment>
     <hotkey>0</hotkey>
     <line type="Text">conn &amp;rocc</line>
     <line type="KeyPress">RETURN</line>

@@ -9,9 +9,11 @@
     <file action="WebBrowser">recollect_bck_info.txt</file>
     <file action="WebBrowser">schedule_cloud_bck_job.txt</file>
     <file action="WebBrowser">00_DDBoost_BCK_setup_upgrade.txt</file>
+    <file action="WebBrowser">DDBoostUpgrade.txt</file>
     <file>full_db_backup.rman</file>
     <file>report_backup.rman</file>
-    <file>CONFIG_DDBoost_pwd.ksh</file>
+    <file action="vi">CONFIG_DDBoost_pwd.ksh</file>
+    <file action="vi">CONFIG_DDBoost_pwd_sample.ksh</file>
     <file>DDBoost_Springvalley.ksh</file>
     <file>DDBoost_Mainstreet.ksh</file>
     <file>00_reset_rman_config.rman</file>
@@ -38,6 +40,14 @@
     <file>04_block_corruption_protect.sql</file>
     <file>05_block_tracking_help.sql</file>
     <file>backup_and_delete_archivelog.rman</file>
+    <file>full_bck_not_backed_since_72_hours.rman</file>
+    <file>List_and_kill_ALL_RMAN.ksh</file>
+    <file>SBT_current_SETTING.ksh</file>
+    <file action="vi">point_sv03.ksh</file>
+    <file action="vi">point_ms03.ksh</file>
+    <file>02_rman_config_tape_channel_count.rman</file>
+    <file>report_DDBoost_config.sql</file>
+    <file action="vi">get_DDBoost_AIX.pl</file>
     <!--     
     <file>copy_exp_imp_tables.sql</file>
     <file action="WebBrowser">Daily_bck_issue.txt</file>
