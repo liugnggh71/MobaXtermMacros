@@ -1,0 +1,46 @@
+
+
+Given that all angles shown are marked, the perimeter of the polygon shown is
+
+\begin{figure}[H]
+\centering
+\begin{asy}
+size(200);
+draw((0,0)--(0,6)--(8,6)--(8,3)--(4,3)--(4,0)--cycle);
+label("6",(0,3),W);
+label("8",(4,6),N);
+\end{asy}
+\end{figure}
+
+\[ \textbf{(A)}\ 14 \qquad
+\textbf{(B)}\ 20 \qquad
+\textbf{(C)}\ 28 \qquad
+\textbf{(D)}\ 48 \qquad
+\textbf{(E)}\ \text{cannot be determined from the information given} \qquad
+\]
+\\
+Solution 1
+\\
+For the segments parallel to the side with side length 8, let's call those two segments $a$ and $b$, the longer segment being $b$, the shorter one being $a$.
+
+For the segments parallel to the side with side length 6, let's call those two segments $c$ and $d$, the longer segment being $d$, the shorter one being $c$.
+
+So the perimeter of the polygon would be...
+
+$8 + 6 + a + b + c + d$
+
+Note that $a + b = 8$, and $c + d = 6$.
+
+Now we plug those in: \begin{align*} 8 + 6 + a + b + c + d &= 8 + 6 + 8 + 6 \\ &= 14 \times 2 \\ &= 28 \\ \end{align*}
+28 is $\boxed{\text{C}}$.
+\\
+Solution 2
+\\
+\begin{figure}[H]
+\centering
+\begin{asy}
+import "olympiad.asy" as olympiad;
+unitsize(12); draw((0,0)--(0,6)--(8,6)--(8,3)--(2.7,3)--(2.7,0)--cycle); label("$6$",(0,3),W); label("$8$",(4,6),N); draw((8,3)--(8,0)--(2.7,0),dashed); 
+\end{asy}
+\end{figure}
+The perimeter of the requested region is the same as the perimeter of the rectangle with the dashed portion. This makes the answer $2(6+8)=28\rightarrow \boxed{\text{C}}$

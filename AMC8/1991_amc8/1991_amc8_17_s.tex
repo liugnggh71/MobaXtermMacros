@@ -1,0 +1,12 @@
+
+
+An auditorium with $20$ rows of seats has $10$ seats in the first row. Each successive row has one more seat than the previous row. If students taking an exam are permitted to sit in any row, but not next to another student in that row, then the maximum number of students that can be seated for an exam is
+
+$\text{(A)}\ 150 \qquad \text{(B)}\ 180 \qquad \text{(C)}\ 200 \qquad \text{(D)}\ 400 \qquad \text{(E)}\ 460$
+\\
+Solution
+\\
+We first note that if a row has $n$ seats, then the maximum number of students that can be seated in that row is $\left\lceil \frac{n}{2} \right\rceil$, where $\lceil x \rceil$ is the smallest integer greater than or equal to $x$. If a row has $2k$ seats, clearly we can only fit $k$ students in that row. If a row has $2k+1$ seats, we can fit $k+1$ students by putting students at the ends and then alternating between skipping a seat and putting a student in.
+
+For each row with $10+k$ seats, there is a corresponding row with $29-k$ seats. The sum of the maximum number of students for these rows is \[\left\lceil \frac{10+k}{2}\right\rceil +\left\lceil \frac{29-k}{2} \right\rceil = 20.\] There are $20/2=10$ pairs of rows, so the maximum number of students for the exam is $20\times 10=200\rightarrow \boxed{\text{C}}$.
+

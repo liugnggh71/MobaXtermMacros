@@ -1,0 +1,57 @@
+
+
+Suppose one of the eight lettered identical squares is included with the four squares in the T-shaped figure outlined. How many of the resulting figures can be folded into a topless cubical box?
+
+\begin{figure}[H]
+\centering
+\begin{asy}
+size(200);
+draw((0,0)--(1,0)--(1,1)--(2,1)--(2,2)--(3,2)--(3,3)--(2,3)--(2,4)--(1,4)--(1,5)--(0,5)--(0,4)--(-1,4)--(-1,1)--(0,1)--cycle);
+draw((0,1)--(1,1));
+draw((-1,2)--(2,2));
+draw((-1,3)--(2,3));
+draw((0,4)--(1,4));
+draw((0,1)--(0,4));
+draw((1,1)--(1,4));
+draw((2,2)--(2,3));
+draw((0,1)--(1,1)--(1,2)--(2,2)--(2,3)--(1,3)--(1,4)--(0,4)--cycle);
+draw((0,1)--(1,1)--(1,2)--(2,2)--(2,3)--(1,3)--(1,4)--(0,4)--cycle);
+draw((0,1)--(1,1)--(1,2)--(2,2)--(2,3)--(1,3)--(1,4)--(0,4)--cycle);
+draw((0,1)--(1,1)--(1,2)--(2,2)--(2,3)--(1,3)--(1,4)--(0,4)--cycle);
+draw((0,1)--(1,1)--(1,2)--(2,2)--(2,3)--(1,3)--(1,4)--(0,4)--cycle);
+draw((0,1)--(1,1)--(1,2)--(2,2)--(2,3)--(1,3)--(1,4)--(0,4)--cycle);
+label("H",(0.5,0.2),N);
+label("G",(1.5,1.2),N);
+label("F",(-0.5,1.2),N);
+label("E",(2.5,2.2),N);
+label("D",(-0.5,2.2),N);
+label("C",(1.5,3.2),N);
+label("B",(-0.5,3.2),N);
+label("A",(0.5,4.2),N);
+\end{asy}
+\end{figure}
+
+\[ \textbf{(A)}\ 2 \qquad
+\textbf{(B)}\ 3 \qquad
+\textbf{(C)}\ 4 \qquad
+\textbf{(D)}\ 5 \qquad
+\textbf{(E)}\ 6
+\]
+\\
+Solution 1
+\\
+The four squares we already have assemble nicely into four sides of the cube. Let the central one be the bottom, and fold the other three upwards to get the front, right, and back side. Currently, our box is missing its left side and its top side. We have to count the possibilities that would fold to one of these two places.
+
+$A$ would be the top side - OK
+$B$ would be the left side - OK
+$C$ would cause the figure to not be foldable at all
+$D$ would be the left side - OK
+$E$ would be the top side - OK
+$F$ is the same case as $B$ - OK
+$G$ is the same case as $C$
+$H$ is the same case as $A$ - OK
+In total, there are $6\rightarrow\boxed{\text{E}}$ good possibilities.
+\\
+Solution 2
+\\
+Fold the four squares into the four sides of a cube. Then, there are six edges "open" (for lack of better term). For each open edge, we can add a square/side, so the answer is $6\rightarrow\boxed{\text{E}}$.

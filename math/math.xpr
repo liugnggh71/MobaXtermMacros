@@ -6,5 +6,7 @@
     </meta>
     <projectTree name="math.xpr">
         <folder path="."/>
+        <file name="code_list.xml"/>
+        <file name="math.xml"/>
     </projectTree>
 </project>

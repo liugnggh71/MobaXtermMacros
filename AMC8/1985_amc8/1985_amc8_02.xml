@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<problem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../AMC_problem.xsd">
+    <type>multi_selection</type>
+    <source>
+        <test_class>AMC8</test_class>
+        <year>1985</year>
+        <sequence>2</sequence>
+        <answer_key>B</answer_key>
+    </source>
+    <focus>
+        <subject>Prealgebra</subject>
+        <topic>Arithmetic - Addition</topic>
+    </focus>
+    <difficulty>
+        <solve_seconds>10</solve_seconds>
+        <error_list>
+            <person>None</person>
+            <person>Andrew</person>
+        </error_list>
+    </difficulty>
+</problem>

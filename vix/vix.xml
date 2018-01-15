@@ -6,6 +6,7 @@
     <xi:include href="../common/cmd.xml"/>
     <xi:include href="../common/cd_MobaXtermMacros.xml"/>
     <xi:include href="../vix/pwd.xml"/>
+    <xi:include href="../vix/daily_vix_check.xml"/>
     <transfer_map>
         <transfer>
             <source_xml>../unparsed_code/code_list.xml</source_xml>

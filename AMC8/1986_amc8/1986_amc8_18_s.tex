@@ -1,0 +1,27 @@
+
+
+A rectangular grazing area is to be fenced off on three sides using part of a $ 100$ meter rock wall as the fourth side. Fence posts are to be placed every $ 12$ meters along the fence including the two posts where the fence meets the rock wall. What is the fewest number of posts required to fence an area $ 36$ m by $ 60$ m?
+
+\begin{figure}[H]
+\centering
+\begin{asy}
+unitsize(12); draw((0,0)--(16,12)); draw((10.66666,8)--(6.66666,13.33333)--(1.33333,9.33333)--(5.33333,4)); label("WALL",(7,4),SE); 
+\end{asy}
+\end{figure}
+
+\[ \textbf{(A)}\ 11 \qquad
+\textbf{(B)}\ 12 \qquad
+\textbf{(C)}\ 13 \qquad
+\textbf{(D)}\ 14 \qquad
+\textbf{(E)}\ 16
+\]
+\\
+Solution
+\\
+The shortest possible rectangle that has sides 36 and 60 would be if the side opposite the wall was 60.
+
+Each of the sides of length 36 contribute $\frac{36}{12}+1=4$ fence posts and the side of length 60 contributes $\frac{60}{12}+1=6$ fence posts, so there are $4+4+6=14$ fence posts.
+
+However, the two corners where a 36 foot fence meets an 60 foot fence are counted twice, so there are actually $14-2=12$ fence posts.
+
+$\boxed{\text{B}}$

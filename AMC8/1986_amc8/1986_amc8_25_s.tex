@@ -1,0 +1,21 @@
+
+
+Which of the following sets of whole numbers has the largest average?
+
+\textbf{(A)}\ \text{multiples of 2 between 1 and 101} \qquad
+\textbf{(B)}\ \text{multiples of 3 between 1 and 101} \\
+\textbf{(C)}\ \text{multiples of 4 between 1 and 101} \qquad
+\textbf{(D)}\ \text{multiples of 5 between 1 and 101} \\
+\textbf{(E)}\ \text{multiples of 6 between 1 and 101}
+\\
+Solution 1
+\\
+From $1$ to $101$ there are $\left\lfloor \frac{101}{2} \right\rfloor = 50$ (see floor function) multiples of $2$, and their average is
+
+$\frac{2\cdot 1+2\cdot 2+2\cdot 3+\cdots + 2\cdot 50}{50}  \\ \\ = \frac{2(1+2+3+\cdots +50)}{50}  \\ \\ = \frac{2\cdot \frac{50\cdot 51}{2}}{50} \\ \\ = \frac{2\cdot 51}{2} \\ \\ = 51$
+
+Similarly, we can find that the average of the multiples of $3$ between $1$ and $101$ is $51$, the average of the multiples of $4$ is $52$, the average of the multiples of $5$ is $52.5$, and the average of the multiples of $6$ is $51$, so the one with the largest average is $\boxed{\text{D}}$
+\\
+Solution 2
+\\
+The multiples of any number in any range form an arithmetic sequence. It can be proven that the average of the numbers in an arithmetic sequence is simply the average of their highest and lowest entries, so you can just add the first term and the last term, and see which one is the largest (since the sum of two numbers is twice their average). 2+100=102, 3+99=102, 4+100=104, 5+100=105, 6+96=102. Therefore, the answer is multiples of five because it has the largest number.
